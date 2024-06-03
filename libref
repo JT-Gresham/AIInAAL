@@ -1,5 +1,5 @@
 pdirectory=ParentDirectory
-aiiaaldir=ParentDirectory/AIInAAL
+aiinaaldir=ParentDirectory/AIInAAL
 export LD_LIBRARY_PATH=ParentDirectory/AIInAAL/AIInAAL_env/lib
 export USE_XETLA=OFF
 export SYCL_PI_LEVEL_ZERO_USE_IMMEDIATE_COMMANDLISTS=1
