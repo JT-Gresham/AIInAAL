@@ -1,0 +1,9 @@
+pdirectory="ParentDirectory"
+AIInAALdir="ParentDirectory/AIInAAL"
+
+AIInAAL_update (){
+    cd $AIInAALdir
+    git switch main
+    git reset --hard HEAD
+    git pull
+}
