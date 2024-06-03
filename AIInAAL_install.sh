@@ -47,5 +47,6 @@ pip install wheel
 echo ""
 echo "Installing packages from requirements_AIInAAL.txt..."
 pip install -r requirements_AIInAAL.txt
+pip install -r --no-dependancies requirements_critical.txt
 #Run after git pull
 sed -i "s|ParentDirectory|$pdirectory|g" $pdirectory/AIInAAL/libref
