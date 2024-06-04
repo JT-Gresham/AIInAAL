@@ -33,9 +33,9 @@ cd $pdirectory
 echo ""
 git clone https://github.com/JT-Gresham/AIInAAL.git
 echo ""
-touch $pdirectory/AIInAAL/Scripts/AIInAAL.path
-echo "pdirectory=$pdirectory" > $pdirectory/AIInAAL/Scripts/AIInAAL.path
-echo "AIInAALdir=$pdirectory/AIInAAL" >> $pdirectory/AIInAAL/Scripts/AIInAAL.path
+touch $pdirectory/AIInAAL/Scripts/AIInAAL_path
+echo "pdirectory=$pdirectory" > $pdirectory/AIInAAL/Scripts/AIInAAL_path
+echo "AIInAALdir=$pdirectory/AIInAAL" >> $pdirectory/AIInAAL/Scripts/AIInAAL_path
 $pdirectory/AIInAAL/Scripts/librefgen
 echo "Changing directory ->$pdirectory/AIInAAL"
 cd $pdirectory/AIInAAL
