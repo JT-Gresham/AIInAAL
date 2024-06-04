@@ -45,7 +45,7 @@ echo "Changing directory ->$pdirectory/AIInAAL"
 cd $pdirectory/AIInAAL
 echo ""
 echo "Creating python 3.11 environment (AIInAAL_env)"
-/usr/bin/python3.11 -m venv $pdirectory/AIInAAL_env
+/usr/bin/python3.11 -m venv $pdirectory/AIInAAL/AIInAAL_env
 echo ""
 echo "Activating environment -> AIInAAL_env"
 source $pdirectory/AIInAAL/AIInAAL_env/bin/activate
