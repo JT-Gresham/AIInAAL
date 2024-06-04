@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+AIInAALuser="$(whoami)"
 
 echo "########## AI Framework for Intel Arc GPUs on Arch Linux ##########"
 echo "################### created by JT Gresham ####################"
@@ -34,12 +35,12 @@ echo ""
 git clone https://github.com/JT-Gresham/AIInAAL.git
 echo ""
 cd $pdirectory/AIInAAL/Scripts
-touch $pdirectory/AIInAAL/Scripts/AIInAAL_path
-echo "#!/usr/bin/env bash" > $pdirectory/AIInAAL/Scripts/AIInAAL_path
-echo "" > $pdirectory/AIInAAL/Scripts/AIInAAL_path
-echo "pdirectory=$pdirectory" > $pdirectory/AIInAAL/Scripts/AIInAAL_path
-echo "AIInAALdir=$pdirectory/AIInAAL" >> $pdirectory/AIInAAL/Scripts/AIInAAL_path
-source $pdirectory/AIInAAL/Scripts/AIInAAL_path
+touch /etc/AIInAAL/AIInAAL_path
+echo "#!/usr/bin/env bash" > /etc/AIInAAL/AIInAAL_path
+echo "" > /etc/AIInAAL/AIInAAL_path
+echo "pdirectory=$pdirectory" > /etc/AIInAAL/AIInAAL_path
+echo "AIInAALdir=$pdirectory/AIInAAL" >> /etc/AIInAAL/AIInAAL_path
+source /etc/AIInAAL/AIInAAL_path
 bash $pdirectory/AIInAAL/Scripts/librefgen
 echo "Changing directory ->$pdirectory/AIInAAL"
 cd $pdirectory/AIInAAL
