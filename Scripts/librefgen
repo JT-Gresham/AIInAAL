@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
 source $pdirectory/AIInAAL/Scripts/AIInAAL.path
+
 echo "Running librefgen..."
 cd $AIInAALdir
 echo "Regenerating LIBREF..."
+touch $AIInAALdir/libref
 echo "pdirectory=$pdirectory" > $AIInAALdir/libref
 echo "export LD_LIBRARY_PATH=$AIInAALdir_env/lib" >> $AIInAALdir/libref
 #echo "export CUDA_PATH=$AIInAALdir_env/lib/python3.11/site-packages/nvidia" >> $AIInAALdir/libref
