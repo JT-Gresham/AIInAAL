@@ -40,7 +40,7 @@ echo "Creating python 3.11 environment (AIInAAL_env)"
 /usr/bin/python3.11 -m venv AIInAAL_env
 echo ""
 echo "Activating environment -> AIInAAL_env"
-source AIInAAL_env/bin/activate
+source $pdirectory/AIInAAL/AIInAAL_env/bin/activate
 echo ""
 echo "Installing wheel package..."
 pip install wheel
@@ -51,4 +51,4 @@ pip install -r requirements_AIInAAL.txt
 touch $pdirectory/AIInAAL/Scripts/AIInAAL.path
 echo "pdirectory=$pdirectory" > $pdirectory/AIInAAL/Scripts/AIInAAL.path
 echo "AIInAALdir=$pdirectory/AIInAAL" >> $pdirectory/AIInAAL/Scripts/AIInAAL.path
-./Scripts/librefgen
+$pdirectory/AIInAAL/Scripts/librefgen
