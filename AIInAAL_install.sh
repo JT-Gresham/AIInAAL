@@ -48,4 +48,6 @@ echo ""
 echo "Installing packages from requirements_AIInAAL.txt..."
 pip install -r requirements_AIInAAL.txt
 #Run after git pull
-sed -i "s|ParentDirectory|$pdirectory|g" $pdirectory/AIInAAL/libref
+echo "pdirectory=$pdirectory" > $pdirectory/AIInAAL/Scripts/AIInAAL.path
+echo "AIInAALdir=$pdirectory/AIInAAL" > $pdirectory/AIInAAL/Scripts/AIInAAL.path
+./Scripts/librefgen
