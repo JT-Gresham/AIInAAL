@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source $pdirectory/AIInAAL/Scripts/AIInAAL.path
+source AIInAAL_path
 
 echo "Running librefgen..."
 cd $AIInAALdir
