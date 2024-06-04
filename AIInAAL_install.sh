@@ -33,12 +33,14 @@ cd $pdirectory
 echo ""
 git clone https://github.com/JT-Gresham/AIInAAL.git
 echo ""
+cd $pdirectory/AIInAAL/Scripts
 touch $pdirectory/AIInAAL/Scripts/AIInAAL_path
 echo "#!/usr/bin/env bash" > $pdirectory/AIInAAL/Scripts/AIInAAL_path
 echo "" > $pdirectory/AIInAAL/Scripts/AIInAAL_path
 echo "pdirectory=$pdirectory" > $pdirectory/AIInAAL/Scripts/AIInAAL_path
 echo "AIInAALdir=$pdirectory/AIInAAL" >> $pdirectory/AIInAAL/Scripts/AIInAAL_path
-$pdirectory/AIInAAL/Scripts/librefgen
+source $pdirectory/AIInAAL/Scripts/AIInAAL_path
+bash $pdirectory/AIInAAL/Scripts/librefgen
 echo "Changing directory ->$pdirectory/AIInAAL"
 cd $pdirectory/AIInAAL
 echo ""
