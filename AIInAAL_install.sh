@@ -35,7 +35,8 @@ echo ""
 git clone https://github.com/JT-Gresham/AIInAAL.git
 echo ""
 cd $pdirectory/AIInAAL/Scripts
-touch -p /etc/AIInAAL/AIInAAL_path
+mkdir /etc/AIInAAL
+touch /etc/AIInAAL/AIInAAL_path
 echo "#!/usr/bin/env bash" > /etc/AIInAAL/AIInAAL_path
 echo "" > /etc/AIInAAL/AIInAAL_path
 echo "pdirectory=$pdirectory" > /etc/AIInAAL/AIInAAL_path
