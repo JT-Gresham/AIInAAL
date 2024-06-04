@@ -33,6 +33,10 @@ cd $pdirectory
 echo ""
 git clone https://github.com/JT-Gresham/AIInAAL.git
 echo ""
+touch $pdirectory/AIInAAL/Scripts/AIInAAL.path
+echo "pdirectory=$pdirectory" > $pdirectory/AIInAAL/Scripts/AIInAAL.path
+echo "AIInAALdir=$pdirectory/AIInAAL" >> $pdirectory/AIInAAL/Scripts/AIInAAL.path
+$pdirectory/AIInAAL/Scripts/librefgen
 echo "Changing directory ->$pdirectory/AIInAAL"
 cd $pdirectory/AIInAAL
 echo ""
@@ -48,7 +52,3 @@ echo ""
 echo "Installing packages from requirements_AIInAAL.txt..."
 pip install -r requirements_AIInAAL.txt
 #Run after git pull
-touch $pdirectory/AIInAAL/Scripts/AIInAAL.path
-echo "pdirectory=$pdirectory" > $pdirectory/AIInAAL/Scripts/AIInAAL.path
-echo "AIInAALdir=$pdirectory/AIInAAL" >> $pdirectory/AIInAAL/Scripts/AIInAAL.path
-$pdirectory/AIInAAL/Scripts/librefgen
