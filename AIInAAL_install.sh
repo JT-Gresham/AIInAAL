@@ -34,6 +34,8 @@ echo ""
 git clone https://github.com/JT-Gresham/AIInAAL.git
 echo ""
 touch $pdirectory/AIInAAL/Scripts/AIInAAL_path
+echo "#!/usr/bin/env bash" > $pdirectory/AIInAAL/Scripts/AIInAAL_path
+echo "" > $pdirectory/AIInAAL/Scripts/AIInAAL_path
 echo "pdirectory=$pdirectory" > $pdirectory/AIInAAL/Scripts/AIInAAL_path
 echo "AIInAALdir=$pdirectory/AIInAAL" >> $pdirectory/AIInAAL/Scripts/AIInAAL_path
 $pdirectory/AIInAAL/Scripts/librefgen
@@ -41,7 +43,7 @@ echo "Changing directory ->$pdirectory/AIInAAL"
 cd $pdirectory/AIInAAL
 echo ""
 echo "Creating python 3.11 environment (AIInAAL_env)"
-/usr/bin/python3.11 -m venv AIInAAL_env
+/usr/bin/python3.11 -m venv $pdirectory/AIInAAL_env
 echo ""
 echo "Activating environment -> AIInAAL_env"
 source $pdirectory/AIInAAL/AIInAAL_env/bin/activate
