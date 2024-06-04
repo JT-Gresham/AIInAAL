@@ -3,7 +3,7 @@
 source /etc/AIInAAL/AIInAAL_path
 source $AIInAALdir/libref
 source $AIInAALdir/AIInAAL_env/bin/activate
-aiinaalpkg="fooocus"
+aiinaalpkg="Fooocus"
 
 echo "########## $AIInAALpkg for Intel Arc GPUs on Arch Linux ##########"
 echo "##################### framework by JT Gresham #####################"
