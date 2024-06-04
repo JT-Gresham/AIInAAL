@@ -37,7 +37,7 @@ echo ""
 cd $pdirectory/AIInAAL/Scripts
 sudo mkdir /etc/AIInAAL
 sudo touch /etc/AIInAAL/AIInAAL_path
-sudo chmod 775 /etc/AIInAAL/AIInAAL_path
+sudo chmod 777 /etc/AIInAAL/AIInAAL_path
 echo "#!/usr/bin/env bash" > /etc/AIInAAL/AIInAAL_path
 echo "" > /etc/AIInAAL/AIInAAL_path
 echo "pdirectory=$pdirectory" > /etc/AIInAAL/AIInAAL_path
