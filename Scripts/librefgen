@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-$AIInAALuser="$(whoami)"
-
 source /etc/AIInAAL/AIInAAL_path
 
 echo "Running librefgen..."
