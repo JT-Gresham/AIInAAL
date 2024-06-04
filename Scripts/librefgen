@@ -14,7 +14,7 @@ echo "export SYCL_PI_LEVEL_ZERO_USE_IMMEDIATE_COMMANDLISTS=1" >> $AIInAALdir/lib
 echo "export SYCL_CACHE_PERSISTENT=1" >> $AIInAALdir/libref
 echo "source $AIInAALdir_env/bin/ipex-llm-init -g --device Arc" >> $AIInAALdir/libref
 
-echo "AIIAAL_update () {" >> $AIInAALdir/libref
+echo "AIInAAL_update () {" >> $AIInAALdir/libref
 echo "    cd $AIInAALdir" >> $AIInAALdir/libref
 echo "    git switch main" >> $AIInAALdir/libref
 echo "    git reset --hard HEAD" >> $AIInAALdir/libref
