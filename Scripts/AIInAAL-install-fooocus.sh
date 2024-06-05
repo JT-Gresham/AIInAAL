@@ -30,6 +30,7 @@ source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
 echo "Applying AIInAAL modifications to original $aiinaalpkg..."
 AIInAAL_update_$aiinaalpkg
+cp $AIInAALdir/$aiinaalpkg/user_customize_Fooocus_example.sh $AIInAALdir/$aiinaalpkg/user_customize_Fooocus.sh
 echo ""
 echo "Installing packages from requirements_versions.txt..."
 cd $AIInAALdir/$aiinaalpkg
