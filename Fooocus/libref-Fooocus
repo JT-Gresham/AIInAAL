@@ -3,7 +3,7 @@
 source /etc/AIInAAL/AIInAAL_path
 aiinaalpkg=Fooocus
 
-AIInAAL_update_$aiinaalpkg () {
+AIInAAL_update_Fooocus () {
   cd $AIInAALdir/$aiinaalpkg
   git switch main
   git reset --hard HEAD
@@ -50,6 +50,6 @@ cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 }
 
-$aiinaalpkg-exit () {
+Fooocus-exit () {
     kill $(pidof python $AIInAALdir/$aiinaalpkg)
 }
