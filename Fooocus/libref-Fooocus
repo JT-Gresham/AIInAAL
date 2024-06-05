@@ -3,7 +3,7 @@
 source /etc/AIInAAL/AIInAAL_path
 aiinaalpkg=Fooocus
 
-AIIAAL_update_$aiinaalpkg () {
+AIInAAL_update_$aiinaalpkg () {
   cd $AIInAALdir/$aiinaalpkg
   git switch main
   git reset --hard HEAD
