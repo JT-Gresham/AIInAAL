@@ -20,5 +20,6 @@ echo "    cd $AIInAALdir" >> $AIInAALdir/libref
 echo "    git switch main" >> $AIInAALdir/libref
 echo "    git reset --hard HEAD" >> $AIInAALdir/libref
 echo "    git pull" >> $AIInAALdir/libref
+echo "    pip install --upgrade -no-dependencies ipex-llm[xpu]" >> $AIInAALdir/libref
 echo "}" >> $AIInAALdir/libref
 echo "LIBREF regenerated."
