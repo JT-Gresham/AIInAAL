@@ -18,3 +18,4 @@ onemkl-sycl-rng
 onemkl-sycl-stats
 openvino
 ipex-llm
+ipex-llm[cpp]
