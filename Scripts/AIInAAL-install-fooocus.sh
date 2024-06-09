@@ -25,6 +25,7 @@ echo "Cloning official $aiinaalpkg repository to $aiinaalpkg"
 #### GIT CLONE COMMAND  URL HERE ####
 git clone "https://github.com/lllyasviel/$aiinaalpkg.git" "/tmp/$aiinaalpkg"
 mv -f "/tmp/$aiinaalpkg/.git" "$AIInAALdir/$aiinaalpkg/"
+cd $AIInAALdir/$aiinaalpkg
 git checkout .
 rm -r /tmp/$aiinaalpkg
 source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
