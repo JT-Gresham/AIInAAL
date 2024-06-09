@@ -16,6 +16,7 @@ echo "Press enter to continue the installation..."
 read go
 echo "Your installation will be installed in $AIInAALdir/$aiinaalpkg"
 echo ""
+AIInAAL_update
 echo "Changing directory ->$AIInAALdir/$aiinaalpkg"
 cd $AIInAALdir/$aiinaalpkg
 echo ""
