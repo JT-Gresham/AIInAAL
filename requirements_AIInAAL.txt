@@ -19,5 +19,6 @@ onemkl-sycl-vm
 onemkl-sycl-rng
 onemkl-sycl-stats
 openvino
+bigdl-core-xe-21==2.5
 ipex-llm[xpu]
 ipex-llm[cpp]
