@@ -12,7 +12,7 @@ AIInAAL_update_Fooocus () {
     then
       echo "Intel extensions found in launch.py...skipping"
     else
-      sed -i 's|import sys|import sys\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n\nimport torchvision.models as models\n\nmodel = models.resnet50(pretrained=True)\nmodel.eval()\ndata = torch.rand(1, 3, 224, 224)\n\nmodel = model.to('xpu')\ndata = data.to('xpu')\nmodel = ipex.optimize(model)\n\nwith torch.no_grad():\n  model(data)|g' launch.py
+      sed -i 's|import sys|import sys\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n\nadd_definitions(-D_GLIBCXX_USE_CXX11_ABI=1)\n\nimport torchvision.models as models\n\nmodel = models.resnet50(pretrained=True)\nmodel.eval()\ndata = torch.rand(1, 3, 224, 224)\n\nmodel = model.to('xpu')\ndata = data.to('xpu')\nmodel = ipex.optimize(model)\n\nwith torch.no_grad():\n  model(data)|g' launch.py
   fi
   if grep -Fxq "https://download.pytorch.org/whl/cu121" launch.py
     then
