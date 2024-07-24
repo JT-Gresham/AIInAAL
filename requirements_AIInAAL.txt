@@ -1,8 +1,8 @@
 --extra-index-url https://developer.intel.com/ipex-whl-stable-xpu/
 
 ipex-llm
-ipex-llm[xpu]
 ipex-llm[cpp]
+ipex-llm[xpu]
 torch==2.1.0a0
 torchvision==0.16.0a0
 torchaudio==2.1.0a0
