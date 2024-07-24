@@ -1,5 +1,8 @@
 --extra-index-url https://developer.intel.com/ipex-whl-stable-xpu/
 
+ipex-llm
+ipex-llm[xpu]
+ipex-llm[cpp]
 torch==2.1.0a0
 torchvision==0.16.0a0
 torchaudio==2.1.0a0
@@ -19,6 +22,3 @@ onemkl-sycl-vm
 onemkl-sycl-rng
 onemkl-sycl-stats
 openvino
-ipex-llm
-ipex-llm[xpu]
-ipex-llm[cpp]
