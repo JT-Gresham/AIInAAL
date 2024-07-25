@@ -1,6 +1,6 @@
 --extra-index-url https://developer.intel.com/ipex-whl-stable-xpu/
 
---upgrade pip
+pip
 ipex-llm
 --no-deps ipex-llm[cpp]
 --no-deps ipex-llm[xpu]
