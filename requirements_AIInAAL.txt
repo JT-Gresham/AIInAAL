@@ -1,7 +1,7 @@
 --extra-index-url https://developer.intel.com/ipex-whl-stable-xpu/
 
 pip
-bigdl~=2.*
+bigdl==2.*
 ipex-llm
 ipex-llm[cpp]
 ipex-llm[xpu]
