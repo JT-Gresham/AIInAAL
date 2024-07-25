@@ -1,4 +1,4 @@
---extra-index-url https://developer.intel.com/ipex-whl-stable-xpu/
+--allow-external --extra-index-url https://developer.intel.com/ipex-whl-stable-xpu/
 
 ipex-llm
 ipex-llm[cpp]
