@@ -30,7 +30,7 @@ AIInAAL_update_Fooocus () {
     then
       echo "torchsde version fix found in requirements_versions.txt...skipping"
     else
-      sed -i 's|torchsde==0.2.5|torchsde>=0.2.5|g' requirements_versions.txt
+      sed -i 's|torchsde==0.2.6|torchsde>=0.2.6|g' requirements_versions.txt
   fi
   if grep -Fxq "transformers>=4.34.0" requirements_versions.txt
     then
