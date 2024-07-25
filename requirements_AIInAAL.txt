@@ -1,13 +1,10 @@
---extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us/ 
-
-torch==2.1.0.post2
-torchvision==0.16.0.post2
-torchaudio==2.1.0.post2
-intel-extension-for-pytorch==2.1.30+xpu
+--extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us
+torch==2.1.0.post2+cxx11.abi
+torchvision==0.16.0.post2+cxx11.abi
+torchaudio==2.1.0.post2+cxx11.abi
+intel_extension_for_pytorch==2.1.30+xpu
 oneccl_bind_pt==2.1.300+xpu
-intel-extension-for-transformers
-scipy>=1.9.3
-numpy<=1.26.4
+setuptools==71.1.0
 mkl-devel-dpcpp
 dpcpp-cpp-rt
 mkl-devel
