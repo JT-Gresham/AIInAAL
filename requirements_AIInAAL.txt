@@ -1,8 +1,5 @@
 --extra-index-url https://developer.intel.com/ipex-whl-stable-xpu/
 
-bigdl==2.*
-ipex-llm
-ipex-llm[cpp]
 ipex-llm[xpu]
 torch==2.1.0.post2
 torchvision==0.16.0.post2
