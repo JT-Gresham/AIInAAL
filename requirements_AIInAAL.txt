@@ -16,3 +16,5 @@ onemkl-sycl-vm
 onemkl-sycl-rng
 onemkl-sycl-stats
 openvino
+ipex-llm[cpp]
+ipex-llm[xpu]
