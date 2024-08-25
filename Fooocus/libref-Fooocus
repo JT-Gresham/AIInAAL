@@ -6,6 +6,8 @@ aiinaalpkg=Fooocus
 AIInAAL_update_Fooocus () {
   cd $AIInAALdir/$aiinaalpkg
   git switch main
+  git reset --hard
+  git clean -df
   git reset --hard HEAD
   git pull
   if grep -Fxq "import intel_extension_for_pytorch as ipex" launch.py
