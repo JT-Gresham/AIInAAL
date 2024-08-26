@@ -5,6 +5,7 @@ aiinaalpkg=Fooocus
 
 AIInAAL_update_Fooocus () {
   cd $AIInAALdir/$aiinaalpkg
+  pip install -r requirements_Fooocus.txt
   git switch main
   git fetch --all
   git reset --hard origin/master
