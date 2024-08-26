@@ -9,7 +9,7 @@ __pycache__
 *.corrupted
 *.partial
 *.onnx
-
+shared/
 shared/*
 
 Fooocus/user_customize_fooocus.sh
