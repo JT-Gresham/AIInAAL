@@ -23,7 +23,7 @@ echo ""
 echo "Cloning official $aiinaalpkg repository to $aiinaalpkg"
 
 #### GIT CLONE COMMAND  URL HERE ####
-git clone "https://github.com/zachysaur/$aiinaalpkg.git" "/tmp/$aiinaalpkg"
+git clone "https://github.com/ehristoforu//$aiinaalpkg.git" "/tmp/$aiinaalpkg"
 mv -f "/tmp/$aiinaalpkg/.git" "$AIInAALdir/$aiinaalpkg/"
 cd $AIInAALdir/$aiinaalpkg
 git checkout .
