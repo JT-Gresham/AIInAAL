@@ -14,7 +14,7 @@ AIInAAL_update_DeFooocus () {
     then
       echo "Intel extensions found in launch.py...skipping"
     else
-      sed -i 's|import sys|import sys\n\nimport torch\nimport torch.nn as nn\nimport intel_extension_for_pytorch as ipex|g' launch.py
+      sed -i 's|import sys|import sys\n\nimport torch\nimport torch.nn as nn\nimport torch.xpu as xpu\nimport intel_extension_for_pytorch as ipex|g' launch.py
   fi
   if grep -Fxq "https://download.pytorch.org/whl/cu121" launch.py
     then
