@@ -3,7 +3,7 @@
 source /etc/AIInAAL/AIInAAL_path
 aiinaalpkg=DeFooocus
 
-AIInAAL_update_Fooocus () {
+AIInAAL_update_DeFooocus () {
   cd $AIInAALdir/$aiinaalpkg
   git switch main
   git fetch --all
