@@ -3,7 +3,7 @@
 source /etc/AIInAAL/AIInAAL_path
 source $AIInAALdir/libref
 source $AIInAALdir/AIInAAL_env/bin/activate
-aiinaalpkg="Fooocus"
+aiinaalpkg="DeeFooocus"
 
 echo "########## $aiinaalpkg for Intel Arc GPUs on Arch Linux ##########"
 echo "##################### framework by JT Gresham #####################"
@@ -23,7 +23,7 @@ echo ""
 echo "Cloning official $aiinaalpkg repository to $aiinaalpkg"
 
 #### GIT CLONE COMMAND  URL HERE ####
-git clone "https://github.com/lllyasviel/$aiinaalpkg.git" "/tmp/$aiinaalpkg"
+git clone "https://github.com/zachysaur/$aiinaalpkg.git" "/tmp/$aiinaalpkg"
 mv -f "/tmp/$aiinaalpkg/.git" "$AIInAALdir/$aiinaalpkg/"
 cd $AIInAALdir/$aiinaalpkg
 git checkout .
