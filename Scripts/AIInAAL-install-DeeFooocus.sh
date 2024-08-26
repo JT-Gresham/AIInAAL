@@ -3,7 +3,7 @@
 source /etc/AIInAAL/AIInAAL_path
 source $AIInAALdir/libref
 source $AIInAALdir/AIInAAL_env/bin/activate
-aiinaalpkg="DeeFooocus"
+aiinaalpkg="DeFooocus"
 
 echo "########## $aiinaalpkg for Intel Arc GPUs on Arch Linux ##########"
 echo "##################### framework by JT Gresham #####################"
@@ -32,7 +32,7 @@ source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
 echo "Applying AIInAAL modifications to original $aiinaalpkg..."
 AIInAAL_update_$aiinaalpkg
-cp $AIInAALdir/$aiinaalpkg/user_customize_Fooocus_example.sh $AIInAALdir/$aiinaalpkg/user_customize_Fooocus.sh
+cp $AIInAALdir/$aiinaalpkg/user_customize_DeFooocus_example.sh $AIInAALdir/$aiinaalpkg/user_customize_DeFooocus.sh
 echo ""
 echo "Installing packages from requirements_versions.txt..."
 cd $AIInAALdir/$aiinaalpkg
@@ -41,7 +41,7 @@ pip install -r requirements_versions.txt
 pip install -r requirements_$aiinaalpkg.txt
 echo ""
 echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
-cp user_customize_fooocus_example.sh user_customize_fooocus.sh
+cp user_customize_DeFooocus_example.sh user_customize_DeFooocus.sh
 touch $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "#!/usr/bin/env bash" > $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
