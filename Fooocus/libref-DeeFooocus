@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 source /etc/AIInAAL/AIInAAL_path
-aiinaalpkg=Fooocus
+aiinaalpkg=DeeFooocus
 
 AIInAAL_update_Fooocus () {
   cd $AIInAALdir/$aiinaalpkg
@@ -9,7 +9,7 @@ AIInAAL_update_Fooocus () {
   git fetch --all
   git reset --hard origin/master
   git pull
-  pip install -r requirements_Fooocus.txt
+  pip install -r requirements_DeeFooocus.txt
   if grep -Fxq "import intel_extension_for_pytorch as ipex" launch.py
     then
       echo "Intel extensions found in launch.py...skipping"
