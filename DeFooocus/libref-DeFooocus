@@ -5,9 +5,6 @@ aiinaalpkg=DeFooocus
 
 AIInAAL_update_DeFooocus () {
   cd $AIInAALdir/$aiinaalpkg
-  git switch main
-  git fetch --all
-  git pull
   pip install -r requirements_DeFooocus.txt
 #### DEBUG - CAN'T FIND launch.py #####
 pwd
