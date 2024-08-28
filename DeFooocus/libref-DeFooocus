@@ -6,6 +6,8 @@ aiinaalpkg=DeFooocus
 AIInAAL_update_DeFooocus () {
   cd $AIInAALdir/$aiinaalpkg
   git pull
+  rm ./libref-$aiinaalpkg
+  rm ./requirements_$aiinaalpkg.txt*
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/DeFooocus/libref-$aiinaalpkg
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/DeFooocus/requirements_$aiinaalpkg.txt
   pip install -r requirements_DeFooocus.txt
