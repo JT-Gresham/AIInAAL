@@ -10,6 +10,8 @@ AIInAAL_update_DeFooocus () {
   git reset --hard origin/master
   git pull
   pip install -r requirements_DeFooocus.txt
+#### DEBUG - CAN'T FIND launch.py #####
+pwd
   if grep -Fxq "import intel_extension_for_pytorch as ipex" launch.py
     then
       echo "Intel extensions found in launch.py...skipping"
