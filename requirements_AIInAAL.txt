@@ -3,6 +3,8 @@ torch==2.1.0.post3+cxx11.abi
 torchvision==0.16.0.post3+cxx11.abi
 torchaudio==2.1.0.post3+cxx11.abi
 intel_extension_for_pytorch==2.1.40+xpu
+tensorflow==2.15.1
+intel-extension-for-tensorflow[xpu]
 setuptools==71.1.0
 mkl-devel-dpcpp
 dpcpp-cpp-rt
