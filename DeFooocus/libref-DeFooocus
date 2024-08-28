@@ -11,26 +11,26 @@ AIInAAL_update_DeFooocus () {
   rm ./requirements_$aiinaalpkg.txt*
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/DeFooocus/libref-$aiinaalpkg
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/DeFooocus/requirements_$aiinaalpkg.txt
-  pip install -r requirements_DeFooocus.txt
+  pip install -r requirements_$aiinaalpkg.txt
 #### DEBUG - CAN'T FIND launch.py #####
 pwd
-  if grep -Fxq "import intel_extension_for_pytorch as ipex" $AIInAALdir/$aiinaalpkg/launch.py
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" launch.py
     then
       echo "Intel extensions found in launch.py...skipping"
     else
       sed -i 's|import ssl|import ssl\n\nimport torch\nimport torch\nimport torchvision.models as models\n\nmodel = models.resnet50(pretrained=True)\nmodel.eval()\ndata = torch.rand(1, 3, 224, 224)\n\nimport intel_extension_for_pytorch as ipex\nmodel = model.to(\'xpu\')\ndata = data.to(\'xpu\')\nmodel = ipex.optimize(model)\n\nwith torch.no_grad():\nmodel\(data\)\n\nimport openvino\n|g' $AIInAALdir/$aiinaalpkg/launch.py
   fi
-  if grep -Fxq "https://download.pytorch.org/whl/cu121" $AIInAALdir/$aiinaalpkg/launch.py
+  if grep -Fxq "https://download.pytorch.org/whl/cu121" launch.py
     then
       echo "URL for Intel version of pytorch found in launch.py...skipping"
     else
       sed -i 's|https://download.pytorch.org/whl/cu121|https://developer.intel.com/ipex-whl-stable-xpu/|g' $AIInAALdir/$aiinaalpkg/launch.py
   fi
-  if grep -Fxq "torch==2.1.0 torchvision==0.16.0" $AIInAALdir/$aiinaalpkg/launch.py
+  if grep -Fxq "torch==2.1.0 torchvision==0.16.0" launch.py
     then
       echo "Intel versions of pytorch-related packages found in launch.py...skipping"
     else
-      sed -i 's|torch==2.1.0 torchvision==0.16.0|torch>=2.1.0.post3 torchvision>=0.16.0.post3 torchaudio>=2.1.0.post3 intel-extension-for-pytorch>=2.1.40+xpu|g' $AIInAALdir/$aiinaalpkg/launch.py
+      sed -i 's|torch==2.1.0 torchvision==0.16.0|torch>=2.1.0.post3 torchvision>=0.16.0.post3 torchaudio>=2.1.0.post3 intel-extension-for-pytorch>=2.1.40+xpu|g' launch.py
   fi
   if grep -Fxq "torchsde>=0.2.5" requirements_versions.txt
     then
