@@ -7,7 +7,6 @@ AIInAAL_update_DeFooocus () {
   cd $AIInAALdir/$aiinaalpkg
   git switch main
   git fetch --all
-  git reset --hard origin/master
   git pull
   pip install -r requirements_DeFooocus.txt
 #### DEBUG - CAN'T FIND launch.py #####
