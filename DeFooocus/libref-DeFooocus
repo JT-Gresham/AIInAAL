@@ -18,7 +18,7 @@ pwd
     then
       echo "Intel extensions found in launch.py...skipping"
     else
-      sed -i 's|import ssl|import ssl\n\nimport torch\ntorch.device(xpu)\nimport intel_extension_for_pytorch as ipex\n\nimport openvino\n|g' launch.py
+      sed -i 's|import ssl|import ssl\n\nimport torch\ntorch.device("xpu")\nimport intel_extension_for_pytorch as ipex\n\nimport openvino\n|g' launch.py
   fi
   if grep -Fxq "https://download.pytorch.org/whl/cu121" launch.py
     then
