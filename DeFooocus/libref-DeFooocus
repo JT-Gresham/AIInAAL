@@ -5,11 +5,11 @@ aiinaalpkg=DeFooocus
 
 AIInAAL_update_DeFooocus () {
   cd $AIInAALdir/$aiinaalpkg
+  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/DeFooocus/libref-$aiinaalpkg
+  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/DeFooocus/requirements_$aiinaalpkg.txt
   pip install -r requirements_DeFooocus.txt
 #### DEBUG - CAN'T FIND launch.py #####
 pwd
-wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/DeFooocus/libref-$aiinaalpkg
-wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/DeFooocus/requirements_$aiinaalpkg.txt
   if grep -Fxq "import intel_extension_for_pytorch as ipex" $AIInAALdir/$aiinaalpkg/launch.py
     then
       echo "Intel extensions found in launch.py...skipping"
