@@ -18,7 +18,7 @@ pwd
     then
       echo "Intel extensions found in launch.py...skipping"
     else
-      sed -i 's|import ssl|import ssl\n\nimport torch\nimport torchvision.models as models\n\nmodel = models.resnet50(pretrained=True)\nmodel.eval()\ndata = torch.rand(1, 3, 224, 224)\n\nimport intel_extension_for_pytorch as ipex\nmodel = model.to(\'xpu\')\ndata = data.to(\'xpu\')\nmodel = ipex.optimize(model)\n\nwith torch.no_grad():\n    model\(data\)\n\nimport openvino\n|g' launch.py
+      sed -i `s|import ssl|import ssl\n\nimport torch\nimport torchvision.models as models\n\nmodel = models.resnet50(pretrained=True)\nmodel.eval()\ndata = torch.rand(1, 3, 224, 224)\n\nimport intel_extension_for_pytorch as ipex\nmodel = model.to('xpu')\ndata = data.to('xpu')\nmodel = ipex.optimize(model)\n\nwith torch.no_grad():\n    model\(data\)\n\nimport openvino\n|g` launch.py
   fi
   if grep -Fxq "https://download.pytorch.org/whl/cu121" launch.py
     then
