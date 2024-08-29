@@ -5,7 +5,9 @@ aiinaalpkg=DeFooocus
 
 AIInAAL_update_DeFooocus () {
   cd $AIInAALdir/$aiinaalpkg
-  git reset --hard HEAD
+  git fetch --all
+  git branch backup-master
+  git reset --hard origin/master
   git pull
   rm ./libref-$aiinaalpkg*
   rm ./requirements_$aiinaalpkg*
