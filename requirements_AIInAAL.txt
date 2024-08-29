@@ -1,13 +1,3 @@
 --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us
 ipex-llm[xpu]
-mkl-devel-dpcpp
-dpcpp-cpp-rt
-mkl-devel
-onemkl-sycl-blas
-onemkl-sycl-lapack
-onemkl-sycl-sparse
-onemkl-sycl-dft
-onemkl-sycl-vm
-onemkl-sycl-rng
-onemkl-sycl-stats
 mkl==2024.0
