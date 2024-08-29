@@ -33,19 +33,19 @@ AIInAAL_update_DeFooocus () {
     else
       sed -i 's|torch==2.1.0 torchvision==0.16.0|torch>=2.1.0a0 torchvision>=0.16.0a9 torchaudio>=2.1.0a0 intel-extension-for-pytorch>=2.1.10+xpu|g' launch.py
   fi
-  if grep -Fxq "torchsde>=0.2.6" requirements_versions.txt
+  if grep -Fxq "torchsde==0.2.6" requirements_versions.txt
     then
       echo "torchsde version fix found in requirements_versions.txt...skipping"
     else
       sed -i 's|torchsde==0.2.6|torchsde>=0.2.6|g' requirements_versions.txt
   fi
-  if grep -Fxq "transformers>=4.34.0" requirements_versions.txt
+  if grep -Fxq "transformers==4.30.2" requirements_versions.txt
     then
       echo "torchsde version fix found in requirements_versions.txt...skipping"
     else
       sed -i 's|transformers==4.30.2|transformers>=4.34.0|g' requirements_versions.txt
   fi
-  if grep -Fxq "accelerate>=0.21.0" requirements_versions.txt
+  if grep -Fxq "accelerate==0.21.0" requirements_versions.txt
     then
       echo "accelerate version fix found in requirements_versions.txt...skipping"
     else
