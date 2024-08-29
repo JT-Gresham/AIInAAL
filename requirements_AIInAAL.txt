@@ -1,6 +1,5 @@
 --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us
 ipex-llm[xpu]
-setuptools==71.1.0
 mkl-devel-dpcpp
 dpcpp-cpp-rt
 mkl-devel
