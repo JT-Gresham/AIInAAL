@@ -10,3 +10,4 @@ onemkl-sycl-dft
 onemkl-sycl-vm
 onemkl-sycl-rng
 onemkl-sycl-stats
+mkl==2024.0
