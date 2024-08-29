@@ -19,7 +19,7 @@ AIInAAL_update_DeFooocus () {
     then
       echo "Intel extensions found in launch.py...skipping"
     else
-      sed -i 's|import ssl|import ssl\n\nimport torch\ntorch.device("xpu")\nimport intel_extension_for_pytorch as ipex\n\nimport openvino\n|g' launch.py
+      sed -i 's|import ssl|import ssl\n\nimport torch\nimport intel_extension_for_pytorch as ipex|g' launch.py
   fi
   if grep -Fxq "https://download.pytorch.org/whl/cu121" launch.py
     then
@@ -31,7 +31,7 @@ AIInAAL_update_DeFooocus () {
     then
       echo "Intel versions of pytorch-related packages found in launch.py...skipping"
     else
-      sed -i 's|torch==2.1.0 torchvision==0.16.0|torch>=2.1.0.post3 torchvision>=0.16.0.post3 torchaudio>=2.1.0.post3 intel-extension-for-pytorch>=2.1.40+xpu|g' launch.py
+      sed -i 's|torch==2.1.0 torchvision==0.16.0|torch>=2.1.0a0 torchvision>=0.16.0a9 torchaudio>=2.1.0a0 intel-extension-for-pytorch>=2.1.10+xpu|g' launch.py
   fi
   if grep -Fxq "torchsde>=0.2.5" requirements_versions.txt
     then
