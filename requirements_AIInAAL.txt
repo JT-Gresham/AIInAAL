@@ -1,2 +1,3 @@
 --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us
 ipex-llm[xpu]
+mkl==2024.0
