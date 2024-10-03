@@ -5,4 +5,4 @@ torchaudio==2.3.1
 intel-extension-for-pytorch==2.3.110+xpu
 oneccl_bind_pt==2.3.100+xpu
 ipex-llm[xpu]
-mkl-devel-dpcpp
+mkl==2024.0
