@@ -13,7 +13,7 @@ echo "export USE_XETLA=OFF" >> $AIInAALdir/libref
 echo "export SYCL_PI_LEVEL_ZERO_USE_IMMEDIATE_COMMANDLISTS=1" >> $AIInAALdir/libref
 echo "export SYCL_CACHE_PERSISTENT=1" >> $AIInAALdir/libref
 #echo "export LLM_DIR=$AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ipex_llm" >> $AIInAALdir/libref
-#echo "source /opt/intel/oneapi/setvars.sh" >> $AIInAALdir/libref
+echo "source /opt/intel/oneapi/setvars.sh" >> $AIInAALdir/libref
 #echo "source $pdirectory/AIInAAL/AIInAAL_env/bin/ipex-llm-init -g --device Arc" >> $AIInAALdir/libref
 
 echo "AIInAAL_update () {" >> $AIInAALdir/libref
