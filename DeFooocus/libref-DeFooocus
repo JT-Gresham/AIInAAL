@@ -62,11 +62,13 @@ rm -R "$AIInAALdir/$aiinaalpkg/models/loras"
 rm -R "$AIInAALdir/$aiinaalpkg/wildcards"
 rm -R "$AIInAALdir/$aiinaalpkg/sdxl_styles"
 rm -R "$AIInAALdir/$aiinaalpkg/models/vae"
+rm -R "$AIInAALdir/$aiinaalpkg/models/vae_approx"
 ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/checkpoints"
 ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/loras"
 ln -sf "$AIInAALdir/shared/wildcards/$aiinaalpkg" "$AIInAALdir/$aiinaalpkg/wildcards"
 ln -sf "$AIInAALdir/shared/sdxl_styles/$aiinaalpkg" "$AIInAALdir/$aiinaalpkg/sdxl_styles"
-ln -sf "$AIInAALdir/shared/VAEs/t2i/" "$AIInAALdir/$aiinaalpkg/models/vae"
+ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/vae"
+ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/vae_approx"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 }
