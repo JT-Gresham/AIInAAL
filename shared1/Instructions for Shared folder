@@ -1,0 +1,10 @@
+This folder is to provide the initial structure for AIInAAL to find any LLMs, safetensor, wildcards...etc...
+  ...that you might want to share between AI programs within the AIInAAL framework.
+
+Use this by renaming the "shared1" directory to "shared"...ie: just remove the 1 from the name.
+
+Why? :
+Just in case gitignore doesn't do what it should when updating.  I've had this happen and it wiped my library and we all know how big those LLMs can get.
+Major PITA to re-download them, so I did it this way as a means of protection albeit minor protection.
+
+This is expreimental for now...
