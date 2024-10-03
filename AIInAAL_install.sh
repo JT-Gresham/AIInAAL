@@ -59,5 +59,5 @@ echo ""
 echo "Installing packages from requirements_AIInAAL.txt..."
 pip install -r requirements_AIInAAL.txt
 #pip install ipex-llm[xpu]
-#ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL_env/bin/
+ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL_env/bin/
 #Run after git pull
