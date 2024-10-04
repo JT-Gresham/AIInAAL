@@ -32,6 +32,13 @@ echo ""
 echo "Changing directory -> $pdirectory"
 cd $pdirectory
 echo ""
+echo "Creating the AIInAAL-update command..."
+echo "#!/usr/bin/env bash" > /bin/AIInAAL-update
+echo "" >> /bin/AIInAAL-update
+echo "source $pdirectory/AIInAAL_env/bin/activate" >> /bin/AIInAAL-update
+echo "souce $pdirectory/AIInAAL/libref" >> /bin/AIInAAL-update
+echo "AIInAAL_update" >> /bin/AIInAAL-update
+sudo chmod +x /bin/AIInAAL-update
 git clone https://github.com/JT-Gresham/AIInAAL.git
 echo ""
 cd $pdirectory/AIInAAL/Scripts
