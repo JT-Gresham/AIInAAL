@@ -17,7 +17,7 @@ AIInAAL_update_$aiinaalpkg () {
   pip install -r requirements_$aiinaalpkg.txt
   if grep -Fxq "import intel_extension_for_pytorch as ipex" webui.py
     then
-      echo "Intel extensions found in launch.py...skipping"
+      echo "Intel extensions found in webui.py...skipping"
     else
       sed -i 's|import time|\nimport torch\nimport intel_extension_for_pytorch as ipex\n\nimport time|g' webui.py
   fi
