@@ -67,4 +67,13 @@ echo "Installing packages from requirements_AIInAAL.txt..."
 pip install -r requirements_AIInAAL.txt
 #pip install ipex-llm[xpu]
 ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL_env/bin/
+echo "AIInAAL framework is now installed. AI program installers are located in the \"Scripts\" directory."
+echo "AIInAAL is updated \(if necessary\) whenever a framework program is started, however..."
+echo "   you can also use the command: \"AIInAAL-update\" in your terminal to update AIInAAL whenever you wish."
+echo ""
+echo "Thank you for trying out AIInAAL...this is a lot of work."
+echo ""
+echo "Before you press a key to exit the installer, a small request:"
+echo "   I'd appreciate it if you'd consider supporting my work by using one of the methods listed on the main github page. - OCD"
+read go
 #Run after git pull
