@@ -58,13 +58,11 @@ echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalp
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "python $AIInAALdir/$aiinaalpkg/launch.py --port 7865 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "sleep 60"
-#echo "echo "Fooocus is still running in the background. Enter command: fooocus-exit to close down fooocus.""
-#echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "Setting the new start file to be executable. (Authorization Required)"
 sudo chmod +x $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "Creating executable link in /usr/bin --> AIInAAL-$aiinaalpkg"
 sudo ln -sf "$AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh" "/usr/bin/AIInAAL-$aiinaalpkg"
-echo "Installation complete. Start with command: AIInAAL-$aiinaalpkg with any fooocus arguments afterward"
+echo "Installation complete. Start with command: AIInAAL-$aiinaalpkg with any Forge arguments afterward"
 echo "--Press any key to exit installer--"
 read go
 exit 0

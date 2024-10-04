@@ -73,6 +73,6 @@ cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 }
 
-Fooocus-exit () {
+DeFooocus-exit () {
     kill $(pidof python $AIInAALdir/$aiinaalpkg)
 }
