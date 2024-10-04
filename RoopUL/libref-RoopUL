@@ -57,13 +57,13 @@ AIInAAL_update_RoopUL () {
   #  else
   #    sed -i 's|scipy==1.9.3|scipy>=1.9.3|g' requirements_versions.txt
   #fi
-#rm -R "$AIInAALdir/$aiinaalpkg/models/checkpoints"
+rm -R "$AIInAALdir/$aiinaalpkg/models"
 #rm -R "$AIInAALdir/$aiinaalpkg/models/loras"
 #rm -R "$AIInAALdir/$aiinaalpkg/wildcards"
 #rm -R "$AIInAALdir/$aiinaalpkg/sdxl_styles"
 #rm -R "$AIInAALdir/$aiinaalpkg/models/vae"
 #rm -R "$AIInAALdir/$aiinaalpkg/models/vae_approx"
-#ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/checkpoints"
+ln -sf "$AIInAALdir/shared/RoopUL/models" "$AIInAALdir/$aiinaalpkg/"
 #ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/loras"
 #ln -sf "$AIInAALdir/shared/wildcards/Fooocus" "$AIInAALdir/$aiinaalpkg/wildcards"
 #ln -sf "$AIInAALdir/shared/sdxl_styles/Fooocus" "$AIInAALdir/$aiinaalpkg/sdxl_styles"
