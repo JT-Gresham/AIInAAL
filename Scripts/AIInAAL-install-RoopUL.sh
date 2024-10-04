@@ -39,7 +39,7 @@ cp $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg_example.sh $AIInAALdir/$ai
 echo "Installing packages from requirements.txt..."
 cd $AIInAALdir/$aiinaalpkg
 #sleep 1
-pip install -r requirements.txt
+#pip install -r requirements.txt
 pip install -r requirements_$aiinaalpkg.txt
 #echo ""
 #echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
