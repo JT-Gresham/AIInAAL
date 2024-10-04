@@ -25,6 +25,7 @@ echo "Cloning official $aiinaalpkg repository to $aiinaalpkg"
 #### GIT CLONE COMMAND  URL HERE ####
 git clone "https://github.com/ehristoforu//$aiinaalpkg.git" "/tmp/$aiinaalpkg"
 mv -f "/tmp/$aiinaalpkg/.git" "$AIInAALdir/$aiinaalpkg/"
+mv -rf "/tmp/$aiinaalpkg/sdxl_styles/"* "$AIInAALdir/shared1/sdxl_styles/"
 cd $AIInAALdir/$aiinaalpkg
 git checkout .
 rm -r /tmp/$aiinaalpkg
