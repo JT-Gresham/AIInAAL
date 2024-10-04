@@ -4,6 +4,7 @@ source /etc/AIInAAL/AIInAAL_path
 source $AIInAALdir/libref
 source $AIInAALdir/AIInAAL_env/bin/activate
 aiinaalpkg="DeFooocus"
+aiinaalpkgURL="https://github.com/ehristoforu//$aiinaalpkg.git"
 
 echo "########## $aiinaalpkg for Intel Arc GPUs on Arch Linux ##########"
 echo "##################### framework by JT Gresham #####################"
@@ -23,7 +24,7 @@ echo ""
 echo "Cloning official $aiinaalpkg repository to $aiinaalpkg"
 
 #### GIT CLONE COMMAND  URL HERE ####
-git clone "https://github.com/ehristoforu//$aiinaalpkg.git" "/tmp/$aiinaalpkg"
+git clone "$aiinaalpkgURL" "/tmp/$aiinaalpkg"
 mv -f "/tmp/$aiinaalpkg/.git" "$AIInAALdir/$aiinaalpkg/"
 mv -rf "/tmp/$aiinaalpkg/sdxl_styles/"* "$AIInAALdir/shared1/sdxl_styles/"
 cd $AIInAALdir/$aiinaalpkg
@@ -33,7 +34,7 @@ source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
 echo "Applying AIInAAL modifications to original $aiinaalpkg..."
 AIInAAL_update_$aiinaalpkg
-cp $AIInAALdir/$aiinaalpkg/user_customize_DeFooocus_example.sh $AIInAALdir/$aiinaalpkg/user_customize_DeFooocus.sh
+cp $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg_example.sh $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 echo ""
 echo "Installing packages from requirements_versions.txt..."
 cd $AIInAALdir/$aiinaalpkg
@@ -42,7 +43,7 @@ pip install -r requirements_versions.txt
 pip install -r requirements_$aiinaalpkg.txt
 echo ""
 echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
-cp user_customize_DeFooocus_example.sh user_customize_DeFooocus.sh
+cp user_customize_$aiinaalpkg_example.sh user_customize_$aiinaalpkg.sh
 touch $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "#!/usr/bin/env bash" > $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
