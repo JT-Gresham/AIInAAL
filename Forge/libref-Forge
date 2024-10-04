@@ -3,7 +3,7 @@
 source /etc/AIInAAL/AIInAAL_path
 aiinaalpkg=Forge
 
-AIInAAL_update_$aiinaalpkg () {
+AIInAAL_update_Forge () {
   cd $AIInAALdir/$aiinaalpkg
   git fetch --all
   git branch backup-master
