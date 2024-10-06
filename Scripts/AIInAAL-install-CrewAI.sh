@@ -26,7 +26,7 @@ echo "Cloning official $aiinaalpkg repository to $aiinaalpkg"
 #### GIT CLONE COMMAND  URL HERE ####
 wget -O - https://github.com/crewAIInc/crewAI/archive/master.tar.gz | tar -xz --strip=2 "crewAI-main/src/crewai"
 cp -R /tmp/crewai/* $AIInAALdir/$aiinaalpkg/
-rm /tmp/crewai
+rm -R /tmp/crewai
 cd $AIInAALdir/$aiinaalpkg
 source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
