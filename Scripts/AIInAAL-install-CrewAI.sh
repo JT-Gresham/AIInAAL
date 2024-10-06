@@ -19,20 +19,15 @@ echo "Your installation will be installed in $AIInAALdir/$aiinaalpkg"
 echo ""
 AIInAAL_update
 echo "Changing directory ->$AIInAALdir/$aiinaalpkg"
-cd $AIInAALdir/$aiinaalpkg
+cd $AIInAALdir
 echo ""
 echo "Cloning official $aiinaalpkg repository to $aiinaalpkg"
 
 #### GIT CLONE COMMAND  URL HERE ####
-cd /tmp
 wget -O - https://github.com/crewAIInc/crewAI/archive/master.tar.gz | tar -xz --strip=2 "crewAI-main/src/crewai"
-sleep 1
-mv ./crewai -t ./CrewAI
-cd $AIInAALdir
-mv -f "/tmp/$aiinaalpkg" -t ./
-sleep 1
+cp -R ./crewai/ ./CrewAI/
+rm ./crewai
 cd $AIInAALdir/$aiinaalpkg
-#rm -r /tmp/$aiinaalpkg
 source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
 echo "Applying AIInAAL modifications to original $aiinaalpkg..."
