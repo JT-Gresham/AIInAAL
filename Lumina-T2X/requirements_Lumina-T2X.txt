@@ -7,3 +7,4 @@ gradio
 torchdiffeq
 click
 flash_attn
+nvcc
