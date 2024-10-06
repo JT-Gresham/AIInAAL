@@ -16,7 +16,7 @@ echo ""
 echo "Press enter to continue the installation..."
 read go
 echo "AIInAAL installer needs to check/install some PACMAN packages...Please authorize to continue..."
-sudo pacman -S --needed intel-compute-runtime intel-graphics-compiler ocl-icd opencl-headers level-zero-loader
+sudo pacman -S --needed intel-compute-runtime intel-graphics-compiler ocl-icd opencl-headers level-zero-loader wget
 echo ""
 echo "--- Important Notes:"
 echo "   * This directory can get pretty big in size as you add AI Software, LLMs, Checkpoints...etc!"
