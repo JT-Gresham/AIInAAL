@@ -31,7 +31,7 @@ mv ./crewai -t ./CrewAI
 cd $AIInAALdir
 mv -f "/tmp/$aiinaalpkg/CrewAI" -t ./
 cd $AIInAALdir/$aiinaalpkg
-rm -r /tmp/$aiinaalpkg
+#rm -r /tmp/$aiinaalpkg
 source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
 echo "Applying AIInAAL modifications to original $aiinaalpkg..."
