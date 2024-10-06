@@ -33,7 +33,7 @@ cd $AIInAALdir/$aiinaalpkg
 source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
 echo "Applying AIInAAL modifications to original $aiinaalpkg..."
-cp -n "$AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg_example.sh" "$AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh"
+cp -n "$AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg\_example.sh" "$AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh"
 AIInAAL_update_$aiinaalpkg
 #echo ""
 #echo "Installing packages from requirements_versions.txt..."
@@ -43,7 +43,6 @@ cd $AIInAALdir/$aiinaalpkg
 pip install -r requirements_$aiinaalpkg.txt
 #echo ""
 #echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
-cp user_customize_$aiinaalpkg_example.sh user_customize_$aiinaalpkg.sh
 #touch $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "#!/usr/bin/env bash" > $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
