@@ -27,7 +27,7 @@ echo "Cloning official $aiinaalpkg repository to $aiinaalpkg"
 touch "/tmp/$aiinaalpkg"
 cd "/tmp/@iinaalpkg"
 wget -O - https://github.com/crewAIInc/crewAI/archive/master.tar.gz | tar -xz --strip=2 "crewAI-main/src/crewai"
-mv -rf "/tmp/$aiinaalpkg/crewai/" "$AIInAALdir/$aiinaalpkg"
+mv -rf "/tmp/$aiinaalpkg/crewai/*" "$AIInAALdir/$aiinaalpkg/"
 cd $AIInAALdir/$aiinaalpkg
 rm -r /tmp/$aiinaalpkg
 source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
