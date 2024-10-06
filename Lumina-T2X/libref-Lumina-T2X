@@ -19,7 +19,7 @@ AIInAAL_update_Lumina-T2X () {
     then
       echo "Intel extensions found in entry_point.py...skipping"
     else
-      sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex\n|g' $AIInAALdir/$aiinaalpkg/lumina_t2i/demo.py
+      sed -i 's|import torch.distributed as dist|import torch.distributed as dist\nimport intel_extension_for_pytorch as ipex\n|g' $AIInAALdir/$aiinaalpkg/lumina_t2i/demo.py
   fi
   #if grep -Fxq "https://download.pytorch.org/whl/cu121" launch.py
   #  then
