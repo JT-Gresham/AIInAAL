@@ -15,11 +15,11 @@ AIInAAL_update_Lumina-T2X () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Lumina-T2X/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Lumina-T2X/requirements_$aiinaalpkg.txt
   pip install -r requirements_$aiinaalpkg.txt
-  if grep -Fxq "import intel_extension_for_pytorch as ipex" lumina-t2i/entry_point.py
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" lumina_t2i/entry_point.py
     then
       echo "Intel extensions found in entry_point.py...skipping"
     else
-      sed -i 's|import os|import os\n\nimport torch\nimport intel_extension_for_pytorch as ipex|g' lumina-t2i/entry_point.py
+      sed -i 's|import os|import os\n\nimport torch\nimport intel_extension_for_pytorch as ipex|g' lumina_t2i/entry_point.py
   fi
   #if grep -Fxq "https://download.pytorch.org/whl/cu121" launch.py
   #  then
