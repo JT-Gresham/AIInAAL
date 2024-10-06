@@ -27,7 +27,7 @@ echo "Cloning official $aiinaalpkg repository to $aiinaalpkg"
 wget -O - https://github.com/crewAIInc/crewAI/archive/master.tar.gz | tar -xz --strip=2 "crewAI-main/src/crewai"
 cp -R /tmp/crewai/* $AIInAALdir/$aiinaalpkg/
 cp $AIInAALdir/Scripts/crewai $AIInAALdir/AIInAAL_env/bin/
-sed -i 's|10062024|#!$AIInAALdir/$aiinaalpkg|g' $AIInAALdir/AIInAAL_env/bin/crewai
+sed -i "s|10062024|#!$AIInAALdir/$aiinaalpkg|g" $AIInAALdir/AIInAAL_env/bin/crewai
 rmdir -R /tmp/crewai
 cd $AIInAALdir/$aiinaalpkg
 source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
