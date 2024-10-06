@@ -6,3 +6,4 @@ transformers
 gradio
 torchdiffeq
 click
+flash_attn
