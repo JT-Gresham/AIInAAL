@@ -14,4 +14,4 @@ AIInAAL - pronounced (ān-ᵊl) or 'anal' in English...fun acronym for AI-IntelA
 # What's Currently Working (10/05/2024)
 *   Fooocus
 *   DeFooocus
-
+*   Forge
