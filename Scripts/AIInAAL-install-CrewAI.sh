@@ -33,7 +33,7 @@ cd $AIInAALdir/$aiinaalpkg
 source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
 echo "Applying AIInAAL modifications to original $aiinaalpkg..."
-cp -n $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg_example.sh $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+cp -n "$AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg_example.sh" "$AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh"
 AIInAAL_update_$aiinaalpkg
 #echo ""
 #echo "Installing packages from requirements_versions.txt..."
