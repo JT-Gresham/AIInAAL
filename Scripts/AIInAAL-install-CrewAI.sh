@@ -24,11 +24,11 @@ echo ""
 echo "Cloning official $aiinaalpkg repository to $aiinaalpkg"
 
 #### GIT CLONE COMMAND  URL HERE ####
-git clone "$aiinaalpkgURL" "/tmp/$aiinaalpkg"
-mv -f "/tmp/$aiinaalpkg/.git" "$AIInAALdir/$aiinaalpkg/"
-#mv -rf "/tmp/$aiinaalpkg/sdxl_styles/"* "$AIInAALdir/shared1/sdxl_styles/"
+touch "/tmp/$aiinaalpkg"
+cd "/tmp/@iinaalpkg"
+wget -O - https://github.com/crewAIInc/crewAI/archive/master.tar.gz | tar -xz --strip=2 "crewAI-main/src/crewai"
+mv -rf "/tmp/$aiinaalpkg/crewai/" "$AIInAALdir/$aiinaalpkg"
 cd $AIInAALdir/$aiinaalpkg
-git checkout .
 rm -r /tmp/$aiinaalpkg
 source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
