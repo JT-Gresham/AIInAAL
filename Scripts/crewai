@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 import re
 import sys
+import torch
+import intel_extension_for_pytorch as ipex
+
 from crewai.cli.cli import crewai
 if __name__ == '__main__':
     sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
