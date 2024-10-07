@@ -16,7 +16,7 @@ echo ""
 echo "Press enter to continue the installation..."
 read go
 echo "AIInAAL installer needs to check/install some PACMAN packages...Please authorize to continue..."
-sudo pacman -S --needed intel-compute-runtime intel-graphics-compiler ocl-icd opencl-headers level-zero-loader wget
+sudo pacman -S --needed intel-compute-runtime intel-graphics-compiler ocl-icd opencl-headers level-zero-loader wget git python-pipx 
 echo ""
 echo "--- Important Notes:"
 echo "   * This directory can get pretty big in size as you add AI Software, LLMs, Checkpoints...etc!"
@@ -59,6 +59,12 @@ echo "Creating python 3.11 environment (AIInAAL_env)"
 echo ""
 echo "Activating environment -> AIInAAL_env"
 source $pdirectory/AIInAAL/AIInAAL_env/bin/activate
+echo "Installing pip..."
+cd $pdirectory/AIInAAL/Scripts
+curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+cd $pdirectory/AIInAAL
+cd 
 echo ""
 echo "Installing wheel package..."
 pip install wheel

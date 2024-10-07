@@ -185,8 +185,8 @@ if [ "${ENABLE_GPU}" -eq 1 ]; then
         # set -xv
         case "${DEVICE}" in
             Max|MAX)
-                conda install -c conda-forge -y gperftools=2.10
-                export LD_PRELOAD=$(echo ${LD_PRELOAD} ${CONDA_PREFIX}/lib/libtcmalloc.so)
+                pip3 install gperftools=2.10
+                export LD_PRELOAD=$(echo ${LD_PRELOAD} AIInAAL_env/lib/libtcmalloc.so)
                 export SYCL_PI_LEVEL_ZERO_USE_IMMEDIATE_COMMANDLISTS=1
                 export SYCL_CACHE_PERSISTENT=1
                 export ENABLE_SDP_FUSION=1
