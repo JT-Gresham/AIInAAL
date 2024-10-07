@@ -73,6 +73,10 @@ echo "Installing packages from requirements_AIInAAL.txt..."
 pip install -r requirements_AIInAAL.txt
 #pip install ipex-llm[xpu]
 ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL_env/bin/
+echo "Creating initial \"Shared\" directory...replace with yours afterwar, if necssary (symlink allowed)"
+if [ ! -d "$pdirectory/AIInAAL/Shared" ]; then
+  mv -R ./Shared1 ./Shared
+fi
 echo "AIInAAL framework is now installed. AI program installers are located in the \"Scripts\" directory."
 echo "AIInAAL is updated \(if necessary\) whenever a framework program is started, however..."
 echo "   you can also use the command: \"AIInAAL-update\" in your terminal to update AIInAAL whenever you wish."
