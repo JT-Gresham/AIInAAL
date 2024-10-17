@@ -13,7 +13,7 @@ source AIInAAL/libref
 #cd $pdirectory/AIInAAL
 
 #  Copy files (without overwritting) from my custom preset directory (FOOOCUS_Presets) I created in the AIInAAL shared folder
-#cp --no-clobber -R shared/FOOOCUS_Presets/* Fooocus/presets/
+#cp --no-clobber -R shared/presets/Fooocus/* Fooocus/presets/
 
 #  Change into the fooocus directory for the next part.
 #cd Fooocus/modules
