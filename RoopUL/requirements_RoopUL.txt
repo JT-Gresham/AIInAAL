@@ -4,7 +4,7 @@ fastapi<0.113.0
 opencv-python-headless==4.9.0.80
 onnx
 openvino
-onnxruntime-gpu
+onnxruntime-openvino
 insightface==0.7.3
 albucore==0.0.16
 psutil==5.9.6
