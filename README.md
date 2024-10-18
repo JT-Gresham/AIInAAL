@@ -15,3 +15,4 @@ AIInAAL - pronounced (ān-ᵊl) or 'anal' in English...fun acronym for AI-IntelA
 *   Fooocus
 *   DeFooocus
 *   Forge
+*   RoopUL (via openvino)
