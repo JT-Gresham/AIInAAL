@@ -1,1 +1,1 @@
-GPT4All-chat
+GPT4All
