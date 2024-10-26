@@ -21,12 +21,12 @@ AIInAAL_update_F5-TTS () {
     else
       sed -i 's|import ssl|import ssl\n\nimport torch\nimport intel_extension_for_pytorch as ipex|g' app_local.py
   fi
-  #if grep -Fxq "https://download.pytorch.org/whl/cu121" app_local.py
-  #  then
-  #    echo "URL for Intel version of pytorch found in app_local.py...skipping"
-  #  else
-  #    sed -i 's|https://download.pytorch.org/whl/cu121|https://pytorch-extension.intel.com/release-whl/stable/xpu/us/|g' $AIInAALdir/$aiinaalpkg/app_local.py
-  #fi
+  if grep -Fxq "WARNING: You are running this unofficial E2/F5 TTS demo locally" app_local.py
+    then
+      echo "URL for Intel version of pytorch found in app_local.py...skipping"
+    else
+      sed -i 's|print("WARNING: You are running this unofficial E2/F5 TTS demo locally, it may not be as up-to-date as the hosted version (https://huggingface.co/spaces/mrfakename/E2-F5-TTS)")||g' $AIInAALdir/$aiinaalpkg/app_local.py
+  fi
   #if grep -Fxq "torch==2.1.0 torchvision==0.16.0" app_local.py
   #  then
   #    echo "Intel versions of pytorch-related packages found in app_local.py...skipping"
