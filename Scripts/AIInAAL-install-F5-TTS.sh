@@ -56,7 +56,7 @@ echo "AIInAAL_update" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 #### Executable below
 echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "python $AIInAALdir/$aiinaalpkg/launch.py --port 7865 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "python $AIInAALdir/$aiinaalpkg/app_local.py \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "sleep 60"
 #echo "echo "F5-TTS is still running in the background. Enter command: F5-TTS-exit to close down F5-TTS.""
 #echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
