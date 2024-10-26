@@ -15,23 +15,23 @@ AIInAAL_update_F5-TTS () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/F5-TTS/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/F5-TTS/requirements_$aiinaalpkg.txt
   pip install -r requirements_$aiinaalpkg.txt
-  if grep -Fxq "import intel_extension_for_pytorch as ipex" launch.py
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" app_local.py
     then
-      echo "Intel extensions found in launch.py...skipping"
+      echo "Intel extensions found in app_local.py...skipping"
     else
-      sed -i 's|import ssl|import ssl\n\nimport torch\nimport intel_extension_for_pytorch as ipex|g' launch.py
+      sed -i 's|import ssl|import ssl\n\nimport torch\nimport intel_extension_for_pytorch as ipex|g' app_local.py
   fi
-  #if grep -Fxq "https://download.pytorch.org/whl/cu121" launch.py
+  #if grep -Fxq "https://download.pytorch.org/whl/cu121" app_local.py
   #  then
-  #    echo "URL for Intel version of pytorch found in launch.py...skipping"
+  #    echo "URL for Intel version of pytorch found in app_local.py...skipping"
   #  else
-  #    sed -i 's|https://download.pytorch.org/whl/cu121|https://pytorch-extension.intel.com/release-whl/stable/xpu/us/|g' $AIInAALdir/$aiinaalpkg/launch.py
+  #    sed -i 's|https://download.pytorch.org/whl/cu121|https://pytorch-extension.intel.com/release-whl/stable/xpu/us/|g' $AIInAALdir/$aiinaalpkg/app_local.py
   #fi
-  #if grep -Fxq "torch==2.1.0 torchvision==0.16.0" launch.py
+  #if grep -Fxq "torch==2.1.0 torchvision==0.16.0" app_local.py
   #  then
-  #    echo "Intel versions of pytorch-related packages found in launch.py...skipping"
+  #    echo "Intel versions of pytorch-related packages found in app_local.py...skipping"
   #  else
-  #    sed -i 's|torch==2.1.0 torchvision==0.16.0|torch>=2.3.1 torchvision>=0.18.1 torchaudio>=2.3.1 intel-extension-for-pytorch>=2.3.110+xpu|g' launch.py
+  #    sed -i 's|torch==2.1.0 torchvision==0.16.0|torch>=2.3.1 torchvision>=0.18.1 torchaudio>=2.3.1 intel-extension-for-pytorch>=2.3.110+xpu|g' app_local.py
   #fi
   #if grep -Fxq "torchsde==0.2.6" requirements_versions.txt
   #  then
