@@ -21,4 +21,4 @@ x_transformers>=1.31.14
 zhconv
 zhon
 gradio<=5.0.2
-#cached_path0>=1.6.3
+# cached_path0>=1.6.3
