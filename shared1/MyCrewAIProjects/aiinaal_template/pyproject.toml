@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "aiinaal_template"
+version = "0.1.0"
+description = "AIInAAL-Template using crewAI"
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<=3.13"
+crewai = { extras = ["tools"], version = ">=0.67.1,<1.0.0" }
+
+
+[tool.poetry.scripts]
+aiinaal_template = "aiinaal_template.main:run"
+run_crew = "aiinaal_template.main:run"
+train = "aiinaal_template.main:train"
+replay = "aiinaal_template.main:replay"
+test = "aiinaal_template.main:test"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
