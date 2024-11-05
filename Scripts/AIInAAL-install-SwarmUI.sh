@@ -42,7 +42,7 @@ cd $AIInAALdir/$aiinaalpkg
 sleep 1
 #pip install -r requirements_versions.txt
 pip install -r requirements_$aiinaalpkg.txt
-ln -sf "$AIInAALdir/$AIInAAL_env/lib/python3.11/dotnetcore2/bin/dotnet" "$AIInAALdir/$AIInAAL_env/bin/dotnet"
+ln -sf "$AIInAALdir/AIInAAL_env/lib/python3.11/dotnetcore2/bin/dotnet" "$AIInAALdir/AIInAAL_env/bin/dotnet"
 cd launchtools
 rm dotnet-install.sh
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
