@@ -57,6 +57,7 @@ echo "AIInAAL_update" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 #### Executable below
 echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "cd $AIInAALdir/$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "$AIInAALdir/$aiinaalpkg/launch-linux.sh \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 #echo "sleep 60"
 #echo "echo "SwarmUI is still running in the background. Enter command: SwarmUI-exit to close down SwarmUI.""
@@ -65,6 +66,8 @@ echo "Setting the new start file to be executable. (Authorization Required)"
 sudo chmod +x $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "Creating executable link in /usr/bin --> AIInAAL-$aiinaalpkg"
 sudo ln -sf "$AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh" "/usr/bin/AIInAAL-$aiinaalpkg"
+mkdir "$AIInAALdir/$aiinaalpkg/src/bin"
+touch "$AIInAALdir/$aiinaalpkg/src/bin/last-build
 echo "Installation complete. Start with command: AIInAAL-$aiinaalpkg with any SwarmUI arguments afterward"
 echo "--Press any key to exit installer--"
 read go
