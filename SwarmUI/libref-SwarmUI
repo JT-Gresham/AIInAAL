@@ -57,19 +57,19 @@ AIInAAL_update_SwarmUI () {
   #  else
   #    sed -i 's|scipy==1.9.3|scipy>=1.9.3|g' requirements_versions.txt
   #fi
-rm -R "$AIInAALdir/$aiinaalpkg/models/Stable-diffusion"
-rm -R "$AIInAALdir/$aiinaalpkg/models/Lora"
+rm -R "$AIInAALdir/$aiinaalpkg/Models/Stable-diffusion"
+rm -R "$AIInAALdir/$aiinaalpkg/Models/Lora"
 #rm -R "$AIInAALdir/$aiinaalpkg/wildcards"
 #rm -R "$AIInAALdir/$aiinaalpkg/sdxl_styles"
-rm -R "$AIInAALdir/$aiinaalpkg/models/VAE"
-rm -R "$AIInAALdir/$aiinaalpkg/models/VAE-approx"
+rm -R "$AIInAALdir/$aiinaalpkg/Models/VAE"
+rm -R "$AIInAALdir/$aiinaalpkg/Models/VAE-approx"
 rm -R "$AIInAALdir/$aiinaalpkg/outputs"
-ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/Stable-diffusion"
-ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/Lora"
+ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/Models/Stable-diffusion"
+ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/Models/Lora"
 #ln -sf "$AIInAALdir/shared/wildcards/$aiinaalpkg" "$AIInAALdir/$aiinaalpkg/wildcards"
 #ln -sf "$AIInAALdir/shared/sdxl_styles/$aiinaalpkg" "$AIInAALdir/$aiinaalpkg/sdxl_styles"
-ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/VAE"
-ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/VAE-approx"
+ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/Models/VAE"
+ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/Models/VAE-approx"
 ln -sf "$AIInAALdir/shared/output/" "$AIInAALdir/$aiinaalpkg/outputs"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
