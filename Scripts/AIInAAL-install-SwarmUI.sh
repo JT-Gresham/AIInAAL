@@ -29,6 +29,7 @@ mv -f "/tmp/$aiinaalpkg/.git" "$AIInAALdir/$aiinaalpkg/"
 mv -rf "/tmp/$aiinaalpkg/sdxl_styles/"* "$AIInAALdir/shared1/sdxl_styles/"
 cd $AIInAALdir/$aiinaalpkg
 git checkout .
+mkdir "$AIInAALdir/$aiinaalpkg/models"
 rm -r /tmp/$aiinaalpkg
 source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
