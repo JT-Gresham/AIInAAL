@@ -50,8 +50,8 @@ chmod +x dotnet-install.sh
 cd ..
 SCRIPT_DIR=$(echo $AIInAALdir/$aiinaalpkg)
 # Note: manual installers that want to avoid home dir, add to both of the below lines: --install-dir "$AIInAALdir/$aiinaalpkg/.dotnet"
-./launchtools/dotnet-install.sh --channel 8.0 --runtime aspnetcore --install-dir "$AIInAALdir/$aiinaalpkg/.dotnet
-./launchtools/dotnet-install.sh --channel 8.0 --install-dir "$AIInAALdir/$aiinaalpkg/.dotnet
+./launchtools/dotnet-install.sh --channel 8.0 --runtime aspnetcore --install-dir "$AIInAALdir/$aiinaalpkg/.dotnet"
+./launchtools/dotnet-install.sh --channel 8.0 --install-dir "$AIInAALdir/$aiinaalpkg/.dotnet"
 
 echo ""
 echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
