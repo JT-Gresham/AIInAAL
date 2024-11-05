@@ -78,7 +78,14 @@ sudo chmod +x $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "Creating executable link in /usr/bin --> AIInAAL-$aiinaalpkg"
 sudo ln -sf "$AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh" "/usr/bin/AIInAAL-$aiinaalpkg"
 mkdir "$AIInAALdir/$aiinaalpkg/src/bin"
-touch "$AIInAALdir/$aiinaalpkg/src/bin/last_build
+touch "$AIInAALdir/$aiinaalpkg/src/bin/last_build"
+if grep -Fxq "https://pytorch-extension.intel.com/release-whl/stable/xpu/us" $AIInAALdir/$aiinaalpkg/launchtools/comfy-install-linux.sh
+    then
+        echo "JT correction entry found in sdxl_styles.py...skipping"
+    else
+        sed -i 's|--extra-index-url https://download.pytorch.org/whl/cu124|--extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us|g' $AIInAALdir/$aiinaalpkg/launchtools/comfy-install-linux.sh
+        sed -i 's|--index-url https://download.pytorch.org/whl/rocm6.1|--extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us|g' $AIInAALdir/$aiinaalpkg/launchtools/comfy-install-linux.sh
+fi
 echo "Installation complete. Start with command: AIInAAL-$aiinaalpkg with any SwarmUI arguments afterward"
 echo "--Press any key to exit installer--"
 read go
