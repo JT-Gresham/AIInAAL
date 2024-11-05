@@ -41,7 +41,7 @@ cd $AIInAALdir/$aiinaalpkg
 sleep 1
 #pip install -r requirements_versions.txt
 pip install -r requirements_$aiinaalpkg.txt
-ln -sf $AIInAALdir/$AIInAAL_env/lib/python3.11/dotnetcore2/dotnet $AIInAALdir/$AIInAAL_env/bin/dotnet
+ln -sf $AIInAALdir/$AIInAAL_env/lib/python3.11/dotnetcore2/bin/dotnet $AIInAALdir/$AIInAAL_env/bin/dotnet
 echo ""
 echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
 cp user_customize_$aiinaalpkg_example.sh user_customize_$aiinaalpkg.sh
