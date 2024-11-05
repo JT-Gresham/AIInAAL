@@ -1,1 +1,1 @@
-dotnet
+dotnetcore2
