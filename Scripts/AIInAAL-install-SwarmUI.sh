@@ -42,6 +42,16 @@ sleep 1
 #pip install -r requirements_versions.txt
 pip install -r requirements_$aiinaalpkg.txt
 ln -sf $AIInAALdir/$AIInAAL_env/lib/python3.11/dotnetcore2/bin/dotnet $AIInAALdir/$AIInAAL_env/bin/dotnet
+cd launchtools
+rm dotnet-install.sh
+wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+chmod +x dotnet-install.sh
+cd ..
+SCRIPT_DIR=$(echo $AIInAALdir/$aiinaalpkg)
+# Note: manual installers that want to avoid home dir, add to both of the below lines: --install-dir "$AIInAALdir/$aiinaalpkg/.dotnet"
+./launchtools/dotnet-install.sh --channel 8.0 --runtime aspnetcore --install-dir "$AIInAALdir/$aiinaalpkg/.dotnet
+./launchtools/dotnet-install.sh --channel 8.0 --install-dir "$AIInAALdir/$aiinaalpkg/.dotnet
+
 echo ""
 echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
 cp user_customize_$aiinaalpkg_example.sh user_customize_$aiinaalpkg.sh
