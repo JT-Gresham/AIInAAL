@@ -1,0 +1,17 @@
+--extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us
+
+torch==2.3.1
+torchvision==0.18.1
+torchaudio==2.3.1
+intel-extension-for-pytorch==2.3.110+xpu
+oneccl_bind_pt==2.3.100+xpu
+mkl==2024.2.1
+transformers>=4.45.2
+datasets>=2.20.0
+accelerate>=0.26.1
+diffusers>=0.30.3
+timm>=0.9.16
+peft>=0.9.0
+safetensors>=0.4.5
+gradio>=5.4.0
+numpy>=1.26.3
