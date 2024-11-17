@@ -15,13 +15,13 @@ AIInAAL_update_OmniGen () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/OmniGen/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/OmniGen/requirements_$aiinaalpkg.txt
   pip install -r requirements_$aiinaalpkg.txt
-  if grep -Fxq "import intel_extension_for_pytorch as ipex" launch.py
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
     then
       echo "Intel extensions found in pipeline.py...skipping"
     else
       sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex|g' $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
   fi
-  if grep -Fxq "else 'xpu'" launch.py
+  if grep -Fxq "else 'xpu'" $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
     then
       echo "Device set to XPU in pipeline.py...skipping"
     else
