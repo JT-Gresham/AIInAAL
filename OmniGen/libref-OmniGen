@@ -15,18 +15,18 @@ AIInAAL_update_OmniGen () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/OmniGen/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/OmniGen/requirements_$aiinaalpkg.txt
   pip install -r requirements_$aiinaalpkg.txt
-  #if grep -Fxq "import intel_extension_for_pytorch as ipex" launch.py
-  #  then
-  #    echo "Intel extensions found in launch.py...skipping"
-  #  else
-  #    sed -i 's|import ssl|import ssl\n\nimport torch\nimport intel_extension_for_pytorch as ipex|g' launch.py
-  #fi
-  #if grep -Fxq "https://download.pytorch.org/whl/cu121" launch.py
-  #  then
-  #    echo "URL for Intel version of pytorch found in launch.py...skipping"
-  #  else
-  #    sed -i 's|https://download.pytorch.org/whl/cu121|https://pytorch-extension.intel.com/release-whl/stable/xpu/us/|g' $AIInAALdir/$aiinaalpkg/launch.py
-  #fi
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" launch.py
+    then
+      echo "Intel extensions found in pipeline.py...skipping"
+    else
+      sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex|g' $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
+  fi
+  if grep -Fxq "else 'xpu'" launch.py
+    then
+      echo "Device set to XPU in pipeline.py...skipping"
+    else
+      sed -i 's|else "cpu"|else "xpu"|g' $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
+  fi
   #if grep -Fxq "torch==2.1.0 torchvision==0.16.0" launch.py
   #  then
   #    echo "Intel versions of pytorch-related packages found in launch.py...skipping"
