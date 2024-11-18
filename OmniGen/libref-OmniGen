@@ -28,29 +28,35 @@ AIInAAL_update_OmniGen () {
     else
       sed -i 's|else \x27cpu\x27|else \x27xpu\x27|g' pipeline.py
   fi
-    if grep -Fxq "import intel_extension_for_pytorch as ipex" model.py
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" model.py
     then
       echo "Intel extensions found in model.py...skipping"
     else
       sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex|g' model.py
   fi
-    if grep -Fxq "import intel_extension_for_pytorch as ipex" transformer.py
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" transformer.py
     then
       echo "Intel extensions found in pipeline.py...skipping"
     else
       sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers|g' transformer.py
   fi
-      if grep -Fxq "import intel_extension_for_pytorch as ipex" scheduler.py
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" scheduler.py
     then
       echo "Intel extensions found in pipeline.py...skipping"
     else
       sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers|g' scheduler.py
   fi
-      if grep -Fxq "import intel_extension_for_pytorch as ipex" utils.py
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" utils.py
     then
       echo "Intel extensions found in pipeline.py...skipping"
     else
       sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers|g' utils.py
+  fi
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" processor.py
+    then
+      echo "Intel extensions found in pipeline.py...skipping"
+    else
+      sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers|g' processor.py
   fi
 #rm -R "$AIInAALdir/$aiinaalpkg/MyOmniGenProjects"
 #rm -R "$AIInAALdir/$aiinaalpkg/models/loras"
