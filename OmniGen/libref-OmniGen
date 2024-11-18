@@ -34,36 +34,24 @@ AIInAAL_update_OmniGen () {
     else
       sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex|g' model.py
   fi
-  #if grep -Fxq "torch==2.1.0 torchvision==0.16.0" launch.py
-  #  then
-  #    echo "Intel versions of pytorch-related packages found in launch.py...skipping"
-  #  else
-  #    sed -i 's|torch==2.1.0 torchvision==0.16.0|torch>=2.3.1 torchvision>=0.18.1 torchaudio>=2.3.1 intel-extension-for-pytorch>=2.3.110+xpu|g' launch.py
-  #fi
-  #if grep -Fxq "torchsde==0.2.6" requirements_versions.txt
-  #  then
-  #    echo "torchsde version fix found in requirements_versions.txt...skipping"
-  #  else
-  #    sed -i 's|torchsde==0.2.6|torchsde>=0.2.6|g' requirements_versions.txt
-  #fi
-  #if grep -Fxq "transformers==4.30.2" requirements_versions.txt
-  #  then
-  #    echo "torchsde version fix found in requirements_versions.txt...skipping"
-  #  else
-  #    sed -i 's|transformers==4.30.2|transformers>=4.34.0|g' requirements_versions.txt
-  #fi
-  #if grep -Fxq "accelerate==0.21.0" requirements_versions.txt
-  #  then
-  #    echo "accelerate version fix found in requirements_versions.txt...skipping"
-  #  else
-  #    sed -i 's|accelerate==0.21.0|accelerate>=0.21.0|g' requirements_versions.txt
-  #fi
-  #if grep -Fxq "scipy==1.9.3" requirements_versions.txt
-  #  then
-  #    echo "scipy version fix found in requirements_versions.txt...skipping"
-  #  else
-  #    sed -i 's|scipy==1.9.3|scipy>=1.9.3|g' requirements_versions.txt
-  #fi
+    if grep -Fxq "import intel_extension_for_pytorch as ipex" transformer.py
+    then
+      echo "Intel extensions found in pipeline.py...skipping"
+    else
+      sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers|g' transformer.py
+  fi
+      if grep -Fxq "import intel_extension_for_pytorch as ipex" scheduler.py
+    then
+      echo "Intel extensions found in pipeline.py...skipping"
+    else
+      sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers|g' scheduler.py
+  fi
+      if grep -Fxq "import intel_extension_for_pytorch as ipex" utils.py
+    then
+      echo "Intel extensions found in pipeline.py...skipping"
+    else
+      sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers|g' utils.py
+  fi
 #rm -R "$AIInAALdir/$aiinaalpkg/MyOmniGenProjects"
 #rm -R "$AIInAALdir/$aiinaalpkg/models/loras"
 #rm -R "$AIInAALdir/$aiinaalpkg/wildcards"
