@@ -15,17 +15,18 @@ AIInAAL_update_OmniGen () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/OmniGen/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/OmniGen/requirements_$aiinaalpkg.txt
   pip install -r requirements_$aiinaalpkg.txt
-  if grep -Fxq "import intel_extension_for_pytorch as ipex" $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
+  cd $aiinaalpkg
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" pipeline.py
     then
       echo "Intel extensions found in pipeline.py...skipping"
     else
-      sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex|g' $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
+      sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex|g' pipeline.py
   fi
-  if grep -Fxq "else \x27xpu\x27" $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
+  if grep -Fxq "else 'xpu'" pipeline.py
     then
       echo "Device set to XPU in pipeline.py...skipping"
     else
-      sed -i 's|else \x27cpu\x27|else \x27xpu\x27|g' $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
+      sed -i 's|else \x27cpu\x27|else \x27xpu\x27|g' pipeline.py
   fi
   #if grep -Fxq "torch==2.1.0 torchvision==0.16.0" launch.py
   #  then
