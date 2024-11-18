@@ -28,6 +28,12 @@ AIInAAL_update_OmniGen () {
     else
       sed -i 's|else \x27cpu\x27|else \x27xpu\x27|g' pipeline.py
   fi
+    if grep -Fxq "import intel_extension_for_pytorch as ipex" model.py
+    then
+      echo "Intel extensions found in model.py...skipping"
+    else
+      sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex|g' model.py
+  fi
   #if grep -Fxq "torch==2.1.0 torchvision==0.16.0" launch.py
   #  then
   #    echo "Intel versions of pytorch-related packages found in launch.py...skipping"
