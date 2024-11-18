@@ -32,13 +32,13 @@ AIInAAL_update_OmniGen () {
     then
       echo "Intel extensions found in model.py...skipping"
     else
-      sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex|g' model.py
+      sed -i 's|import torch.nn as nn|import torch.nn as nn\nimport intel_extension_for_pytorch as ipex|g' model.py
   fi
   if grep -Fxq "import intel_extension_for_pytorch as ipex" transformer.py
     then
       echo "Intel extensions found in pipeline.py...skipping"
     else
-      sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers|g' transformer.py
+      sed -i 's|import torch.utils.checkpoint|import torch.utils.checkpoint\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers|g' transformer.py
   fi
   if grep -Fxq "import intel_extension_for_pytorch as ipex" scheduler.py
     then
