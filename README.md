@@ -16,6 +16,6 @@ AIInAAL - pronounced (ān-ᵊl) or 'anal' in English...fun acronym for AI-IntelA
 *   DeFooocus
 *   Forge
 *   RoopUL (via openvino) 
-*   OmniGen (WIP but starting) 
+*   OmniGen (WIP but generating images) 
     -TODO:  Shared folder links
             Initial model download is 15GB+ - Test smaller models 
