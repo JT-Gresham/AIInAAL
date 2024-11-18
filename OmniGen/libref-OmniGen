@@ -21,7 +21,7 @@ AIInAAL_update_OmniGen () {
     else
       sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex|g' $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
   fi
-  if grep -Fxq "else 'xpu'" $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
+  if grep -Fxq "else \x27xpu\x27" $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
     then
       echo "Device set to XPU in pipeline.py...skipping"
     else
