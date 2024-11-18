@@ -56,7 +56,7 @@ echo "AIInAAL_update" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 #### Executable below
 echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "python $AIInAALdir/$aiinaalpkg/app.py --port 7866 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "python $AIInAALdir/$aiinaalpkg/app.py \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "sleep 5"
 #echo "echo "OmniGen is still running in the background. Enter command: OmniGen-exit to close down OmniGen.""
 #echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh

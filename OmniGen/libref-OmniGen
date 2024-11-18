@@ -25,7 +25,7 @@ AIInAAL_update_OmniGen () {
     then
       echo "Device set to XPU in pipeline.py...skipping"
     else
-      sed -i 's|else "cpu"|else "xpu"|g' $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
+      sed -i 's|else 'cpu'|else 'xpu'|g' $AIInAALdir/$aiinaalpkg/$aiinaalpkg/pipeline.py
   fi
   #if grep -Fxq "torch==2.1.0 torchvision==0.16.0" launch.py
   #  then
