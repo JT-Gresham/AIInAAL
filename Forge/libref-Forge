@@ -28,14 +28,18 @@ rm -R "$AIInAALdir/$aiinaalpkg/models/Lora"
 #rm -R "$AIInAALdir/$aiinaalpkg/sdxl_styles"
 rm -R "$AIInAALdir/$aiinaalpkg/models/VAE"
 rm -R "$AIInAALdir/$aiinaalpkg/models/VAE-approx"
-rm -R "$AIInAALdir/$aiinaalpkg/outputs"
+rm -R "$AIInAALdir/$aiinaalpkg/outputs/txt2img-grids"
+rm -R "$AIInAALdir/$aiinaalpkg/outputs/txt2img-images"
 ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/Stable-diffusion"
 ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/Lora"
 #ln -sf "$AIInAALdir/shared/wildcards/$aiinaalpkg" "$AIInAALdir/$aiinaalpkg/wildcards"
 #ln -sf "$AIInAALdir/shared/sdxl_styles/$aiinaalpkg" "$AIInAALdir/$aiinaalpkg/sdxl_styles"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/VAE"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/VAE-approx"
-ln -sf "$AIInAALdir/shared/output/" "$AIInAALdir/$aiinaalpkg/outputs"
+ln -sf "$AIInAALdir/shared/output/txt2img-grids" "$AIInAALdir/$aiinaalpkg/outputs/"
+ln -sf "$AIInAALdir/shared/output/txt2img-images" "$AIInAALdir/$aiinaalpkg/outputs/"
+
+
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 }
