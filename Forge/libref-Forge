@@ -36,8 +36,8 @@ ln -sf "$AIInAALdir/shared/wildcards/Fooocus/" "$AIInAALdir/$aiinaalpkg/extensio
 #ln -sf "$AIInAALdir/shared/sdxl_styles/$aiinaalpkg" "$AIInAALdir/$aiinaalpkg/sdxl_styles"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/VAE"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/VAE-approx"
-ln -sf "$AIInAALdir/shared/output/txt2img-grids" "$AIInAALdir/$aiinaalpkg/outputs/"
-ln -sf "$AIInAALdir/shared/output/txt2img-images" "$AIInAALdir/$aiinaalpkg/outputs/"
+ln -sf "$AIInAALdir/shared/output/txt2img-grids" "$AIInAALdir/$aiinaalpkg/outputs/txt2img-grids"
+ln -sf "$AIInAALdir/shared/output/" "$AIInAALdir/$aiinaalpkg/outputs/txt2img-images"
 
 
 cd $pdirectory
