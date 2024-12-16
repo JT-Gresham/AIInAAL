@@ -1,4 +1,4 @@
-t#!/usr/bin/env bash
+#!/usr/bin/env bash
 
 source /etc/AIInAAL/AIInAAL_path
 aiinaalpkg=Forge
