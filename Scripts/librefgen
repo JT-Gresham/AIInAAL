@@ -21,7 +21,7 @@ echo "    cd $AIInAALdir" >> $AIInAALdir/libref
 echo "    git switch main" >> $AIInAALdir/libref
 echo "    git reset --hard HEAD" >> $AIInAALdir/libref
 echo "    git pull" >> $AIInAALdir/libref
-echo "    rm -R $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/~*
+echo "    rm -R $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/~*" >> $AIInAALdir/libref
 echo "    pip install --upgrade pip" >> $AIInAALdir/libref
 echo "}" >> $AIInAALdir/libref
 echo "LIBREF regenerated."
