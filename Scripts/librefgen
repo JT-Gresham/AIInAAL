@@ -10,9 +10,9 @@ echo "AIInAALdir=$AIInAALdir" >> $AIInAALdir/libref
 echo "" >> $AIInAALdir/libref
 echo "export LD_LIBRARY_PATH=$AIInAALdir_env/lib" >> $AIInAALdir/libref
 #echo "export LLM_DIR=$AIInAALdir_env/lib/python3.11/site-packages/intel_extension_for_pytorch/llm" >> $AIInAALdir/libref
-echo "rm \"$AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ipex_llm\"" >> $AIInAALdir/libref
-echo "ln -sf \"$AIInAALdir_env/lib/python3.11/site-packages/intel_extension_for_pytorch/llm/\" \"$AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ipex_llm\"" >> $AIInAALdir/libref
-echo "export LLM_DIR=$AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ipex_llm" >> $AIInAALdir/libref
+#echo "rm \"$AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ipex_llm\"" >> $AIInAALdir/libref
+#echo "ln -sf \"$AIInAALdir_env/lib/python3.11/site-packages/intel_extension_for_pytorch/llm/\" \"$AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ipex_llm\"" >> $AIInAALdir/libref
+#echo "export LLM_DIR=$AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ipex_llm" >> $AIInAALdir/libref
 echo "export USE_XETLA=OFF" >> $AIInAALdir/libref
 echo "export SYCL_PI_LEVEL_ZERO_USE_IMMEDIATE_COMMANDLISTS=1" >> $AIInAALdir/libref
 echo "export SYCL_CACHE_PERSISTENT=1" >> $AIInAALdir/libref
