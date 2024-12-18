@@ -23,5 +23,10 @@ echo "    git reset --hard HEAD" >> $AIInAALdir/libref
 echo "    git pull" >> $AIInAALdir/libref
 echo "    rm -Rf $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/~*" >> $AIInAALdir/libref
 echo "    pip install --upgrade pip" >> $AIInAALdir/libref
+echo "    AIInAAL_update_Intel" >> $AIInAALdir/libref
+echo "}" >> $AIInAALdir/libref
+
+echo "AIInAAL_update_Intel () {" >> $AIInAALdir/libref
+echo "    pip install --upgrade -r $AIInAALdir/Scripts/intel_requirements.txt" >> $AIInAALdir/libref
 echo "}" >> $AIInAALdir/libref
 echo "LIBREF regenerated."
