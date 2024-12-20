@@ -19,7 +19,7 @@ AIInAAL_update_RoopUL () {
     then
       echo "Intel extensions found in run.py...skipping"
     else
-      sed -i 's|from roop import core|import torch\nimport openvino\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_tensorflow as itex\n\nfrom roop import core|g' run.py
+      sed -i 's|from roop import core|import torch\nimport openvino\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport intel_extension_for_tensorflow as itex\n\nfrom roop import core|g' run.py
   fi
   #if grep -Fxq "https://download.pytorch.org/whl/cu121" launch.py
   #  then
