@@ -4,6 +4,7 @@
 #opencv-python-headless==4.9.0.80
 #onnx
 intel_extension_for_tensorflow[xpu]
+intel-sycl-rt
 openvino
 #onnxruntime
 onnxruntime-openvino
