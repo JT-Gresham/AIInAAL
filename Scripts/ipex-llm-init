@@ -241,6 +241,7 @@ if [ "${ENABLE_TCMALLOC}" -eq 1 ]; then
 fi
 
 export LD_PRELOAD=${LD_PRELOAD}
+export LD_PRELOAD=$AIInAALdir/AIInAAL_env/lib/libsycl.so
 
 display-var
 echo "Complete."
