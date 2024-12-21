@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+source /etc/AIInAAL/AIInAAL_path
+aiinaalpkg=Ollama
+
+AIInAAL_update_Ollama () {
+  cd $AIInAALdir/$aiinaalpkg
+  git fetch --all
+  git branch backup-master
+  git reset --hard origin/master
+  git pull
+  rm ./libref-$aiinaalpkg*
+  rm ./requirements_$aiinaalpkg*
+  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Forge/libref-$aiinaalpkg
+  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Forge/user_customize_$aiinaalpkg_example.sh
+  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Forge/requirements_$aiinaalpkg.txt
+  pip install -r requirements_$aiinaalpkg.txt
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" webui.py
+    then
+      echo "Intel extensions found in webui.py...skipping"
+    else
+      sed -i 's|from modules import timer|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\n\nfrom modules import timer|g' webui.py
+  fi
+
+rm -R "$AIInAALdir/$aiinaalpkg/models/Stable-diffusion"
+rm -R "$AIInAALdir/$aiinaalpkg/models/Lora"
+rm -R "$AIInAALdir/$aiinaalpkg/extensions/sd-dynamic-prompts/wildcards"
+#rm -R "$AIInAALdir/$aiinaalpkg/sdxl_styles"
+rm -R "$AIInAALdir/$aiinaalpkg/models/VAE"
+rm -R "$AIInAALdir/$aiinaalpkg/models/VAE-approx"
+rm -R "$AIInAALdir/$aiinaalpkg/outputs/txt2img-grids"
+rm -R "$AIInAALdir/$aiinaalpkg/outputs/txt2img-images"
+ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/Stable-diffusion"
+ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/Lora"
+ln -sf "$AIInAALdir/shared/wildcards/Fooocus/" "$AIInAALdir/$aiinaalpkg/extensions/sd-dynamic-prompts/wildcards"
+#ln -sf "$AIInAALdir/shared/sdxl_styles/$aiinaalpkg" "$AIInAALdir/$aiinaalpkg/sdxl_styles"
+ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/VAE"
+ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/VAE-approx"
+ln -sf "$AIInAALdir/shared/output/txt2img-grids" "$AIInAALdir/$aiinaalpkg/outputs/txt2img-grids"
+ln -sf "$AIInAALdir/shared/output/" "$AIInAALdir/$aiinaalpkg/outputs/txt2img-images"
+
+
+cd $pdirectory
+$AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+}
+
+Forge-exit () {
+    kill $(pidof python $AIInAALdir/$aiinaalpkg)
+}
