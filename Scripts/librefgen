@@ -20,7 +20,14 @@ echo "source /opt/intel/oneapi/setvars.sh" >> $AIInAALdir/libref
 echo "source $pdirectory/AIInAAL/AIInAAL_env/bin/ipex-llm-init -g --device Arc" >> $AIInAALdir/libref
 
 echo "AIInAAL_update () {" >> $AIInAALdir/libref
+echo "    Correcting any BS WINBLOWS carriage return entries in bash scripts..." >> $AIInAALdir/libref
+echo "    cd $AIInAALdir/Scripts" >> $AIInAALdir/libref
+echo "    for file in *.sh" >> $AIInAALdir/libref
+echo "      do" >> $AIInAALdir/libref
+echo "      sed -i 's/\r//' $file" >> $AIInAALdir/libref
+echo "    done" >> $AIInAALdir/libref
 echo "    cd $AIInAALdir" >> $AIInAALdir/libref
+echo "    sed -i 's/\r//' $AIInAALdir/AIInAAL_install.sh
 echo "    git switch main" >> $AIInAALdir/libref
 echo "    git reset --hard HEAD" >> $AIInAALdir/libref
 echo "    git pull" >> $AIInAALdir/libref
