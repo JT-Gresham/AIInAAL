@@ -72,7 +72,7 @@ echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.s
 echo "ollama serve &" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "sleep 10" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "\$AIInAALdir/\$aiinaalpkg/ipexrun xpu open-webui serve" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "Ollama_exit"
+echo "Ollama_exit" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 #echo "sleep 60"
 echo "Setting the new start file to be executable. (Authorization Required)"
 sudo chmod +x $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
