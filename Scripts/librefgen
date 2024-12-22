@@ -34,7 +34,8 @@ echo "    done" >> $AIInAALdir/libref
 echo "    cd \$AIInAALdir" >> $AIInAALdir/libref
 echo "    for d in */" >> $AIInAALdir/libref
 echo "      do" >> $AIInAALdir/libref
-echo "      sed -i 's/\r//' \$d/libref-*" >> $AIInAALdir/libref
+echo "      aiinaalpkg=\$(echo \$d | cut -d/ -f1)" >> $AIInAALdir/libref 
+echo "      sed -i 's/\r//' \$aiinaalpkg/libref-\$aiinaalpkg" >> $AIInAALdir/libref
 echo "    done" >> $AIInAALdir/libref
 echo "    Scripts/librefgen" >> $AIInAALdir/libref
 echo "    pip install --upgrade pip" >> $AIInAALdir/libref
