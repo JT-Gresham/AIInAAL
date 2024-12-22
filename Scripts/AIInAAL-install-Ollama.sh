@@ -30,7 +30,7 @@ cd $AIInAALdir/$aiinaalpkg
 echo "Changing directory ->$AIInAALdir/$aiinaalpkg"
 cd $AIInAALdir/$aiinaalpkg
 echo ""
-echo "Installing the $aiiaalpkg binary --> $pdirectory/$aiiaalpkg/bin/ollama"
+echo "Installing the $aiinaalpkg binary --> $AIInAALdir/$aiinaalpkg/bin/ollama"
 sudo curl -L $aiinaalpkgURL --create-dirs --output bin/ollama/
 cd bin/ollama
 sudo tar -xzf ollama-linux-amd64.tgz
@@ -49,7 +49,7 @@ cd $AIInAALdir/$aiinaalpkg
 pip install -r requirements_$aiinaalpkg.txt
 
 mkdir -p "$AIInAALdir/$aiinaalpkg/.ollama/models"
-ln -sf "$AIInAALdir/$aiinaalpkg/.ollama" "/home/$aiinaaluser/.ollama"
+ln -sf "$AIInAALdir/$aiinaalpkg/" "/home/$aiinaaluser/.ollama"
 echo "Initializing Ollama with IPEX for your GPU..."
 #Create symlinks for ipex, ollama, and openwebui
 ln -sf $AIInAALdir/AIInAAL_env/bin/ipexrun ipexrun
