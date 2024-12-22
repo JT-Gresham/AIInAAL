@@ -37,5 +37,6 @@ $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 }
 
 Ollama-exit () {
-    kill $(pidof python $AIInAALdir/$aiinaalpkg)
+    kill $(pidof "ollama serve")
+    kill $(pidof "open-webui")
 }
