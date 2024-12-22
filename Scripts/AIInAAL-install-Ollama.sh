@@ -4,7 +4,7 @@ source /etc/AIInAAL/AIInAAL_path
 source $AIInAALdir/libref
 source $AIInAALdir/AIInAAL_env/bin/activate
 aiinaalpkg="Ollama"
-aiinaalpkgURL="https://ollama.com/download/ollama-linux-amd64"
+aiinaalpkgURL="https://ollama.com/download/ollama-linux-amd64.tgz"
 aiinaaluser=$(whoami)
 
 echo "########## $aiinaalpkg for Intel Arc GPUs on Arch Linux ##########"
@@ -31,7 +31,11 @@ echo "Changing directory ->$AIInAALdir/$aiinaalpkg"
 cd $AIInAALdir/$aiinaalpkg
 echo ""
 echo "Installing the $aiiaalpkg binary --> $pdirectory/$aiiaalpkg/bin/ollama"
-sudo curl -L $aiinaalpkgURL --create-dirs --output bin/ollama
+sudo curl -L $aiinaalpkgURL --create-dirs --output bin/ollama/
+cd bin/ollama
+sudo tar -xzf ollama-linux-amd64.tgz
+sudo rm ollama-linux-amd64.tgz
+cd $AIInAALdir/$aiinaalpkg
 echo "The base ollama file needs to be made executable. Authorize with sudo user password below."
 sudo chmod +x bin/ollama
 echo ""
