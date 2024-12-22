@@ -49,7 +49,7 @@ cd $AIInAALdir/$aiinaalpkg
 pip install -r requirements_$aiinaalpkg.txt
 
 mkdir -p "$AIInAALdir/$aiinaalpkg/.ollama/models"
-ln -sf "$AIInAALdir/$aiinaalpkg/.ollama/" "/home/$aiinaaluser/.ollama"
+ln -sf "$AIInAALdir/$aiinaalpkg/.ollama" "/home/$aiinaaluser/.ollama"
 echo "Initializing Ollama with IPEX for your GPU..."
 #Create symlinks for ipex, ollama, and openwebui
 ln -sf $AIInAALdir/AIInAAL_env/bin/ipexrun ipexrun
