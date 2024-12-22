@@ -36,7 +36,7 @@ cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 }
 
-Ollama-exit () {
+Ollama_exit () {
     kill $(pidof "ollama serve")
     kill $(pidof "open-webui")
 }
