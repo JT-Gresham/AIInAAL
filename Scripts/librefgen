@@ -42,7 +42,7 @@ echo "}" >> $AIInAALdir/libref
 
 echo "EOF_fix () {" >> $AIInAALdir/libref
 echo "echo    Correcting any BS WINBLOWS carriage return entries in bash scripts..." >> $AIInAALdir/libref
-echo "    cd $AIInAALdir/\$1" >> $AIInAALdir/libref
+echo "    cd $AIInAALdir/\$aiinaalpkg" >> $AIInAALdir/libref
 echo "    for file in libref-*" >> $AIInAALdir/libref
 echo "      do" >> $AIInAALdir/libref
 echo "      sed -i 's/\r//' \$file" >> $AIInAALdir/libref
