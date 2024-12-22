@@ -5,6 +5,7 @@ source $AIInAALdir/libref
 source $AIInAALdir/AIInAAL_env/bin/activate
 aiinaalpkg="Ollama"
 aiinaalpkgURL="https://ollama.com/download/ollama-linux-amd64"
+aiinaaluser=$(whoami)
 
 echo "########## $aiinaalpkg for Intel Arc GPUs on Arch Linux ##########"
 echo "##################### framework by JT Gresham #####################"
@@ -44,7 +45,7 @@ cd $AIInAALdir/$aiinaalpkg
 pip install -r requirements_$aiinaalpkg.txt
 
 mkdir -p "$AIInAALdir/$aiinaalpkg/.ollama/models"
-ln -sf "$AIInAALdir/$aiinaalpkg/.ollama/" "/home/$aiiaaluser/.ollama"
+ln -sf "$AIInAALdir/$aiinaalpkg/.ollama/" "/home/$aiinaaluser/.ollama"
 echo "Initializing Ollama with IPEX for your GPU..."
 #Create symlinks for ipex, ollama, and openwebui
 ln -sf $AIInAALdir/AIInAAL_env/bin/ipexrun ipexrun
