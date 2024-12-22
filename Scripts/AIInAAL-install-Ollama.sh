@@ -71,7 +71,7 @@ echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalp
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "ollama serve &" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "sleep 10" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "ipexrun xpu open-webui serve" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "\$AIInAALdir/\$aiinaalpkg/ipexrun xpu open-webui serve" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 #echo "sleep 60"
 echo "Setting the new start file to be executable. (Authorization Required)"
 sudo chmod +x $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
