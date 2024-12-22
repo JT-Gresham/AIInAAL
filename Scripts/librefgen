@@ -20,18 +20,17 @@ echo "source /opt/intel/oneapi/setvars.sh" >> $AIInAALdir/libref
 echo "source $pdirectory/AIInAAL/AIInAAL_env/bin/ipex-llm-init -g --device Arc" >> $AIInAALdir/libref
 
 echo "AIInAAL_update () {" >> $AIInAALdir/libref
-echo "echo    Correcting any BS WINBLOWS carriage return entries in bash scripts..." >> $AIInAALdir/libref
+echo "    cd $AIInAALdir" >> $AIInAALdir/libref
+echo "    git switch main" >> $AIInAALdir/libref
+echo "    git reset --hard HEAD" >> $AIInAALdir/libref
+echo "    git pull" >> $AIInAALdir/libref
+echo "    rm -Rf $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/~*" >> $AIInAALdir/libref
+echo "    sed -i 's/\r//' $AIInAALdir/AIInAAL_install.sh" >> $AIInAALdir/libref
 echo "    cd $AIInAALdir/Scripts" >> $AIInAALdir/libref
 echo "    for file in *.sh" >> $AIInAALdir/libref
 echo "      do" >> $AIInAALdir/libref
 echo "      sed -i 's/\r//' \$file" >> $AIInAALdir/libref
 echo "    done" >> $AIInAALdir/libref
-echo "    cd $AIInAALdir" >> $AIInAALdir/libref
-echo "    sed -i 's/\r//' $AIInAALdir/AIInAAL_install.sh" >> $AIInAALdir/libref
-echo "    git switch main" >> $AIInAALdir/libref
-echo "    git reset --hard HEAD" >> $AIInAALdir/libref
-echo "    git pull" >> $AIInAALdir/libref
-echo "    rm -Rf $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/~*" >> $AIInAALdir/libref
 echo "    Scripts/librefgen" >> $AIInAALdir/libref
 echo "    pip install --upgrade pip" >> $AIInAALdir/libref
 echo "    AIInAAL_update_Intel" >> $AIInAALdir/libref
@@ -39,5 +38,14 @@ echo "}" >> $AIInAALdir/libref
 
 echo "AIInAAL_update_Intel () {" >> $AIInAALdir/libref
 echo "    pip install --upgrade -r $AIInAALdir/Scripts/intel_requirements.txt" >> $AIInAALdir/libref
+echo "}" >> $AIInAALdir/libref
+
+echo "EOF_fix () {" >> $AIInAALdir/libref
+echo "echo    Correcting any BS WINBLOWS carriage return entries in bash scripts..." >> $AIInAALdir/libref
+echo "    cd $AIInAALdir/\$1" >> $AIInAALdir/libref
+echo "    for file in libref-*" >> $AIInAALdir/libref
+echo "      do" >> $AIInAALdir/libref
+echo "      sed -i 's/\r//' \$file" >> $AIInAALdir/libref
+echo "    done" >> $AIInAALdir/libref
 echo "}" >> $AIInAALdir/libref
 echo "LIBREF regenerated."
