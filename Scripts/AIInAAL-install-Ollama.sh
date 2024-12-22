@@ -31,8 +31,8 @@ echo "Changing directory ->$AIInAALdir/$aiinaalpkg"
 cd $AIInAALdir/$aiinaalpkg
 echo ""
 echo "Installing the $aiinaalpkg binary --> $AIInAALdir/$aiinaalpkg/bin/ollama"
-sudo curl -L $aiinaalpkgURL --create-dirs --output bin/ollama/
-cd bin/ollama
+sudo curl -L $aiinaalpkgURL --create-dirs --output $AiinAALdir/
+cd $AIInAALdir
 sudo tar -xzf ollama-linux-amd64.tgz
 sudo rm ollama-linux-amd64.tgz
 cd $AIInAALdir/$aiinaalpkg
