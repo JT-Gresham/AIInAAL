@@ -24,7 +24,7 @@ echo "    Correcting any BS WINBLOWS carriage return entries in bash scripts..."
 echo "    cd $AIInAALdir/Scripts" >> $AIInAALdir/libref
 echo "    for file in *.sh" >> $AIInAALdir/libref
 echo "      do" >> $AIInAALdir/libref
-echo "      sed -i 's/\r//' $file" >> $AIInAALdir/libref
+echo "      sed -i 's/\r//' \$file" >> $AIInAALdir/libref
 echo "    done" >> $AIInAALdir/libref
 echo "    cd $AIInAALdir" >> $AIInAALdir/libref
 echo "    sed -i 's/\r//' $AIInAALdir/AIInAAL_install.sh" >> $AIInAALdir/libref
