@@ -1,2 +1,4 @@
 intel-extension-for-transformers
 einops==0.8.0
+fastapi==0.111.0
+pydantic==2.9.2
