@@ -4,7 +4,7 @@ source /etc/AIInAAL/AIInAAL_path
 source $AIInAALdir/libref
 source $AIInAALdir/AIInAAL_env/bin/activate
 aiinaalpkg="F5-TTS"
-aiinaalpkgURL="https://github.com/PasiKoodaa//$aiinaalpkg.git"
+aiinaalpkgURL="https://github.com/SWivid/F5-TTS.git"
 
 echo "########## $aiinaalpkg for Intel Arc GPUs on Arch Linux ##########"
 echo "##################### framework by JT Gresham #####################"
@@ -39,7 +39,7 @@ echo ""
 echo "Installing packages from requirements_versions.txt..."
 cd $AIInAALdir/$aiinaalpkg
 sleep 1
-pip install -r requirements_versions.txt
+#pip install -r requirements_versions.txt
 pip install -r requirements_$aiinaalpkg.txt
 echo ""
 echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
@@ -57,7 +57,7 @@ echo "AIInAAL_update" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "python $AIInAALdir/$aiinaalpkg/app_local.py \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "sleep 60"
+#echo "sleep 60"
 #echo "echo "F5-TTS is still running in the background. Enter command: F5-TTS-exit to close down F5-TTS.""
 #echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "Setting the new start file to be executable. (Authorization Required)"
