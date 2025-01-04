@@ -38,6 +38,7 @@ cp $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg_example.sh $AIInAALdir/$ai
 echo ""
 echo "Installing packages from requirements_versions.txt..."
 cd $AIInAALdir/$aiinaalpkg
+pip install -e .
 sleep 1
 #pip install -r requirements_versions.txt
 pip install -r requirements_$aiinaalpkg.txt
