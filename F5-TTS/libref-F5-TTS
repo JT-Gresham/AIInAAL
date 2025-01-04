@@ -27,6 +27,12 @@ AIInAAL_update_F5-TTS () {
     else
       sed -i 's|print("WARNING: You are running this unofficial E2/F5 TTS demo locally, it may not be as up-to-date as the hosted version (https://huggingface.co/spaces/mrfakename/E2-F5-TTS)")||g' $AIInAALdir/$aiinaalpkg/app_local.py
   fi
+  if grep -Fxq "if.torch.backends.mkl.is_available"' app_local.py
+    then
+      echo "XPU option found in app_local.py...skipping"
+    else
+      sed -i 's|else "cpu"|else "xpu" if.torch.backends.mkl.is_available() else "cpu"|g' $AIInAALdir/$aiinaalpkg/app_local.py
+  fi
   #if grep -Fxq "torch==2.1.0 torchvision==0.16.0" app_local.py
   #  then
   #    echo "Intel versions of pytorch-related packages found in app_local.py...skipping"
