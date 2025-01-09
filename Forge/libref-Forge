@@ -30,6 +30,8 @@ rm -R "$AIInAALdir/$aiinaalpkg/models/VAE"
 rm -R "$AIInAALdir/$aiinaalpkg/models/VAE-approx"
 rm -R "$AIInAALdir/$aiinaalpkg/outputs/txt2img-grids"
 rm -R "$AIInAALdir/$aiinaalpkg/outputs/txt2img-images"
+rm -R "$AIInAALdir/$aiinaalpkg/models/ControlNet"
+rm -R "$AIInAALdir/$aiinaalpkg/models/ControlNetPreprocessor/clip_vision"
 ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/Stable-diffusion"
 ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/Lora"
 ln -sf "$AIInAALdir/shared/wildcards/Fooocus/" "$AIInAALdir/$aiinaalpkg/extensions/sd-dynamic-prompts/wildcards"
@@ -38,7 +40,8 @@ ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/VAE"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/VAE-approx"
 ln -sf "$AIInAALdir/shared/output/txt2img-grids" "$AIInAALdir/$aiinaalpkg/outputs/txt2img-grids"
 ln -sf "$AIInAALdir/shared/output/" "$AIInAALdir/$aiinaalpkg/outputs/txt2img-images"
-
+ln -sf "$AIInAALdir/shared/controlnet/" "$AIInAALdir/$aiinaalpkg/models/ControlNet"
+ln -sf "$AIInAALdir/shared/clip_vision/" "$AIInAALdir/$aiinaalpkg/models/ControlNetPreprocessor/clip_vision"
 
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
