@@ -20,6 +20,7 @@ echo "source /opt/intel/oneapi/setvars.sh" >> $AIInAALdir/libref
 echo "source $pdirectory/AIInAAL/AIInAAL_env/bin/ipex-llm-init -g --device Arc" >> $AIInAALdir/libref
 
 echo "AIInAAL_update () {" >> $AIInAALdir/libref
+echo "    hfcache=$(echo ~)/.cache/huggingface" >> $AIInAALdir/libref
 echo "    cd $AIInAALdir" >> $AIInAALdir/libref
 echo "    git switch main" >> $AIInAALdir/libref
 echo "    git reset --hard HEAD" >> $AIInAALdir/libref
@@ -39,8 +40,8 @@ echo "      sed -i 's/\r//' \$aiinaalpkg1/libref-\$aiinaalpkg1" >> $AIInAALdir/l
 echo "    done" >> $AIInAALdir/libref
 echo "    Scripts/librefgen" >> $AIInAALdir/libref
 echo "    pip install --upgrade pip" >> $AIInAALdir/libref
-echo "    rm -R \"~/.cache/huggingface\"" >> $AIInAALdir/libref
-echo "    ln -sf \"$AIInAALdir/shared/HF\" \"~/.cache/huggingface\"" >> $AIInAALdir/libref
+echo "    rm -R \"$hfcache\"" >> $AIInAALdir/libref
+echo "    ln -sf \"$AIInAALdir/shared/HF\" \"$hfcache\"" >> $AIInAALdir/libref
 echo "    AIInAAL_update_Intel" >> $AIInAALdir/libref
 echo "}" >> $AIInAALdir/libref
 
