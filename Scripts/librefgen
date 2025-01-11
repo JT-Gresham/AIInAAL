@@ -40,7 +40,7 @@ echo "    done" >> $AIInAALdir/libref
 echo "    Scripts/librefgen" >> $AIInAALdir/libref
 echo "    pip install --upgrade pip" >> $AIInAALdir/libref
 echo "    rm -R \"~/.cache/huggingface\" >> $AIInAALdir/libref
-echo "    ln-sf \"$AIInAALdir/shared/HF" "~/.cache/huggingface" >> $AIInAALdir/libref
+echo "    ln-sf \"$AIInAALdir/shared/HF\" \"~/.cache/huggingface\" >> $AIInAALdir/libref
 echo "    AIInAAL_update_Intel" >> $AIInAALdir/libref
 echo "}" >> $AIInAALdir/libref
 
