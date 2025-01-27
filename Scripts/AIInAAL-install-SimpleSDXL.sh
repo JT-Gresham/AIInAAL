@@ -7,7 +7,7 @@ aiinaalpkg="SimpleSDXL"
 aiinaalpkgURL="https://github.com/metercai//$aiinaalpkg.git"
 
 function SimpleSDXL_base_fix(){
-    cd $AIInAALdir/$aiinaalpkg/enhanced/lib
+    cd $AIInAALdir/$aiinaalpkg/enhanced/libs
     simpleaibase=$(ls | grep manylinux)
     unzip $AIInAALdir"/"$aiinaalpkg"/enhanced/libs/"$simpleaibase -d $AIInAALdir"/AIInAAL_env/lib/python3.11/site-packages"
     cd $AIInAALdir/$aiinaalpkg
@@ -42,7 +42,7 @@ echo ""
 echo "Applying AIInAAL modifications to original $aiinaalpkg..."
 SimpleSDXL_base_fix
 AIInAAL_update_$aiinaalpkg
-cp $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg_example.sh $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+cp $AIInAALdir"/"$aiinaalpkg"/user_customize_"$aiinaalpkg"_example.sh" $AIInAALdir"/"$aiinaalpkg"/user_customize_"$aiinaalpkg".sh"
 echo ""
 echo "Installing packages from requirements_versions.txt..."
 cd $AIInAALdir/$aiinaalpkg
