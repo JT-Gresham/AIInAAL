@@ -6,6 +6,13 @@ source $AIInAALdir/AIInAAL_env/bin/activate
 aiinaalpkg="SimpleSDXL"
 aiinaalpkgURL="https://github.com/metercai//$aiinaalpkg.git"
 
+function SimpleSDXL_base_fix(){
+    cd $AIInAALdir/$aiinaalpkg/enhanced/lib
+    simpleaibase=$(ls | grep manylinux)
+    unzip $simpleaibase -d $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages
+    cd $AIInAALdir/$aiinaalpkg
+}
+
 echo "########## $aiinaalpkg for Intel Arc GPUs on Arch Linux ##########"
 echo "##################### framework by JT Gresham #####################"
 echo ""
@@ -33,6 +40,7 @@ rm -r /tmp/$aiinaalpkg
 source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
 echo "Applying AIInAAL modifications to original $aiinaalpkg..."
+SimpleSDXL_base_fix
 AIInAAL_update_$aiinaalpkg
 cp $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg_example.sh $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 echo ""
