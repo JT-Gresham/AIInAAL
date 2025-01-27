@@ -9,7 +9,7 @@ aiinaalpkgURL="https://github.com/metercai//$aiinaalpkg.git"
 function SimpleSDXL_base_fix(){
     cd $AIInAALdir/$aiinaalpkg/enhanced/lib
     simpleaibase=$(ls | grep manylinux)
-    unzip $simpleaibase -d $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages
+    unzip $AIInAALdir/$aiinaalpkg/enhanced/libs/$simpleaibase -d $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages
     cd $AIInAALdir/$aiinaalpkg
 }
 
