@@ -1,0 +1,6 @@
+intel-extension-for-transformers
+einops==0.8.0
+fastapi==0.111.0
+pydantic==2.9.2
+anyio==4.4.0
+aiofiles==24.1.0
