@@ -1,0 +1,2 @@
+mkl==2024.2.1
+intel-extension-for-transformers
