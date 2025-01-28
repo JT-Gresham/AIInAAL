@@ -21,11 +21,11 @@ AIInAAL_update_RuinedFooocus () {
     else
       sed -i 's|import ssl|import ssl\n\nimport torch\nimport intel_extension_for_pytorch as ipex|g' launch.py
   fi
-  if grep -Fxq "https://download.pytorch.org/whl/cu121" launch.py
+  if grep -Fxq "https://download.pytorch.org/whl/cu124" launch.py
     then
       echo "URL for Intel version of pytorch found in launch.py...skipping"
     else
-      sed -i 's|https://download.pytorch.org/whl/cu121|https://pytorch-extension.intel.com/release-whl/stable/xpu/us/|g' $AIInAALdir/$aiinaalpkg/launch.py
+      sed -i 's|https://download.pytorch.org/whl/cu124|https://pytorch-extension.intel.com/release-whl/stable/xpu/us/|g' $AIInAALdir/$aiinaalpkg/launch.py
   fi
   if grep -Fxq "torch==2.1.0 torchvision==0.16.0" launch.py
     then
