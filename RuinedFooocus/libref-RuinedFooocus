@@ -73,6 +73,7 @@ ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models
 ln -sf "$AIInAALdir/shared/output/" "$AIInAALdir/$aiinaalpkg/outputs"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+cd $AIInAALdir/$aiinaalpkg
 }
 
 RuinedFooocus-exit () {
