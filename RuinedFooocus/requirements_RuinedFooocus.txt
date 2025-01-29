@@ -1,4 +1,2 @@
 mkl
 sycl
-intel-extension-for-transformers
-intel-extension-for-tensorflow
