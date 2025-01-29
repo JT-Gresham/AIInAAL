@@ -1,2 +1,4 @@
-mkl==2024.2.1
+mkl
+sycl
 intel-extension-for-transformers
+intel-extension-for-tensorflow
