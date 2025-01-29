@@ -65,6 +65,7 @@ rm -R "$AIInAALdir/$aiinaalpkg/models/vae"
 rm -R "$AIInAALdir/$aiinaalpkg/models/vae_approx"
 rm -R "$AIInAALdir/$aiinaalpkg/outputs"
 rm -R "$AIInAALdir/$aiinaalpkg/prompt_expansion"
+rm -R "$AIInAALdir/$aiinaalpkg/clip_vision"
 ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/checkpoints"
 ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/loras"
 ln -sf "$AIInAALdir/shared/wildcards/Fooocus" "$AIInAALdir/$aiinaalpkg/wildcards"
@@ -73,6 +74,7 @@ ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/vae"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/vae_approx"
 ln -sf "$AIInAALdir/shared/output/" "$AIInAALdir/$aiinaalpkg/outputs"
 ln -sf "$AIInAALdir/shared/prompt_expansion/" "$AIInAALdir/$aiinaalpkg/prompt_expansion"
+ln -sf "$AIInAALdir/shared/clip_vision/" "$AIInAALdir/$aiinaalpkg/clip_vision"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 cd $AIInAALdir/$aiinaalpkg
