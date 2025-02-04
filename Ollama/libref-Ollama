@@ -29,9 +29,8 @@ AIInAAL_update_Ollama () {
 #      sed -i 's|from modules import timer|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\n\nfrom modules import timer|g' webui.py
 #  fi
 
-rm -Rf "$AIInAALdir/$aiinaalpkg/.ollama/models/blobs"
-rm -f "$AIInAALdir/$aiinaalpkg/.ollama/models/blobs"
-ln -sf "$AIInAALdir/shared/LLMs/" "$AIInAALdir/$aiinaalpkg/.ollama/models/blobs"
+rm -Rf "$AIInAALdir/$aiinaalpkg/models"
+ln -sf "$AIInAALdir/shared/LLMs/Ollama" "$AIInAALdir/$aiinaalpkg/models"
 
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
