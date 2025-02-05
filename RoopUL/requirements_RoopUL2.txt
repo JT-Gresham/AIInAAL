@@ -1,0 +1,15 @@
+openvino
+onnxruntime-openvino==1.20.0
+numpy>=1.26.4
+gradio>=5.9.1
+#fastapi<0.113.0
+opencv-python-headless==4.10.0.84
+onnx
+insightface
+albucore
+psutil
+onnxruntime==1.20.0
+tqdm
+ftfy
+regex
+pyvirtualcam
