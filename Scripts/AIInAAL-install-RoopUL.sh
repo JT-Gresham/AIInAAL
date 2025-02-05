@@ -21,7 +21,7 @@ AIInAAL_update
 echo "Changing directory ->$AIInAALdir/$aiinaalpkg"
 cd $AIInAALdir/$aiinaalpkg
 echo ""
-echo "Cloning official $aiinaalpkg repository to $aiinaalpkg"
+echo "Cloning official $aiinaalpkg repository to /tmp/$aiinaalpkg"
 
 #### GIT CLONE COMMAND  URL HERE ####
 git clone "$aiinaalpkgURL" "/tmp/$aiinaalpkg"
@@ -34,7 +34,7 @@ source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
 echo "Applying AIInAAL modifications to original $aiinaalpkg..."
 AIInAAL_update_$aiinaalpkg
-cp $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg_example.sh $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+cp $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg"_example.sh" $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 #echo ""
 echo "Installing packages from requirements.txt..."
 cd $AIInAALdir/$aiinaalpkg
