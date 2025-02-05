@@ -2,5 +2,3 @@ ollama
 lark>=1.1.5
 transformers>=4.34.0
 open-webui
-
---no-deps ipex-llm[xpu]
