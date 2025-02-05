@@ -9,7 +9,7 @@ export ZES_ENABLE_SYSMAN=1
 #source /opt/intel/oneapi/setvars.sh
 export SYCL_CACHE_PERSISTENT=1
 export PATH=/llm/ollama:$PATH
-export OLLAMA_HOST=0.0.0.0:11434
+export OLLAMA_HOST=0.0.0.0
 export OLLAMA_INTEL_GPU=true
 export ONEAPI_DEVICE_SELECTOR=level_zero:0
 export DEVICE=Arc
