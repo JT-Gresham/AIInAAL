@@ -2,3 +2,4 @@ ollama
 lark>=1.1.5
 transformers>=4.34.0
 open-webui
+openvino

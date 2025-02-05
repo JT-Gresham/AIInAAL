@@ -32,7 +32,7 @@ AIInAAL_update_Ollama () {
     then
       echo "Intel extensions found in webui.py...skipping"
     else
-      sed -i 's|from ollama._client import AsyncClient, Client|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\n\nfrom ollama._client import AsyncClient, Client|g' __init__.py
+      sed -i 's|from ollama._client import AsyncClient, Client|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n\nfrom ollama._client import AsyncClient, Client|g' __init__.py
   fi
   cd $AIInAALdir/$aiinaalpkg
 rm -Rf "$AIInAALdir/$aiinaalpkg/models"
