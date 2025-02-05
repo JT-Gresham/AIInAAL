@@ -20,30 +20,29 @@ echo "Your installation will be installed in $AIInAALdir/$aiinaalpkg"
 echo ""
 AIInAAL_update
 echo "Changing directory ->$AIInAALdir/$aiinaalpkg"
-cd /tmp
+mkdir /tmp/$aiinaalpkg
+cd /tmp/$aiinaalpkg
 echo ""
-echo "Cloning official $aiinaalpkg repository to $aiinaalpkg"
-
-#### GIT CLONE COMMAND  URL HERE ####
-cd $AIInAALdir/$aiinaalpkg
-
-echo "Changing directory ->$AIInAALdir/$aiinaalpkg"
-cd $AIInAALdir/$aiinaalpkg
+echo "Downloading official $aiinaalpkg package to /tmp/$aiinaalpkg"
+wget $aiinaalpkgURL
 echo ""
-echo "Installing the $aiinaalpkg binary --> $AIInAALdir/$aiinaalpkg/bin/ollama"
-sudo curl -L $aiinaalpkgURL --create-dirs --output $AiinAALdir/
-cd $AIInAALdir
-sudo tar -xzf ollama-linux-amd64.tgz
-sudo rm ollama-linux-amd64.tgz
+echo "Decompressing Ollama package..."
+tgzpkgname=$(ls | grep "tgz")
+tar -xvf $tgzpkgname
+echo ""
+echo "Copying Ollama executable to AIInAAL environment..."
+cp ./bin/ollama $AIInAALdir/AIInAAL_env/bin/
+echo "Copying library files to AIInAAL environment..."
+cp -Rf ./lib/ollama $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/
+echo "Cleaning up temporary files..."
 cd $AIInAALdir/$aiinaalpkg
-echo "The base ollama file needs to be made executable. Authorize with sudo user password below."
-sudo chmod +x bin/ollama
+rm -R /tmp/Ollama
 echo ""
 
 source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
-echo "Applying AIInAAL modifications to original $aiinaalpkg..."
-cp -n "$AIInAALdir/$aiinaalpkg/user_customize_Ollama_example.sh" "$AIInAALdir/$aiinaalpkg/user_customize_Ollama.sh"
+#echo "Applying AIInAAL modifications to original $aiinaalpkg..."
+#cp -n "$AIInAALdir/$aiinaalpkg/user_customize_Ollama_example.sh" "$AIInAALdir/$aiinaalpkg/user_customize_Ollama.sh"
 AIInAAL_update_$aiinaalpkg
 cd $AIInAALdir/$aiinaalpkg
 pip install -r requirements_$aiinaalpkg.txt
@@ -71,6 +70,7 @@ echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalp
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "ollama serve &" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "cd $AIInAALdir/$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "Open Web UI will start in 10 seconds. After it loads, you can open it up in your browser. (URL: localhost:8080)" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "sleep 10" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "ipexrun xpu open-webui serve" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
