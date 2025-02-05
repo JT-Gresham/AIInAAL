@@ -4,7 +4,7 @@ source /etc/AIInAAL/AIInAAL_path
 source $AIInAALdir/libref
 source $AIInAALdir/AIInAAL_env/bin/activate
 aiinaalpkg="RoopUL"
-aiinaalpkgURL="https://github.com/C0untFloyd/roop-unleashed.git"
+aiinaalpkgURL="https://codeberg.org/Cognibuild/ROOP-FLOYD.git"
 
 echo "########## $aiinaalpkg for Intel Arc GPUs on Arch Linux ##########"
 echo "##################### framework by JT Gresham #####################"
