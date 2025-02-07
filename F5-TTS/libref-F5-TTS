@@ -19,7 +19,7 @@ AIInAAL_update_F5-TTS () {
     then
       echo "Intel extensions found in app_local.py...skipping"
     else
-      sed -i 's|import torch|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\n\n|g' app_local.py
+      sed -i 's|import tempfile|import tempfile\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\n\n|g' app_local.py
   fi
   if grep -Fxq "WARNING: You are running this unofficial E2/F5 TTS demo locally" app_local.py
     then
