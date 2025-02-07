@@ -4,7 +4,7 @@ source /etc/AIInAAL/AIInAAL_path
 source $AIInAALdir/libref
 source $AIInAALdir/AIInAAL_env/bin/activate
 aiinaalpkg="F5-TTS"
-aiinaalpkgURL="https://github.com/SWivid/F5-TTS.git"
+aiinaalpkgURL="https://github.com/PasiKoodaa/F5-TTS.git"
 
 echo "########## $aiinaalpkg for Intel Arc GPUs on Arch Linux ##########"
 echo "##################### framework by JT Gresham #####################"
