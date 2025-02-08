@@ -30,11 +30,10 @@ Remember that there are limitations beyond my control...like memory management, 
 # Recent Notes from JT/OCD
      *  2/5/25
           I noticed today that GitHub has blocked remote access (ban/block) to C0untFloyd's RoopUL repository and every other fork of it for that matter.  Simply, that means my installer and modification scripts won't 
-               work through the origial GitHub repository since the base program can't be downloaded...at least, not from GitHub.  That is to say, there's other places to find the archived package if you live in a place
+               work through the original GitHub repository since the base program can't be downloaded...at least, not from GitHub.  That is to say, there's other places to find the archived package if you live in a place
                that allows for it.
           I have removed RoopUL from the "What's Working" list above accordingly. I don't want to step on anyone's toes.  It's funny that just last month I noted that I was looking for a replacement. Now, it seems, I
-               have to...so I'll be looking at that too.
-               Too bad about RoopUL. It was a fun toy to mess around with.
+               have to...so I'll be looking at that too.  Too bad about RoopUL. It was a fun toy to mess around with.
           I have Ollama listed above, but I realized that I had installed Ollama to my root rather than in the AIInAAL environment.  That explains why it was working well even though I had seen posts stating that GPUs were
                not usable in (docker) containers. I've been working on getting it to work within the AIInAAL container, and I've gotten it to install and run...but it's only using my CPU...which is SLOOOOOOW.  The problem 
                is that Ollama isn't launched in a straightforward way. The devs decided that it would be smart to construct the executable in such a way that I can't even open it with a text editor and look at the code. Can
