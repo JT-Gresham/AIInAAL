@@ -11,13 +11,10 @@ AIInAAL - pronounced (ān-ᵊl) or 'anal' in English...fun acronym for AI-IntelA
 *    [<img align="left" width="10%" src="https://m.media-amazon.com/images/I/41CMZ4XoAJL._SS135_.jpg">](https://www.amazon.com/hz/wishlist/ls/25OBUY6VTN1C8?ref_=wl_share) [<img align="left" width="10%" src="https://i.etsystatic.com/49605844/r/il/d7369b/5752403283/il_640xN.5752403283_m6wa.jpg">](https://www.etsy.com/shop/JTGreshamExclusives)
 <br clear="left"/>
 
-# What's Currently Working (2/8/2025)
+# What's Currently Working (2/10/2025)
 *   Fooocus
      - TF32/BF32 lack of support has made image prompts and enhancements non-functional...Otherwise seems to work as it should.
 *   DeFooocus
-*   Forge
-     - Issues with OOM if setting resolution too high. Most likely issue with Intel extensions for pytorch...my guess.
-     - Still works pretty well..especially for merging which is about all I use it for in this current state.
 *   Ollama + OpenWebUI
      - Installs and seems to be working if you install Ollama directly to your OS rather than in a container. Testing is ongoing.
      - Ollama installer will install OpenWebUI as well.
@@ -28,6 +25,12 @@ AIInAAL - pronounced (ān-ᵊl) or 'anal' in English...fun acronym for AI-IntelA
      - Installs and runs. I have been able to generate a reference voice file and then create speech in the cloned voice.
      - The initial tests prove...well, less than I had hoped for. The end result seems choppy...speed is too fast. Can't say certain
        words...etc. Perhaps it's my reference. I dunno... It installs and works so give it a whirl if you like, but I'd keep expectations low-ish.
+
+# Recently jacked up...(2/10/2025)
+*   Forge - Update now calls for an advanced torch function (custom_op) that isn't supported by Intel's torch (I think). This is a recurring issue that keeps rearing it's ugly head from time to time. We'll just have to wait until it's patched, I guess.
+     Previously:
+     - Issues with OOM if setting resolution too high. Most likely issue with Intel extensions for pytorch...my guess.
+     - Still works pretty well..especially for merging which is about all I use it for in this current state.
 
 Remember that there are limitations beyond my control...like memory management, for example. AIInAAL is a framework for these packages to be installed, but ultimately, these versions, while more versitile and convenient, are the original programs at their core. I've done my best to get them to work with Intel Arc dGPUs on Arch, but this entire project is always a WIP. Keep that in mind before you try to flame me if using something you got for free misbehaves...
 
