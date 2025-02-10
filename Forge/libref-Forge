@@ -15,14 +15,14 @@ AIInAAL_update_Forge () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Forge/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Forge/requirements_$aiinaalpkg.txt
 
-  if grep -Fxq "torch\n" requrements_versions.txt
+  if grep -Fxq "torch\n" requirements_versions.txt
     then
-      sed -i 's|torch\n||g' requrements_versions.txt
+      sed -i 's|torch\n||g' requirements_versions.txt
   fi
 torchsde=$(cat requirements_versions.txt | grep "torchsde")
-  if grep -Fxq "$torchsde" requrements_versions.txt
+  if grep -Fxq "$torchsde" requirements_versions.txt
     then
-      sed -i "s|$torchsde||g" requrements_versions.txt
+      sed -i "s|$torchsde||g" requirements_versions.txt
   fi
   pip install --upgrade -r requirements_versions.txt
   if grep -Fxq "import intel_extension_for_pytorch as ipex" webui.py
