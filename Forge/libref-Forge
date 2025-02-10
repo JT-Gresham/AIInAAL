@@ -14,7 +14,7 @@ AIInAAL_update_Forge () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Forge/libref-$aiinaalpkg
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Forge/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Forge/requirements_$aiinaalpkg.txt
-  pip install -r requirements_$aiinaalpkg.txt
+  pip install --upgrade -r requirements_$aiinaalpkg.txt
   if grep -Fxq "import intel_extension_for_pytorch as ipex" webui.py
     then
       echo "Intel extensions found in webui.py...skipping"
