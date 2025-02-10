@@ -15,9 +15,10 @@ AIInAAL_update_Forge () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Forge/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Forge/requirements_$aiinaalpkg.txt
 
-  if grep -Fxq "torch\ntorchdiffeq" requirements_versions.txt
+torchdiffeq=$(cat requirements_versions.txt | grep "torchdiffeq")
+  if grep -Fxq "torch\n$torchdiffeq" requirements_versions.txt
     then
-      sed -i 's|torch\ntorchdiffeq|torchdiffeq|g' requirements_versions.txt
+      sed -i "s|torch\n$torchdiffeq|$torchdiffeq|g" requirements_versions.txt
   fi
 torchsde=$(cat requirements_versions.txt | grep "torchsde")
   if grep -Fxq "$torchsde" requirements_versions.txt
