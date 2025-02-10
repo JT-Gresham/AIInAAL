@@ -14,7 +14,6 @@ AIInAAL_update_Forge () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Forge/libref-$aiinaalpkg
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Forge/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Forge/requirements_$aiinaalpkg.txt
-  pip install --upgrade -r requirements_$aiinaalpkg.txt
 
   if grep -Fxq "torch\n" requrements_versions.txt
     then
@@ -32,6 +31,8 @@ torchsde=$(cat requirements_versions.txt | grep "torchsde")
     else
       sed -i 's|from modules import timer|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\n\nfrom modules import timer|g' webui.py
   fi
+
+  pip install --upgrade -r requirements_$aiinaalpkg.txt
 
 rm -R "$AIInAALdir/$aiinaalpkg/models/Stable-diffusion"
 rm -R "$AIInAALdir/$aiinaalpkg/models/Lora"
