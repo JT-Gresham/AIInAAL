@@ -46,6 +46,7 @@ echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
 cp "user_customize_"$aiinaalpkg"_example.sh" "user_customize_"$aiinaalpkg".sh"
 cd custom_nodes
 git clone https://github.com/ltdrdata/ComfyUI-Manager comfyui-manager
+git clone https://github.com/Seedsa/Fooocus_Nodes.git Fooocus_Nodes
 cd ..
 touch $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "#!/usr/bin/env bash" > $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
