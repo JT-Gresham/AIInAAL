@@ -56,7 +56,7 @@ echo "AIInAAL_update" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 #### Executable below
 echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "python $AIInAALdir/$aiinaalpkg/launch.py --port 7865 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "python $AIInAALdir/$aiinaalpkg/launch.py --use-ipex --port 7865 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "sleep 60"
 #echo "echo "Auto1111 is still running in the background. Enter command: Auto1111-exit to close down Auto1111.""
 #echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
