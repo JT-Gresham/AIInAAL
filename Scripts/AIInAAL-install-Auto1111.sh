@@ -39,6 +39,7 @@ echo ""
 echo "Installing packages from requirements.txt..."
 cd $AIInAALdir/$aiinaalpkg
 sleep 1
+pip install -r requirements.txt
 pip install -r requirements_versions.txt
 pip install -r requirements_$aiinaalpkg.txt
 echo ""
