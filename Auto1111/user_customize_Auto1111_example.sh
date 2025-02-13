@@ -11,7 +11,6 @@ aiinaalpkg=Auto1111
 
 #### EXAMPLE CODE ####
 
-# This links Auto1111 to the shared wildcards directory. Enable this after installing the stable-diffusion-webui-wildcards extension.
-#  NOTE: I recommend installing the sd-dynamic-prompts extension as well (necessary for nested wildcards)
-#rm -rf "$AIInAALdir/$aiinaalpkg/extensions/stable-diffusion-webui-wildcards/wildcards"
+# This links Auto1111 to the shared wildcards directory. Enable this after installing the sd-dynamic-prompts extension.
+#rm -rf "$AIInAALdir/$aiinaalpkg/extensions/sd-dynamic-prompts/wildcards"
 #ln -sf "$AIInAALdir/shared/wildcards/Fooocus/" "$AIInAALdir/$aiinaalpkg/extensions/sd-dynamic-prompts/wildcards"
