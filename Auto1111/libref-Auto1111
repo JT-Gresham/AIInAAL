@@ -32,7 +32,7 @@ rm -R "$AIInAALdir/$aiinaalpkg/models/Lora"
 rm -R "$AIInAALdir/$aiinaalpkg/models/prompt_expansion"
 rm -R "$AIInAALdir/$aiinaalpkg/models/VAE"
 rm -R "$AIInAALdir/$aiinaalpkg/models/VAE-approx"
-#rm -R "$AIInAALdir/$aiinaalpkg/output"
+rm -R "$AIInAALdir/$aiinaalpkg/outputs"
 ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/Stable-diffusion"
 ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/Lora"
 #ln -sf "$AIInAALdir/shared/clip_vision" "$AIInAALdir/$aiinaalpkg/models/clip_vision"
@@ -42,7 +42,7 @@ ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/Lora"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/prompt_expansion/" "$AIInAALdir/$aiinaalpkg/models/prompt_expansion"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/VAE"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/VAE-approx"
-#ln -sf "$AIInAALdir/shared/output/Auto1111/" "$AIInAALdir/$aiinaalpkg/output"
+ln -sf "$AIInAALdir/shared/output/Auto1111/" "$AIInAALdir/$aiinaalpkg/outputs"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 cd $AIInAALdir/$aiinaalpkg
