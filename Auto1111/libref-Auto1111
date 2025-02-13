@@ -30,7 +30,7 @@ rm -R "$AIInAALdir/$aiinaalpkg/models/Stable-diffusion"
 #rm -R "$AIInAALdir/$aiinaalpkg/wildcards"
 #rm -R "$AIInAALdir/$aiinaalpkg/sdxl_styles"
 rm -R "$AIInAALdir/$aiinaalpkg/models/VAE"
-rm -R "$AIInAALdir/$aiinaalpkg/models/VAE_approx"
+rm -R "$AIInAALdir/$aiinaalpkg/models/VAE-approx"
 #rm -R "$AIInAALdir/$aiinaalpkg/output"
 ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/Stable-diffusion"
 #ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/loras"
@@ -39,7 +39,7 @@ ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/Stab
 #ln -sf "$AIInAALdir/shared/wildcards/Fooocus/" "$AIInAALdir/$aiinaalpkg/wildcards"
 #ln -sf "$AIInAALdir/shared/sdxl_styles/$aiinaalpkg" "$AIInAALdir/$aiinaalpkg/sdxl_styles"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/VAE"
-ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/VAE_approx"
+ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/VAE-approx"
 #ln -sf "$AIInAALdir/shared/output/Auto1111/" "$AIInAALdir/$aiinaalpkg/output"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
