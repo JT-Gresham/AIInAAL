@@ -14,4 +14,4 @@ aiinaalpkg=Auto1111
 # This links Auto1111 to the shared wildcards directory. Enable this after installing the stable-diffusion-webui-wildcards extension.
 #  NOTE: I recommend installing the webui-fooocus-prompt-expansion extension as well (necessary for nested wildcards)
 #rm -rf "$AIInAALdir/$aiinaalpkg/extensions/stable-diffusion-webui-wildcards/wildcards"
-#ln -sf "$AIInAALdir/shared/wildcards/" "$AIInAALdir/$aiinaalpkg/extensions/stable-diffusion-webui-wildcards/wildcards"
+#ln -sf "$AIInAALdir/shared/wildcards/Fooocus/" "$AIInAALdir/$aiinaalpkg/extensions/stable-diffusion-webui-wildcards/wildcards"
