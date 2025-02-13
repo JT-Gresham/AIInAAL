@@ -47,6 +47,7 @@ ln -sf "$AIInAALdir/shared/clip_vision/" "$AIInAALdir/$aiinaalpkg/models/Control
 
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+cd $AIInAALdir/$aiinaalpkg
 }
 
 Forge-exit () {

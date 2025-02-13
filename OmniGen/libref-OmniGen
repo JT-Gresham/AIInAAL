@@ -72,6 +72,7 @@ AIInAAL_update_OmniGen () {
 #ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/vae_approx"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+cd $AIInAALdir/$aiinaalpkg
 }
 
 OmniGen-exit () {

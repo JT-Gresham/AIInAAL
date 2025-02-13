@@ -73,6 +73,7 @@ AIInAAL_update_MetaSearch () {
 #ln -sf "$AIInAALdir/shared/output/" "$AIInAALdir/$aiinaalpkg/outputs"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+cd $AIInAALdir/$aiinaalpkg
 }
 
 MetaSearch-exit () {

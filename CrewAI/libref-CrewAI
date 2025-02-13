@@ -71,6 +71,7 @@ ln -sf "$AIInAALdir/shared/MyCrewAIProjects" "$AIInAALdir/$aiinaalpkg/MyCrewAIPr
 #ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/vae_approx"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+cd $AIInAALdir/$aiinaalpkg
 }
 
 CrewAI-exit () {

@@ -40,6 +40,7 @@ ln -sf "$AIInAALdir/shared/LLMs/Ollama" "$AIInAALdir/$aiinaalpkg/models"
 
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+cd $AIInAALdir/$aiinaalpkg
 }
 
 Ollama_exit () {
