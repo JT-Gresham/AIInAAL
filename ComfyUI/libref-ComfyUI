@@ -30,6 +30,7 @@ rm -R "$AIInAALdir/$aiinaalpkg/wildcards"
 rm -R "$AIInAALdir/$aiinaalpkg/sdxl_styles"
 rm -R "$AIInAALdir/$aiinaalpkg/models/vae"
 rm -R "$AIInAALdir/$aiinaalpkg/models/vae_approx"
+rm -R "$AIInAALdir/$aiinaalpkg/models/upscale_models"
 rm -R "$AIInAALdir/$aiinaalpkg/output"
 ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/checkpoints"
 ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/loras"
@@ -39,6 +40,7 @@ ln -sf "$AIInAALdir/shared/wildcards/Fooocus/" "$AIInAALdir/$aiinaalpkg/wildcard
 ln -sf "$AIInAALdir/shared/sdxl_styles/$aiinaalpkg" "$AIInAALdir/$aiinaalpkg/sdxl_styles"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/vae"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/vae_approx"
+ln -sf "$AIInAALdir/shared/upscale_models/" "$AIInAALdir/$aiinaalpkg/models/upscale_models"
 ln -sf "$AIInAALdir/shared/output/ComfyUI/" "$AIInAALdir/$aiinaalpkg/output"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
