@@ -30,9 +30,9 @@ AIInAAL_update_Ollama () {
   cd $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
   if grep -Fxq "import intel_extension_for_pytorch as ipex" __init__.py
     then
-      echo "Intel extensions found in webui.py...skipping"
+      echo "Intel extensions found in __init__.py...skipping"
     else
-      sed -i 's|from ollama._client import AsyncClient, Client|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n\nfrom ollama._client import AsyncClient, Client|g' __init__.py
+      sed -i 's|from ollama._client import AsyncClient, Client|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n\nfrom ollama._client import AsyncClient, Client\n\ntorch.backends.cuda.allow_fp16_bf16_reduction_math_sdp(True)\n|g' __init__.py
   fi
   cd $AIInAALdir/$aiinaalpkg
 rm -Rf "$AIInAALdir/$aiinaalpkg/models"
