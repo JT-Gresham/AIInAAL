@@ -56,8 +56,10 @@ echo "AIInAAL_update" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 #### Executable below
 echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "cd $AIInAALdir/$aiinaalpkg/MyCrewAIProjects" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "python3 $AIInAALdir/AIInAAL_env/bin/crewai \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "cd $AIInAALdir/$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+#echo "cd $AIInAALdir/$aiinaalpkg/MyCrewAIProjects" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "streamlit run app/app.py --server.headless True \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+#echo "python3 $AIInAALdir/AIInAAL_env/bin/crewai \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 #echo "sleep 60"
 echo "Setting the new start file to be executable. (Authorization Required)"
 sudo chmod +x $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
