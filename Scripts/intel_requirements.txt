@@ -14,7 +14,7 @@ intel-extension-for-transformers
 #torchaudio==2.3.1
 #intel-extension-for-pytorch==2.3.110+xpu
 #oneccl_bind_pt==2.3.100+xpu
-i#ntel-extension-for-transformers
+#intel-extension-for-transformers
 
 #torch==2.5.1
 #torchvision==0.20.1
