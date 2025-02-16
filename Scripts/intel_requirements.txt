@@ -1,4 +1,4 @@
---no-deps --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us
+--extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us
 
 ipex-llm[cpp]
 #torch==2.2.0
