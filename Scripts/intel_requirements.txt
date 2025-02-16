@@ -1,12 +1,20 @@
 --no-deps --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us
 
 ipex-llm[cpp]
-torch==2.2.0
-torchvision==0.18.1
-torchaudio==2.3.1
+#torch==2.2.0
+torchvision<=0.18.1
+torchaudio<=2.3.1
 intel-extension-for-pytorch==2.3.110+xpu
 oneccl_bind_pt==2.3.100+xpu
 intel-extension-for-transformers
+
+#ipex-llm[cpp]
+#torch==2.3.1
+#torchvision==0.18.1
+#torchaudio==2.3.1
+#intel-extension-for-pytorch==2.3.110+xpu
+#oneccl_bind_pt==2.3.100+xpu
+i#ntel-extension-for-transformers
 
 #torch==2.5.1
 #torchvision==0.20.1
