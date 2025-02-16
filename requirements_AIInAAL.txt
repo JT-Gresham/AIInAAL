@@ -1,4 +1,4 @@
---extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/cn
+--extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us
 
 torch==2.5.1
 torchvision==0.20.1
