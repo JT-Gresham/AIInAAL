@@ -24,7 +24,8 @@ echo ""
 echo "Cloning official $aiinaalpkg repository to $aiinaalpkg"
 
 #### GIT CLONE COMMAND  URL HERE ####
-wget -O - https://github.com/crewAIInc/crewAI/archive/master.tar.gz | tar -xz --strip=2 "crewAI-main/src/crewai"
+#wget -O - https://github.com/crewAIInc/crewAI/archive/master.tar.gz | tar -xz --strip=2 "crewAI-main/src/crewai"
+git clone "https://github.com/strnad/CrewAI-Studio.git"
 cp -R /tmp/crewai/* $AIInAALdir/$aiinaalpkg/
 cp $AIInAALdir/Scripts/crewai $AIInAALdir/AIInAAL_env/bin/
 sed -i "s|10062024|#!$AIInAALdir/$aiinaalpkg|g" $AIInAALdir/AIInAAL_env/bin/crewai
@@ -33,13 +34,13 @@ cd $AIInAALdir/$aiinaalpkg
 source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg
 echo ""
 echo "Applying AIInAAL modifications to original $aiinaalpkg..."
-cp -n "$AIInAALdir/$aiinaalpkg/user_customize_CrewAI_example.sh" "$AIInAALdir/$aiinaalpkg/user_customize_CrewAI.sh"
+cp -n "$AIInAALdir/"$aiinaalpkg"/user_customize_CrewAI_example.sh" "$AIInAALdir/"$aiinaalpkg"/user_customize_CrewAI.sh"
 AIInAAL_update_$aiinaalpkg
 #echo ""
-#echo "Installing packages from requirements_versions.txt..."
+#echo "Installing packages from requirements.txt..."
 cd $AIInAALdir/$aiinaalpkg
 #sleep 1
-#pip install -r requirements_versions.txt
+#pip install -r requirements.txt
 pip install -r requirements_$aiinaalpkg.txt
 #echo ""
 #echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
