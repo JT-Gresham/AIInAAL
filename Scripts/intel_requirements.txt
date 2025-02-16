@@ -1,6 +1,6 @@
 --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us
 
-ipex-llm[cpp]
+ipex-llm[cpp]==2.2.0b20250204
 #torch==2.2.0
 torchvision<=0.17.1
 torchaudio<=2.3.1
