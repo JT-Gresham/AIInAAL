@@ -10,7 +10,6 @@ source /etc/AIInAAL/AIInAAL_path
 
 # Activate AIInAAL python environment
 source $AIInAALdir/AIInAAL_env/bin/activate
-
 touch $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/torch
 cd $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/torch
 
@@ -40,6 +39,7 @@ export _GLIBCXX_USE_CXX11_ABI=1
 
 # pytorch build from source
 export CMAKE_PREFIX_PATH="$AIInAALdir/AIInAAL_env"
+#export USE_MPI=0
 python setup.py develop
 cd ..
 

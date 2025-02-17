@@ -3,4 +3,4 @@ lark>=1.1.5
 transformers>=4.34.0
 open-webui
 openvino
-ipex-llm[cpp]==2.2.0b20250204
+#ipex-llm[cpp]==2.2.0b20250204
