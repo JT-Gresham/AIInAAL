@@ -18,6 +18,12 @@ source AIInAAL/libref
 #  Change into the ComfyUI directory for the next part.
 #cd ComfyUI/modules
 
+#   If you already have Fooocus installed in AIInAAL then uncomment the below to tie in your custom styles and wildcards
+#rm -r $pdirectory/AIInAAL/ComfyUI/custom_nodes/Fooocus_Nodes/sdxl_styles
+#rm -r $pdirectory/AIInAAL/ComfyUI/custom_nodes/Fooocus_Nodes/wildcards
+#ln -sf $pdirectory/shared/sdxl_styles/Fooocus/ $pdirectory/AIInAAL/ComfyUI/custom_nodes/Fooocus_Nodes/sdxl_styles
+#ln -sf $pdirectory/shared/wildcards/ $pdirectory/AIInAAL/ComfyUI/custom_nodes/Fooocus_Nodes/wildcards
+
 #  Since my name is both capital letters, I need to make a change into a ComfyUI file so it will recognize my name as "JT" ...not "Jt" (only if needed)
 #    Coding note: The \x27 that you see everywhere is an ASCII escape...necessary for sed to process strings with single quotes in them.
 
