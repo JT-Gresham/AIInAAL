@@ -47,7 +47,7 @@ ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/vae"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/vae_approx"
 ln -sf "$AIInAALdir/shared/upscale_models/" "$AIInAALdir/$aiinaalpkg/models/upscale_models"
 ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/sams/" "$AIInAALdir/$aiinaalpkg/models/sams"
-ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/ultralytic" "$AIInAALdir/$aiinaalpkg/models/ultralytics"
+ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/ultralytics" "$AIInAALdir/$aiinaalpkg/models/ultralytics"
 ln -sf "$AIInAALdir/shared/output/ComfyUI/" "$AIInAALdir/$aiinaalpkg/output"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
