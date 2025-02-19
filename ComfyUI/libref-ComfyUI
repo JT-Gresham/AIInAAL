@@ -52,6 +52,8 @@ ln -sf "$AIInAALdir/shared/output/ComfyUI/" "$AIInAALdir/$aiinaalpkg/output"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 cd $AIInAALdir/$aiinaalpkg
+outputdir=$(echo $(date +%Y)"-"$(date +%m)"-"$(date +%d))
+mkdir -p "output/"$outputdir
 }
 
 ComfyUI-exit () {
