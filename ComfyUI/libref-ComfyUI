@@ -19,7 +19,14 @@ AIInAAL_update_ComfyUI () {
     then
       echo "Intel extensions found in launch.py...skipping"
     else
-      sed -i 's|import logging|import logging\n\nimport torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\n#torch.backends.cuda.allow_fp16_bf16_reduction_math_sdp(True)\n|g' main.py
+      sed -i 's|import logging|import logging\n\nimport torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n|g' main.py
+  fi
+  cd custom_nodes/comfyui-manager
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" prestartup_script.py
+    then
+      echo "Intel extensions found in launch.py...skipping"
+    else
+      sed -i 's|print("** ComfyUI-Manager config path:", manager_config_path)|print("** ComfyUI-Manager config path:", manager_config_path)\n\nimport torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n|g' prestartup_script.py
   fi
 
 rm -R "$AIInAALdir/$aiinaalpkg/models/checkpoints"
@@ -39,7 +46,7 @@ ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/chec
 ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/loras"
 ln -sf "$AIInAALdir/shared/clip_vision" "$AIInAALdir/$aiinaalpkg/models/clip_vision"
 ln -sf "$AIInAALdir/shared/controlnet" "$AIInAALdir/$aiinaalpkg/models/controlnet"
-ln -sf "$AIInAALdir/shared/wildcards/Fooocus/" "$AIInAALdir/$aiinaalpkg/wildcards"
+ln -sf "$AIInAALdir/shared/wildcards/" "$AIInAALdir/$aiinaalpkg/wildcards"
 mkdir "$AIInAALdir/$aiinaalpkg/user"
 ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/user/" "$AIInAALdir/$aiinaalpkg/user/default"
 ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/custom_nodes/" "$AIInAALdir/$aiinaalpkg/custom_nodes"

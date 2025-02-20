@@ -37,7 +37,7 @@ ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/Stab
 ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/Lora"
 #ln -sf "$AIInAALdir/shared/clip_vision" "$AIInAALdir/$aiinaalpkg/models/clip_vision"
 #ln -sf "$AIInAALdir/shared/controlnet" "$AIInAALdir/$aiinaalpkg/models/controlnet"
-#ln -sf "$AIInAALdir/shared/wildcards/Fooocus/" "$AIInAALdir/$aiinaalpkg/wildcards"
+#ln -sf "$AIInAALdir/shared/wildcards/" "$AIInAALdir/$aiinaalpkg/wildcards"
 #ln -sf "$AIInAALdir/shared/sdxl_styles/$aiinaalpkg" "$AIInAALdir/$aiinaalpkg/sdxl_styles"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/prompt_expansion/" "$AIInAALdir/$aiinaalpkg/models/prompt_expansion"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/VAE"
