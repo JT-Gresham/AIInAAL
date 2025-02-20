@@ -18,6 +18,7 @@ oneccl_bind_pt==2.3.100+xpu
 intel-extension-for-transformers
 tensorflow #==2.15.0
 intel-extension-for-tensorflow[xpu]
+ipex-llm[cpp]==2.2.0b20250204
 
 #torch==2.5.1
 #torchvision==0.20.1
