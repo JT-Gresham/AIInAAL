@@ -24,6 +24,12 @@ source AIInAAL/libref
 #ln -sf $pdirectory/shared/sdxl_styles/Fooocus/ $pdirectory/AIInAAL/ComfyUI/custom_nodes/Fooocus_Nodes/sdxl_styles
 #ln -sf $pdirectory/shared/wildcards/ $pdirectory/AIInAAL/ComfyUI/custom_nodes/Fooocus_Nodes/wildcards
 
+# If you already have OmniGen installed in AIInAAL then uncomment the code below and install the OmniGen-ComfyUI by AFISH custom nodes in ComfyUI. This will tie in your existing installation. Make sure to get the right one since there's several packages available.
+#rm -r $pdirectory/AIInAAL/ComfyUI/custom_nodes/OmniGen-ComfyUI/OmniGen
+#ln -sf $pdirectory/AIInAAL/OmniGen/OmniGen/ $pdirectory/AIInAAL/ComfyUI/custom_nodes/OmniGen-ComfyUI/OmniGen
+#### MODEL SPECIFIC - I have renamed my OmniGen model to OmniGen-v1.safetensors...you must change the name in the link below to match yours.
+#ln -sf $pdirectory/AIInAAL/shared/LLMs/OmniGen/OmniGen-v1.safetensors $pdirectory/AIInAAL/ComfyUI/models/OmniGen/OmniGen-v1/model.safetensors
+
 #  Since my name is both capital letters, I need to make a change into a ComfyUI file so it will recognize my name as "JT" ...not "Jt" (only if needed)
 #    Coding note: The \x27 that you see everywhere is an ASCII escape...necessary for sed to process strings with single quotes in them.
 
