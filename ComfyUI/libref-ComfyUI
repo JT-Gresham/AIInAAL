@@ -28,39 +28,42 @@ AIInAAL_update_ComfyUI () {
     else
       sed -i 's|print("** ComfyUI-Manager config path:", manager_config_path)|print("** ComfyUI-Manager config path:", manager_config_path)\n\nimport torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n|g' prestartup_script.py
   fi
+  rm pip_overrides.json
+  cp "$AIInAALdir/$aiinaalpkg/Scripts/ComfyUI_pip_overrides.txt" pip_overrides.json
 
-rm -R "$AIInAALdir/$aiinaalpkg/models/checkpoints"
-rm -R "$AIInAALdir/$aiinaalpkg/models/loras"
-rm -R "$AIInAALdir/$aiinaalpkg/models/clip_vision"
-rm -R "$AIInAALdir/$aiinaalpkg/models/controlnet"
-rm -R "$AIInAALdir/$aiinaalpkg/wildcards"
-rm -R "$AIInAALdir/$aiinaalpkg/user"
-rm -R "$AIInAALdir/$aiinaalpkg/custom_nodes"
-rm -R "$AIInAALdir/$aiinaalpkg/models/vae"
-rm -R "$AIInAALdir/$aiinaalpkg/models/vae_approx"
-rm -R "$AIInAALdir/$aiinaalpkg/models/upscale_models"
-rm -R "$AIInAALdir/$aiinaalpkg/models/sams"
-rm -R "$AIInAALdir/$aiinaalpkg/models/ultralytics"
-rm -R "$AIInAALdir/$aiinaalpkg/output"
-ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/checkpoints"
-ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/loras"
-ln -sf "$AIInAALdir/shared/clip_vision" "$AIInAALdir/$aiinaalpkg/models/clip_vision"
-ln -sf "$AIInAALdir/shared/controlnet" "$AIInAALdir/$aiinaalpkg/models/controlnet"
-ln -sf "$AIInAALdir/shared/wildcards/" "$AIInAALdir/$aiinaalpkg/wildcards"
-mkdir "$AIInAALdir/$aiinaalpkg/user"
-ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/user/" "$AIInAALdir/$aiinaalpkg/user/default"
-ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/custom_nodes/" "$AIInAALdir/$aiinaalpkg/custom_nodes"
-ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/vae"
-ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/vae_approx"
-ln -sf "$AIInAALdir/shared/upscale_models/" "$AIInAALdir/$aiinaalpkg/models/upscale_models"
-ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/sams/" "$AIInAALdir/$aiinaalpkg/models/sams"
-ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/ultralytics" "$AIInAALdir/$aiinaalpkg/models/ultralytics"
-ln -sf "$AIInAALdir/shared/output/ComfyUI/" "$AIInAALdir/$aiinaalpkg/output"
-cd $pdirectory
-$AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
-cd $AIInAALdir/$aiinaalpkg
-outputdir=$(echo $(date +%Y)"-"$(date +%m)"-"$(date +%d))
-mkdir -p "output/"$outputdir
+  cd $AIInAALdir/$aiinaalpkg
+  rm -R "$AIInAALdir/$aiinaalpkg/models/checkpoints"
+  rm -R "$AIInAALdir/$aiinaalpkg/models/loras"
+  rm -R "$AIInAALdir/$aiinaalpkg/models/clip_vision"
+  rm -R "$AIInAALdir/$aiinaalpkg/models/controlnet"
+  rm -R "$AIInAALdir/$aiinaalpkg/wildcards"
+  rm -R "$AIInAALdir/$aiinaalpkg/user"
+  rm -R "$AIInAALdir/$aiinaalpkg/custom_nodes"
+  rm -R "$AIInAALdir/$aiinaalpkg/models/vae"
+  rm -R "$AIInAALdir/$aiinaalpkg/models/vae_approx"
+  rm -R "$AIInAALdir/$aiinaalpkg/models/upscale_models"
+  rm -R "$AIInAALdir/$aiinaalpkg/models/sams"
+  rm -R "$AIInAALdir/$aiinaalpkg/models/ultralytics"
+  rm -R "$AIInAALdir/$aiinaalpkg/output"
+  ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/checkpoints"
+  ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/loras"
+  ln -sf "$AIInAALdir/shared/clip_vision" "$AIInAALdir/$aiinaalpkg/models/clip_vision"
+  ln -sf "$AIInAALdir/shared/controlnet" "$AIInAALdir/$aiinaalpkg/models/controlnet"
+  ln -sf "$AIInAALdir/shared/wildcards/" "$AIInAALdir/$aiinaalpkg/wildcards"
+  mkdir "$AIInAALdir/$aiinaalpkg/user"
+  ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/user/" "$AIInAALdir/$aiinaalpkg/user/default"
+  ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/custom_nodes/" "$AIInAALdir/$aiinaalpkg/custom_nodes"
+  ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/vae"
+  ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/vae_approx"
+  ln -sf "$AIInAALdir/shared/upscale_models/" "$AIInAALdir/$aiinaalpkg/models/upscale_models"
+  ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/sams/" "$AIInAALdir/$aiinaalpkg/models/sams"
+  ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/ultralytics" "$AIInAALdir/$aiinaalpkg/models/ultralytics"
+  ln -sf "$AIInAALdir/shared/output/ComfyUI/" "$AIInAALdir/$aiinaalpkg/output"
+  cd $pdirectory
+  $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+  cd $AIInAALdir/$aiinaalpkg
+  outputdir=$(echo $(date +%Y)"-"$(date +%m)"-"$(date +%d))
+  mkdir -p "output/"$outputdir
 }
 
 ComfyUI-exit () {
