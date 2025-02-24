@@ -29,7 +29,7 @@ AIInAAL_update_ComfyUI () {
       sed -i 's|print("** ComfyUI-Manager config path:", manager_config_path)|print("** ComfyUI-Manager config path:", manager_config_path)\n\nimport torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n|g' prestartup_script.py
   fi
   rm pip_overrides.json
-  cp -f $AIInAALdir/Scripts/pip_overrides.json $AIInAALdir/shared/configs/ComfyUI/custom_nodes/
+  cp -f $AIInAALdir/Scripts/pip_overrides.json $AIInAALdir/shared/configs/ComfyUI/custom_nodes/comfyui-manager/
 
   cd $AIInAALdir/$aiinaalpkg
   rm -R "$AIInAALdir/$aiinaalpkg/models/checkpoints"
