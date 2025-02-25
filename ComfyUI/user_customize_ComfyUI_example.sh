@@ -30,20 +30,7 @@ source AIInAAL/libref
 #### MODEL SPECIFIC - I have renamed my OmniGen model to OmniGen-v1.safetensors...you must change the name in the link below to match yours.
 #ln -sf $pdirectory/AIInAAL/shared/LLMs/OmniGen/OmniGen-v1.safetensors $pdirectory/AIInAAL/ComfyUI/models/OmniGen/OmniGen-v1/model.safetensors
 
-#  Since my name is both capital letters, I need to make a change into a ComfyUI file so it will recognize my name as "JT" ...not "Jt" (only if needed)
-#    Coding note: The \x27 that you see everywhere is an ASCII escape...necessary for sed to process strings with single quotes in them.
-
-#  if grep -Fxq "k = k.replace('Jt', 'JT')" sdxl_styles.py
-#    then
-#      echo "JT correction entry found in sdxl_styles.py...skipping"
-#    else
-#      sed -i 's|k = k.replace(\x27(s\x27, \x27(S\x27)|k = k.replace(\x27(s\x27, \x27(S\x27)\n    k = k.replace(\x27Jt\x27, \x27JT\x27)|g' sdxl_styles.py
-#  fi
-
-#  Lastly, I want ComfyUI to make sure to add my styles only if needed...the 'if' statement makes sure there isn't duplicate lines of code added. 
-#  if grep -Fxq "sdxl_styles_JT.json" sdxl_styles.py
-#    then
-#      echo "JT styles entry found in sdxl_styles.py...skipping"
-#    else
-#      sed -i 's|\x27sdxl_styles_sai.json\x27,|\x27sdxl_styles_sai.json\x27,\n          \x27sdxl_styles_JT.json\x27,|g' sdxl_styles.py
-#  fi
+#### Creates a new output folder with today's date
+#cd $pdirectory/AIInAAL/ComfyUI
+#outputdir=$(echo $(date +%Y)"-"$(date +%m)"-"$(date +%d))
+#mkdir -p "output/Remote/"$outputdir
