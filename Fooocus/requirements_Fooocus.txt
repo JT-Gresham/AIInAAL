@@ -31,7 +31,6 @@ spandrel-extra-arches==0.1.1
 tomesd==0.1.3
 torchdiffeq==0.2.3
 transformers==4.46.1
-httpx==0.24.1
 pillow-avif-plugin==1.4.3
 diffusers==0.31.0
 gradio_rangeslider==0.0.6
