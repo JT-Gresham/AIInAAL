@@ -2,6 +2,7 @@
 
 source /etc/AIInAAL/AIInAAL_path
 aiinaalpkg=Fooocus
+export GRADIO_SERVER_PORT=7865
 
 AIInAAL_update_Fooocus () {
   cd $AIInAALdir/$aiinaalpkg
