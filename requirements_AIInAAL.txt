@@ -10,7 +10,8 @@
 mkl-dpcpp
 transformers
 intel-extension-for-transformers
-tensorflow-intel
-intel-extension-for-tensorflow[xpu]
+#tensorflow==2.15.0
+#tensorflow-intel
+#intel-extension-for-tensorflow[xpu]
 PyQt5
 PyQtWebEngine
