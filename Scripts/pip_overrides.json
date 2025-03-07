@@ -1,4 +1,5 @@
 {
         "onnxruntime": "onnxruntime-openvino",
+        "tensorflow": "tensorflow-intel",
         "tf-keras": "keras"
 }

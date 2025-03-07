@@ -15,7 +15,7 @@ torchaudio==2.3.1
 intel-extension-for-pytorch==2.3.110+xpu
 oneccl_bind_pt==2.3.100+xpu
 intel-extension-for-transformers
-mkl-dpcpp==2025.0.1
+mkl-dpcpp
 openvino
 onnxruntime-openvino
 
