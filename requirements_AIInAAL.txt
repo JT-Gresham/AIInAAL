@@ -7,7 +7,7 @@
 #intel-extension-for-pytorch==2.5.10+xpu
 #oneccl_bind_pt==2.5.0+xpu
 
-mkl-dpcpp==2024.2.1
+mkl-dpcpp==2025.0.1
 transformers
 intel-extension-for-transformers
 tensorflow==2.15.0
