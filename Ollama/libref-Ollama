@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source /etc/AIInAAL/AIInAAL_path
+source $AIInAALdir/AIInAAL_env_inf/bin/ipex-llm-init -g --device Arc
 aiinaalpkg=Ollama
 
 export OLLAMA_NUM_GPU=999
@@ -27,6 +28,7 @@ AIInAAL_update_Ollama () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Ollama/libref-$aiinaalpkg
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Ollama/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Ollama/requirements_$aiinaalpkg.txt
+AIInAAL_update_Intel_inf
   pip install -r requirements_$aiinaalpkg.txt
   cd $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
   if grep -Fxq "import intel_extension_for_pytorch as ipex" __init__.py
