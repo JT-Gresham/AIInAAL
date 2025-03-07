@@ -1,3 +1,4 @@
 {
-        "onnxruntime": "onnxruntime-openvino"
+        "onnxruntime": "onnxruntime-openvino",
+        "tf-keras": "keras"
 }
