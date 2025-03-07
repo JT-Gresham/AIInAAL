@@ -42,11 +42,16 @@ echo "    Scripts/librefgen" >> $AIInAALdir/libref
 echo "    pip install --upgrade pip" >> $AIInAALdir/libref
 echo "    rm -R \"\$hfcache\"" >> $AIInAALdir/libref
 echo "    ln -sf \"$AIInAALdir/shared/HF\" \"\$hfcache\"" >> $AIInAALdir/libref
-echo "    AIInAAL_update_Intel" >> $AIInAALdir/libref
+######## Removed Intel update function call due to split environments. This must now be done in the AIInAAL package updater.
+#echo "    AIInAAL_update_Intel" >> $AIInAALdir/libref
 echo "}" >> $AIInAALdir/libref
 
 echo "AIInAAL_update_Intel () {" >> $AIInAALdir/libref
 echo "    pip install --upgrade -r $AIInAALdir/Scripts/intel_requirements.txt" >> $AIInAALdir/libref
+echo "}" >> $AIInAALdir/libref
+
+echo "AIInAAL_update_Intel_inf () {" >> $AIInAALdir/libref
+echo "    pip install --upgrade -r $AIInAALdir/Scripts/intel_requirements_inf.txt" >> $AIInAALdir/libref
 echo "}" >> $AIInAALdir/libref
 
 echo "EOF_fix () {" >> $AIInAALdir/libref
