@@ -1,1 +1,2 @@
 intel-extension-for-transformers
+comfyui-frontend-package
