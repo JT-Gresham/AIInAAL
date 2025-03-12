@@ -17,19 +17,19 @@ AIInAAL_update_ComfyUI () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/ComfyUI/requirements_$aiinaalpkg.txt
   pip install -r requirements_$aiinaalpkg.txt
   AIInAAL_update_Intel
-  if grep -Fxq "import intel_extension_for_pytorch as ipex" main.py
-    then
-      echo "Intel extensions found in launch.py...skipping"
-    else
-      sed -i 's|import logging|import logging\n\nimport torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n|g' main.py
-  fi
-  cd $AIInAALdir/shared/configs/ComfyUI/custom_nodes/comfyui-manager
-  if grep -Fxq "import intel_extension_for_pytorch as ipex" prestartup_script.py
-    then
-      echo "Intel extensions found in prestartup_script.py...skipping"
-    else
-      sed -i 's|import folder_paths|import folder_paths\n\nimport torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n|g' prestartup_script.py
-  fi
+#  if grep -Fxq "import intel_extension_for_pytorch as ipex" main.py
+#    then
+#      echo "Intel extensions found in launch.py...skipping"
+#    else
+#      sed -i 's|import logging|import logging\n\nimport torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n|g' main.py
+#  fi
+#  cd $AIInAALdir/shared/configs/ComfyUI/custom_nodes/comfyui-manager
+#  if grep -Fxq "import intel_extension_for_pytorch as ipex" prestartup_script.py
+#    then
+#      echo "Intel extensions found in prestartup_script.py...skipping"
+#    else
+#      sed -i 's|import folder_paths|import folder_paths\n\nimport torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n|g' prestartup_script.py
+#  fi
   rm pip_overrides.json
   cp -f $AIInAALdir/Scripts/pip_overrides.json $AIInAALdir/shared/configs/ComfyUI/custom_nodes/comfyui-manager/
 
