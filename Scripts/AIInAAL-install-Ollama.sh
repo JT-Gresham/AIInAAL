@@ -66,6 +66,8 @@ echo "source $AIInAALdir/AIInAAL_env_inf/bin/activate" >> $AIInAALdir/$aiinaalpk
 echo "AIInAAL_update" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 
 #### Executable below
+echo "export OLLAMA_NUM_GPU=999" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "export TORCH_DEVICE_BACKEND_AUTOLOAD=0" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "ollama serve &" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
@@ -73,7 +75,7 @@ echo "cd $AIInAALdir/$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.s
 echo "echo \"Open Web UI will start in 10 seconds. After it loads, you can open it up in your browser. (URL: localhost:8080)\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "sleep 10" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "ipexrun xpu open-webui serve" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "open-webui serve" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "Ollama_exit" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 #echo "sleep 60"
 echo "Setting the new start file to be executable. (Authorization Required)"
