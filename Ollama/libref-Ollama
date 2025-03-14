@@ -47,6 +47,6 @@ cd $AIInAALdir/$aiinaalpkg
 }
 
 Ollama_exit () {
-    kill $(pidof "ollama serve")
-    kill $(pidof "open-webui")
+    kill $(pgrep -f "ollama serve")
+    kill $(pgrep -f "open-webui")
 }
