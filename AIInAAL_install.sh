@@ -56,8 +56,8 @@ cd $pdirectory/AIInAAL
 echo ""
 echo "Creating python 3.11 environment (AIInAAL_env)"
 /usr/bin/python3.11 -m venv $pdirectory/AIInAAL/AIInAAL_env
-echo "Creating python 3.11 environment (AIInAAL_env_inf)"
-/usr/bin/python3.11 -m venv $pdirectory/AIInAAL/AIInAAL_env_inf
+#echo "Creating python 3.11 environment (AIInAAL_env_inf)"
+#/usr/bin/python3.11 -m venv $pdirectory/AIInAAL/AIInAAL_env_inf
 echo ""
 echo "Activating environment -> AIInAAL_env"
 source $pdirectory/AIInAAL/AIInAAL_env/bin/activate
@@ -73,22 +73,22 @@ echo ""
 echo "Installing packages from requirements_AIInAAL.txt..."
 pip install -r requirements_AIInAAL.txt
 echo ""
-echo "Activating environment -> AIInAAL_env_inf"
-source $pdirectory/AIInAAL/AIInAAL_env_inf/bin/activate
-echo "Installing pip..."
-cd $pdirectory/AIInAAL/Scripts
-curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py
-cd $pdirectory/AIInAAL
-echo ""
-echo "Installing wheel package..."
-pip install wheel
-echo ""
+#echo "Activating environment -> AIInAAL_env_inf"
+#source $pdirectory/AIInAAL/AIInAAL_env_inf/bin/activate
+#echo "Installing pip..."
+#cd $pdirectory/AIInAAL/Scripts
+#curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+#python get-pip.py
+#cd $pdirectory/AIInAAL
+#echo ""
+#echo "Installing wheel package..."
+#pip install wheel
+#echo ""
 echo "Installing packages from requirements_AIInAAL.txt..."
 pip install -r requirements_AIInAAL.txt
 #pip install ipex-llm[xpu]
 ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL_env/bin/
-ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL_env_inf/bin/
+#ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL_env_inf/bin/
 echo ""
 echo "Creating initial \"Shared\" directory...replace with yours afterward, if necssary (symlink allowed)"
 if [ ! -d "$pdirectory/AIInAAL/Shared" ]; then
