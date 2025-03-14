@@ -4,6 +4,7 @@ source /etc/AIInAAL/AIInAAL_path
 source $AIInAALdir/AIInAAL_env/bin/ipex-llm-init -g --device Arc
 aiinaalpkg=Ollama
 
+export SYCL_PI_LEVEL_ZERO_USE_IMMEDIATE_COMMANDLISTS=1
 export OLLAMA_NUM_GPU=999
 export OLLAMA_RUNNERS_DIR=$AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama/runners
 export no_proxy=localhost,127.0.0.1
