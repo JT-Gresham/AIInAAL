@@ -6,9 +6,9 @@ source $AIInAALdir/AIInAAL_env/bin/activate
 var1=$(echo $1)
 var2=$(echo $2)
 
-case var1 in
+case $var1 in
     install)
-        case var2 in
+        case $var2 in
             ComfyUI)
                 $AIInAALdir/Scripts/AIInAAL-install-ComfyUI.sh
             ;;
@@ -58,7 +58,7 @@ case var1 in
         esac
 ;;
     update)
-        case var2 in
+        case $var2 in
             AIInAAL)
                 source $AIInAALdir/libref
                 AIInAAL_update
@@ -82,7 +82,7 @@ case var1 in
         esac
 ;;
     run)
-        case var2 in
+        case $var2 in
             ComfyUI)
                 $AIInAALdir/ComfyUI/ComfyUI-Start.sh
             ;;
