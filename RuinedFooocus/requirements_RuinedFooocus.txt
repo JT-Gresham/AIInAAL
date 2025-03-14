@@ -1,2 +1,5 @@
-mkl
-sycl
+--index-url https://download.pytorch.org/whl/xpu
+
+torch
+torchvision
+torchaudio

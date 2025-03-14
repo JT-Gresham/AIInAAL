@@ -1,4 +1,8 @@
-mkl==2024.2.1
-intel-extension-for-transformers
+--index-url https://download.pytorch.org/whl/xpu
+
+torch
+torchvision
+torchaudio
+
 insightface
 librosa>=0.10.2

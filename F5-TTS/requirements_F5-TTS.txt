@@ -1,3 +1,9 @@
+--index-url https://download.pytorch.org/whl/xpu
+
+torch
+torchvision
+torchaudio
+
 accelerate>=0.33.0
 datasets
 einops>=0.8.0

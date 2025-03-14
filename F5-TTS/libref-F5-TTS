@@ -15,6 +15,7 @@ AIInAAL_update_F5-TTS () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/F5-TTS/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/F5-TTS/requirements_$aiinaalpkg.txt
   pip install -r requirements_$aiinaalpkg.txt
+  AIInAAL_update_Intel
   if grep -Fxq "import intel_extension_for_pytorch as ipex" app_local.py
     then
       echo "Intel extensions found in app_local.py...skipping"

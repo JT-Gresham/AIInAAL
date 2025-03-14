@@ -1,4 +1,9 @@
-intel-extension-for-transformers
+--index-url https://download.pytorch.org/whl/xpu
+
+torch
+torchvision
+torchaudio
+
 einops==0.8.0
 pydantic==2.9.2
 setuptools==69.5.1  # temp fix for compatibility with some old packages

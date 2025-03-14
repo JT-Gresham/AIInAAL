@@ -1,8 +1,14 @@
+--index-url https://download.pytorch.org/whl/xpu
+
+torch
+torchvision
+torchaudio
+
 onnxruntime-openvino>=1.17.1
 numpy>=1.26.4
 gradio>=5.9.1
 opencv-python-headless>=4.10.0.84
-onnx>=1.16.1
+#onnx>=1.16.1
 insightface>=0.7.3
 albucore==0.0.16
 psutil>=5.9.6

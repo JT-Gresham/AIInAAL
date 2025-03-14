@@ -1,5 +1,9 @@
-intel-extension-for-transformers
-mkl==2024.2.1
+--index-url https://download.pytorch.org/whl/xpu
+
+torch
+torchvision
+torchaudio
+
 transformers>=4.45.2
 datasets>=2.20.0
 accelerate>=0.26.1
