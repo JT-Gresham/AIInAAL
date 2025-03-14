@@ -30,8 +30,6 @@ AIInAAL_update_ComfyUI () {
 #    else
 #      sed -i 's|import folder_paths|import folder_paths\n\nimport torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n|g' prestartup_script.py
 #  fi
-  rm pip_overrides.json
-  cp -f $AIInAALdir/Scripts/pip_overrides.json $AIInAALdir/shared/configs/ComfyUI/custom_nodes/comfyui-manager/
 
   cd $AIInAALdir/$aiinaalpkg
   rm -R "$AIInAALdir/$aiinaalpkg/models/checkpoints"
@@ -47,6 +45,7 @@ AIInAAL_update_ComfyUI () {
   rm -R "$AIInAALdir/$aiinaalpkg/models/sams"
   rm -R "$AIInAALdir/$aiinaalpkg/models/ultralytics"
   rm -R "$AIInAALdir/$aiinaalpkg/output"
+  rm custom_nodes/comfyui-manager/pip_overrides.json
   ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/models/checkpoints"
   ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/loras"
   ln -sf "$AIInAALdir/shared/clip_vision" "$AIInAALdir/$aiinaalpkg/models/clip_vision"
@@ -61,6 +60,7 @@ AIInAAL_update_ComfyUI () {
   ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/sams/" "$AIInAALdir/$aiinaalpkg/models/sams"
   ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/ultralytics" "$AIInAALdir/$aiinaalpkg/models/ultralytics"
   ln -sf "$AIInAALdir/shared/output/ComfyUI/" "$AIInAALdir/$aiinaalpkg/output"
+  cp -f $AIInAALdir/Scripts/pip_overrides.json $AIInAALdir/$aiinaalpkg/custom_nodes/comfyui-manager/
   cd $pdirectory
   $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
   cd $AIInAALdir/$aiinaalpkg
