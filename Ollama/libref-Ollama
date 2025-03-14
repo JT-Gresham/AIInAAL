@@ -28,15 +28,15 @@ AIInAAL_update_Ollama () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Ollama/libref-$aiinaalpkg
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Ollama/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Ollama/requirements_$aiinaalpkg.txt
-  pip install -r requirements_$aiinaalpkg.txt
+  pip install -r --upgrade requirements_$aiinaalpkg.txt
   AIInAAL_update_Intel
   cd $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
-  if grep -Fxq "import intel_extension_for_pytorch as ipex" __init__.py
-    then
-      echo "Intel extensions found in __init__.py...skipping"
-    else
-      sed -i 's|from ollama._client import AsyncClient, Client|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_tensorflow as itex\n\nfrom ollama._client import AsyncClient, Client\n|g' __init__.py
-  fi
+#  if grep -Fxq "import intel_extension_for_pytorch as ipex" __init__.py
+#    then
+#      echo "Intel extensions found in __init__.py...skipping"
+#    else
+#      sed -i 's|from ollama._client import AsyncClient, Client|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_tensorflow as itex\n\nfrom ollama._client import AsyncClient, Client\n|g' __init__.py
+#  fi
   cd $AIInAALdir/$aiinaalpkg
 rm -Rf "$AIInAALdir/$aiinaalpkg/models"
 ln -sf "$AIInAALdir/shared/LLMs/Ollama" "$AIInAALdir/$aiinaalpkg/models"

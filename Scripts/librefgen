@@ -8,7 +8,7 @@ echo "Regenerating LIBREF..."
 echo "pdirectory=$pdirectory" > $AIInAALdir/libref
 echo "AIInAALdir=$AIInAALdir" >> $AIInAALdir/libref
 echo "" >> $AIInAALdir/libref
-echo "export LD_LIBRARY_PATH=/lib:/lib/python3.11/site-packages/onnxruntime:\"$LD_LIBRARY_PATH\"" >> $AIInAALdir/libref
+echo "export LD_LIBRARY_PATH=/lib/python3.11/site-packages:\"$LD_LIBRARY_PATH\"" >> $AIInAALdir/libref
 #echo "export LLM_DIR=$AIInAALdir_env/lib/python3.11/site-packages/intel_extension_for_pytorch/llm" >> $AIInAALdir/libref
 #echo "rm \"$AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ipex_llm\"" >> $AIInAALdir/libref
 #echo "ln -sf \"$AIInAALdir_env/lib/python3.11/site-packages/intel_extension_for_pytorch/llm/\" \"$AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ipex_llm\"" >> $AIInAALdir/libref
