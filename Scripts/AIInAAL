@@ -74,10 +74,10 @@ case $var1 in
                 pip install --upgrade -r $AIInAALdir/Scripts/intel_requirements.txt
             ;;
             Torch)
-                pip install --upgrade -r torch torchvision torchaudio --index-url https://download.pytorch.org/whl/xpu
+                pip install --upgrade torch torchvision torchaudio --index-url https://download.pytorch.org/whl/xpu
             ;;
             torch)
-                pip install --upgrade -r torch torchvision torchaudio --index-url https://download.pytorch.org/whl/xpu
+                pip install --upgrade torch torchvision torchaudio --index-url https://download.pytorch.org/whl/xpu
             ;;
         esac
 ;;
