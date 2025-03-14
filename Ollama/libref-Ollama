@@ -31,7 +31,7 @@ AIInAAL_update_Ollama () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Ollama/requirements_$aiinaalpkg.txt
   AIInAAL update Torch
   pip install --upgrade -r requirements_$aiinaalpkg.txt
-  AIInAAL_update_Intel
+  AIInAAL update Intel
   cd $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
 #  if grep -Fxq "import intel_extension_for_pytorch as ipex" __init__.py
 #    then

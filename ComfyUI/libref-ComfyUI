@@ -17,7 +17,7 @@ AIInAAL_update_ComfyUI () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/ComfyUI/requirements_$aiinaalpkg.txt
   AIInAAL update Torch
   pip install -r requirements_$aiinaalpkg.txt
-  AIInAAL_update_Intel
+  AIInAAL update Intel
 #  if grep -Fxq "import intel_extension_for_pytorch as ipex" main.py
 #    then
 #      echo "Intel extensions found in launch.py...skipping"

@@ -39,8 +39,10 @@ echo ""
 echo "Installing packages from requirements.txt..."
 cd $AIInAALdir/$aiinaalpkg
 sleep 1
+AIInAAL update Torch
 pip install -r requirements.txt
 pip install -r requirements_$aiinaalpkg.txt
+AIInAAL update Intel
 echo ""
 echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
 cp "user_customize_"$aiinaalpkg"_example.sh" "user_customize_"$aiinaalpkg".sh"

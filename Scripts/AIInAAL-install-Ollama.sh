@@ -45,8 +45,9 @@ echo ""
 #cp -n "$AIInAALdir/$aiinaalpkg/user_customize_Ollama_example.sh" "$AIInAALdir/$aiinaalpkg/user_customize_Ollama.sh"
 AIInAAL_update_$aiinaalpkg
 cd $AIInAALdir/$aiinaalpkg
+AIInAAL update Torch
 pip install -r requirements_$aiinaalpkg.txt
-pip install -r ../Scripts/intel_requirements.txt
+AIInAAL update Intel
 
 mkdir -p "$AIInAALdir/$aiinaalpkg/.ollama/models"
 ln -sf "$AIInAALdir/$aiinaalpkg/" "/home/$aiinaaluser/.ollama"
