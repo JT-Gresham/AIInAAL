@@ -58,11 +58,6 @@ echo "Creating python 3.11 environment (AIInAAL_env)"
 /usr/bin/python3.11 -m venv $pdirectory/AIInAAL/AIInAAL_env
 #echo "Creating python 3.11 environment (AIInAAL_env_inf)"
 #/usr/bin/python3.11 -m venv $pdirectory/AIInAAL/AIInAAL_env_inf
-echo "Initializing the AIInAAL command."
-cp $pdirectory/Scripts/AIInAAL $pdirectory/AIInAAL/AIInAAL_env/bin/
-sudo ln -sf $pdirectory/AIInAAL/AIInAAL_env/bin/AIInAAL /bin/AIInAAL
-sudo chmod +x /bin/AIInAAL
-sudo chmod +x $pdirectory/AIInAAL/AIInAAL_env/bin/AIInAAL
 echo ""
 echo "Activating environment -> AIInAAL_env"
 source $pdirectory/AIInAAL/AIInAAL_env/bin/activate
@@ -95,6 +90,11 @@ pip install -r requirements_AIInAAL.txt
 ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL_env/bin/
 #ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL_env_inf/bin/
 echo ""
+echo "Initializing the AIInAAL command."
+cp $pdirectory/AIInAAL/Scripts/AIInAAL $pdirectory/AIInAAL/AIInAAL_env/bin/
+sudo ln -sf $pdirectory/AIInAAL/AIInAAL_env/bin/AIInAAL /bin/AIInAAL
+sudo chmod +x /bin/AIInAAL
+sudo chmod +x $pdirectory/AIInAAL/AIInAAL_env/bin/AIInAAL
 echo "Creating initial \"Shared\" directory...replace with yours afterward, if necssary (symlink allowed)"
 if [ ! -d "$pdirectory/AIInAAL/Shared" ]; then
   mv ./shared1 ./shared
