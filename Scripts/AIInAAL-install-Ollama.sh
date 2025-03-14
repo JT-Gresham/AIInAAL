@@ -71,6 +71,7 @@ echo "#export OLLAMA_DEBUG=1" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "#export OLLAMA_USE_OPENVINO=true" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "#export OLLAMA_USE_DEVICE=0" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "export OLLAMA_DISABLE_CPU=1" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "export OLLAMA_INTEL_GPU=true" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "export OLLAMA_NUM_GPU=999" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "export OLLAMA_NUM_GPU_LAYERS=9999" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "export TORCH_DEVICE_BACKEND_AUTOLOAD=0" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
