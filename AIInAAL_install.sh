@@ -91,9 +91,9 @@ ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL_env
 #ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL_env_inf/bin/
 echo ""
 echo "Initializing the AIInAAL command."
-cp $pdirectory/AIInAAL/Scripts/AIInAAL $pdirectory/AIInAAL/AIInAAL_env/bin/
+ln -sf $pdirectory/AIInAAL/Scripts/AIInAAL $pdirectory/AIInAAL/AIInAAL_env/bin/AIInAAL
 sudo ln -sf $pdirectory/AIInAAL/AIInAAL_env/bin/AIInAAL /bin/AIInAAL
-sudo chmod +x /bin/AIInAAL
+#sudo chmod +x /bin/AIInAAL
 sudo chmod +x $pdirectory/AIInAAL/AIInAAL_env/bin/AIInAAL
 echo "Creating initial \"Shared\" directory...replace with yours afterward, if necssary (symlink allowed)"
 if [ ! -d "$pdirectory/AIInAAL/Shared" ]; then

@@ -60,9 +60,11 @@ case var1 in
     update)
         case var2 in
             AIInAAL)
+                source $AIInAALdir/libref
                 AIInAAL_update
             ;;
             aiinaal)
+                source $AIInAALdir/libref
                 AIInAAL_update
             ;;
             Intel)
