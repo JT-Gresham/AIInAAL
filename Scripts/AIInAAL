@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 source /etc/AIInAAL/AIInAAL_path
-source $AIInAALdir/libref
 source $AIInAALdir/AIInAAL_env/bin/activate
 
 var1=$(echo $1)
