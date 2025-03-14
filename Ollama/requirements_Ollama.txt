@@ -2,13 +2,8 @@ ollama
 lark>=1.1.5
 transformers>=4.34.0
 open-webui
-onnxruntime
+#onnxruntime
 #openvino
 #onnxruntime-openvino
 #ipex-llm[cpp]==2.2.0b20250204
-
-torch --index-url https://download.pytorch.org/whl/xpu
-torchvision  --index-url https://download.pytorch.org/whl/xpu
-torchaudio  --index-url https://download.pytorch.org/whl/xpu
-
 

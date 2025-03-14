@@ -58,6 +58,11 @@ echo "Creating python 3.11 environment (AIInAAL_env)"
 /usr/bin/python3.11 -m venv $pdirectory/AIInAAL/AIInAAL_env
 #echo "Creating python 3.11 environment (AIInAAL_env_inf)"
 #/usr/bin/python3.11 -m venv $pdirectory/AIInAAL/AIInAAL_env_inf
+echo "Initializing the AIInAAL command."
+cp $pdirectory/Scripts/AIInAAL $pdirectory/AIInAAL/AIInAAL_env/bin/
+sudo ln -sf $pdirectory/AIInAAL/AIInAAL_env/bin/AIInAAL /bin/AIInAAL
+sudo chmod +x /bin/AIInAAL
+sudo chmod +x $pdirectory/AIInAAL/AIInAAL_env/bin/AIInAAL
 echo ""
 echo "Activating environment -> AIInAAL_env"
 source $pdirectory/AIInAAL/AIInAAL_env/bin/activate
@@ -92,7 +97,7 @@ ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL_env
 echo ""
 echo "Creating initial \"Shared\" directory...replace with yours afterward, if necssary (symlink allowed)"
 if [ ! -d "$pdirectory/AIInAAL/Shared" ]; then
-  mv ./Shared1 ./Shared
+  mv ./shared1 ./shared
 fi
 echo "AIInAAL framework is now installed. AI program installers are located in the \"Scripts\" directory."
 echo "AIInAAL is updated \(if necessary\) whenever a framework program is started, however..."

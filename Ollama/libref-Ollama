@@ -29,6 +29,7 @@ AIInAAL_update_Ollama () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Ollama/libref-$aiinaalpkg
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Ollama/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Ollama/requirements_$aiinaalpkg.txt
+  AIInAAL update Torch
   pip install --upgrade -r requirements_$aiinaalpkg.txt
   AIInAAL_update_Intel
   cd $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
