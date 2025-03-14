@@ -2,7 +2,7 @@
 
 source /etc/AIInAAL/AIInAAL_path
 source $AIInAALdir/libref
-source $AIInAALdir/AIInAAL_env_inf/bin/activate
+source $AIInAALdir/AIInAAL_env/bin/activate
 aiinaalpkg="Ollama"
 aiinaalpkgURL="https://ollama.com/download/ollama-linux-amd64.tgz"
 aiinaaluser=$(whoami)
@@ -31,9 +31,9 @@ tgzpkgname=$(ls | grep "tgz")
 tar -xvf $tgzpkgname
 echo ""
 echo "Copying Ollama executable to AIInAAL environment..."
-cp ./bin/ollama $AIInAALdir/AIInAAL_env_inf/bin/
+cp ./bin/ollama $AIInAALdir/AIInAAL_env/bin/
 echo "Copying library files to AIInAAL environment..."
-cp -Rf ./lib/ollama $AIInAALdir/AIInAAL_env_inf/lib/python3.11/site-packages/
+cp -Rf ./lib/ollama $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/
 echo "Cleaning up temporary files..."
 cd $AIInAALdir/$aiinaalpkg
 rm -R /tmp/Ollama
@@ -46,14 +46,15 @@ echo ""
 AIInAAL_update_$aiinaalpkg
 cd $AIInAALdir/$aiinaalpkg
 pip install -r requirements_$aiinaalpkg.txt
+pip install -r ../Scripts/intel_requirements.txt
 
 mkdir -p "$AIInAALdir/$aiinaalpkg/.ollama/models"
 ln -sf "$AIInAALdir/$aiinaalpkg/" "/home/$aiinaaluser/.ollama"
 echo "Initializing Ollama with IPEX for your GPU..."
 #Create symlinks for ipex, ollama, and openwebui
-ln -sf $AIInAALdir/AIInAAL_env_inf/bin/ipexrun ipexrun
+ln -sf $AIInAALdir/AIInAAL_env/bin/ipexrun ipexrun
 init-ollama
-ln -sf $AIInAALdir/AIInAAL_env_inf/bin/open-webui open-webui
+ln -sf $AIInAALdir/AIInAAL_env/bin/open-webui open-webui
 echo ""
 
 echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
@@ -62,11 +63,16 @@ echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "source /etc/AIInAAL/AIInAAL_path" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "source $AIInAALdir/libref" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "source $AIInAALdir/AIInAAL_env_inf/bin/activate" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "source $AIInAALdir/AIInAAL_env/bin/activate" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 
 #### Executable below
+echo "#export OLLAMA_DEBUG=1" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "#export OLLAMA_USE_OPENVINO=true" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "#export OLLAMA_USE_DEVICE=0" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "export OLLAMA_DISABLE_CPU=1" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "export OLLAMA_NUM_GPU=999" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "export OLLAMA_NUM_GPU_LAYERS=9999" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "export TORCH_DEVICE_BACKEND_AUTOLOAD=0" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh

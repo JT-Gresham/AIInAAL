@@ -1,7 +1,6 @@
---index-url https://download.pytorch.org/whl/xpu
-
-torch
-torchvision
-torchaudio 
-
 comfyui-frontend-package
+
+torch --index-url https://download.pytorch.org/whl/xpu
+torchvision --index-url https://download.pytorch.org/whl/xpu
+torchaudio --index-url https://download.pytorch.org/whl/xpu
+
