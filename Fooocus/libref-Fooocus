@@ -15,8 +15,9 @@ AIInAAL_update_Fooocus () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Fooocus/libref-$aiinaalpkg
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Fooocus/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Fooocus/requirements_$aiinaalpkg.txt
+  AIInAAL update Torch
   pip install -r requirements_$aiinaalpkg.txt
-  AIInAAL_update_Intel
+  AIInAAL update Intel
   if grep -Fxq "import intel_extension_for_pytorch as ipex" launch.py
     then
       echo "Intel extensions found in launch.py...skipping"

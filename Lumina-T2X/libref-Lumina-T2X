@@ -14,8 +14,9 @@ AIInAAL_update_Lumina-T2X () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Lumina-T2X/libref-$aiinaalpkg
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Lumina-T2X/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Lumina-T2X/requirements_$aiinaalpkg.txt
+  AIInAAL update Torch
   pip install -r requirements_$aiinaalpkg.txt
-  AIInAAL_update_Intel
+  AIInAAL update Intel
   if grep -Fxq "import intel_extension_for_pytorch as ipex" $AIInAALdir/$aiinaalpkg/lumina_t2i/demo.py
     then
       echo "Intel extensions found in entry_point.py...skipping"

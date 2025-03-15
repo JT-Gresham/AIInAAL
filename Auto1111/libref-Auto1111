@@ -14,8 +14,9 @@ AIInAAL_update_Auto1111 () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Auto1111/libref-$aiinaalpkg
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Auto1111/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Auto1111/requirements_$aiinaalpkg.txt
+  AIInAAL update Torch
   pip install -r requirements_$aiinaalpkg.txt
-  AIInAAL_update_Intel
+  AIInAAL update Intel
   pip install --force-reinstall --no-deps 'https://github.com/bitsandbytes-foundation/bitsandbytes/releases/download/continuous-release_multi-backend-refactor/bitsandbytes-0.44.1.dev0-py3-none-manylinux_2_24_x86_64.whl'
   if grep -Fxq "import intel_extension_for_pytorch as ipex" launch.py
     then

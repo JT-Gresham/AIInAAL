@@ -14,8 +14,9 @@ AIInAAL_update_CrewAI () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/CrewAI/libref-$aiinaalpkg
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/CrewAI/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/CrewAI/requirements_$aiinaalpkg.txt
-  pip install -r --upgrade requirements_$aiinaalpkg.txt
-  AIInAAL_update_Intel
+  AIInAAL update Torch
+  pip install --upgrade -r requirements_$aiinaalpkg.txt
+  AIInAAL update Intel
   #if grep -Fxq "import intel_extension_for_pytorch as ipex" launch.py
   #  then
   #    echo "Intel extensions found in launch.py...skipping"
