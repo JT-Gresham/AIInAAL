@@ -21,6 +21,12 @@ case $var1 in
             ollama)
                 $AIInAALdir/Scripts/AIInAAL-install-Ollama.sh
             ;;
+            SwarmUI)
+                $AIInAALdir/Scripts/AIInAAL-install-SwarmUI.sh
+            ;;
+            swarmui)
+                $AIInAALdir/Scripts/AIInAAL-install-SwarmUI.sh
+            ;;
             Fooocus)
                 $AIInAALdir/Scripts/AIInAAL-install-Fooocus.sh
             ;;
@@ -53,7 +59,7 @@ case $var1 in
             ;;
             *)
                 echo "You have entered an invalid command. You may install the following:"
-                echo "ComfyUI, Ollama, OmniGen, Fooocus, RoopUL, CrewAI, F5-TTS"
+                echo "ComfyUI, Ollama, SwarmUI, OmniGen, Fooocus, RoopUL, CrewAI, F5-TTS"
             ;;
         esac
 ;;
