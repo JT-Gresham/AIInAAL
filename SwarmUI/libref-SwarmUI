@@ -67,6 +67,7 @@ rm -R "$AIInAALdir/$aiinaalpkg/Models/controlnet"
 #rm -R "$AIInAALdir/$aiinaalpkg/sdxl_styles"
 rm -R "$AIInAALdir/$aiinaalpkg/Models/VAE"
 rm -R "$AIInAALdir/$aiinaalpkg/Models/VAE-approx"
+rm -R "$AIInAALdir/$aiinaalpkg/Data/Wildcards"
 rm -R "$AIInAALdir/$aiinaalpkg/Output"
 mkdir -p $AIInAALdir/$aiinaalpkg/Output/local
 ln -sf "$AIInAALdir/shared/checkpoints/t2i" "$AIInAALdir/$aiinaalpkg/Models/Stable-Diffusion"
@@ -77,6 +78,7 @@ ln -sf "$AIInAALdir/shared/controlnet" "$AIInAALdir/$aiinaalpkg/Models/controlne
 #ln -sf "$AIInAALdir/shared/sdxl_styles/$aiinaalpkg" "$AIInAALdir/$aiinaalpkg/sdxl_styles"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/Models/VAE"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/Models/VAE-approx"
+ln -sf "$AIInAALdir/shared/wildcards/" "$AIInAALdir/$aiinaalpkg/Data/Wildcards"
 ln -sf "$AIInAALdir/shared/output/ComfyUI/" "$AIInAALdir/$aiinaalpkg/Output/local/raw"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
