@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+source /etc/AIInAAL/AIInAAL_path
+source $AIInAALdir/AIInAAL_env/bin/ipex-llm-init -g --device Arc
+aiinaalpkg=Ollama
+
+export SYCL_PI_LEVEL_ZERO_USE_IMMEDIATE_COMMANDLISTS=1
+export OLLAMA_NUM_GPU=999
+export OLLAMA_RUNNERS_DIR=$AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama/runners
+export no_proxy=localhost,127.0.0.1
+export ZES_ENABLE_SYSMAN=1
+#source /opt/intel/oneapi/setvars.sh
+export SYCL_CACHE_PERSISTENT=1
+export PATH=/llm/ollama:$PATH
+export OLLAMA_HOST=0.0.0.0
+export OLLAMA_INTEL_GPU=true
+export ONEAPI_DEVICE_SELECTOR=level_zero:0
+export DEVICE=Arc
+source /opt/intel/oneapi/setvars.sh
+
+AIInAAL_update_Ollama () {
+  cd $AIInAALdir/$aiinaalpkg
+  git fetch --all
+  git branch backup-master
+  git reset --hard origin/master
+  git pull
+  rm ./libref-$aiinaalpkg*
+  rm ./requirements_$aiinaalpkg*
+  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Ollama/libref-$aiinaalpkg
+  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Ollama/user_customize_$aiinaalpkg_example.sh
+  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Ollama/requirements_$aiinaalpkg.txt
+  AIInAAL update Torch
+  pip install --upgrade -r requirements_$aiinaalpkg.txt
+  AIInAAL update Intel
+  cd $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
+#  if grep -Fxq "import intel_extension_for_pytorch as ipex" __init__.py
+#    then
+#      echo "Intel extensions found in __init__.py...skipping"
+#    else
+#      sed -i 's|from ollama._client import AsyncClient, Client|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_tensorflow as itex\n\nfrom ollama._client import AsyncClient, Client\n|g' __init__.py
+#  fi
+  cd $AIInAALdir/$aiinaalpkg
+rm -Rf "$AIInAALdir/$aiinaalpkg/models"
+ln -sf "$AIInAALdir/shared/LLMs/Ollama" "$AIInAALdir/$aiinaalpkg/models"
+
+cd $pdirectory
+$AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+cd $AIInAALdir/$aiinaalpkg
+}
+
+Ollama_exit () {
+    kill $(pgrep -f "ollama serve")
+    kill $(pgrep -f "open-webui")
+}

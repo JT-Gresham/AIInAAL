@@ -1,0 +1,9 @@
+ollama
+lark>=1.1.5
+transformers>=4.34.0
+open-webui
+#onnxruntime
+#openvino
+#onnxruntime-openvino
+#ipex-llm[cpp]==2.2.0b20250204
+
