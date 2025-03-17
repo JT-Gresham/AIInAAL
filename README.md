@@ -11,18 +11,13 @@ AIInAAL - pronounced (ān-ᵊl) or 'anal' in English...fun acronym for AI-IntelA
 *    [<img align="left" width="10%" src="https://m.media-amazon.com/images/I/41CMZ4XoAJL._SS135_.jpg">](https://www.amazon.com/hz/wishlist/ls/25OBUY6VTN1C8?ref_=wl_share)
 <br clear="left"/>
 
-# What's Currently Working (3/13/2025)
+# What's Currently Working (3/17/2025)
 *   ComfyUI
      - Installs and works as it should. Tied to the shared folder like all other packages working in AIInAAL, so make sure you have one.
      - The shared1 folder is provided as a structure template, so if you don't have a "shared" folder, just rename it by removing the 1 at the end.
      - I have noticed that some node packages require tensorflow or onnxruntime. Be cautious what you install. Look at the package requirements.txt file.
           Some custom nodes packages can break your install since they will try to install packages through pip.
-*   Fooocus
-     - TF32/BF32 lack of support has made image prompts and enhancements non-functional...Otherwise seems to work as it should.
-*   DeFooocus
-*   Ollama + OpenWebUI (See jacked up section note)
-     - Installs and seems to be working if you install Ollama directly to your OS rather than in a container. Testing is ongoing.
-     - Ollama installer will install OpenWebUI as well.
+
 *   OmniGen (WIP but generating images)
      -TODO:  Shared folder links
              Initial model download is 15GB+ - Test smaller models
@@ -31,25 +26,35 @@ AIInAAL - pronounced (ān-ᵊl) or 'anal' in English...fun acronym for AI-IntelA
      - The initial tests prove...well, less than I had hoped for. The end result seems choppy...speed is too fast. Can't say certain
        words...etc. Perhaps it's my reference. I dunno... It installs and works so give it a whirl if you like, but I'd keep expectations low-ish.
 
-# Recently jacked up...(3/13/2025)
-*   Forge - Update now calls for an advanced torch function (custom_op) that isn't supported by Intel's torch (I think). This is a recurring issue that keeps rearing it's ugly head from time to time. We'll just have to wait until it's patched, I guess.
-     Previously:
-     - Issues with OOM if setting resolution too high. Most likely issue with Intel extensions for pytorch...my guess.
-     - Still works pretty well..especially for merging which is about all I use it for in this current state.
-*    OpenWebUI for Ollama - I've confirmed the recent issue posted on the OpenWebUI git regarding slow or stalled inference. CPU only in OpenWebUI
-     - Ollama loads models in VRAM as it should, but OpenWebUI only uses the CPU runner in it's instructions causing EXTREMELY SLOW responses.
-     - Ollama used in the terminal works fine and uses the GPU correctly.
+# Recently jacked up...(3/17/2025)
+
+     Farily recent update to Intel extensions for pytorch has created a problem with GLIBC 2.41...apparently. SEE: https://github.com/intel/intel-extension-for-pytorch/issues/794 . I would say this is Arch specific, but it seems to be affecting any distro dependent on GLIBC 2.41
+          For now, we'll need to wait for a fix. It seems that several packages have been effected. Evident if you see this error: "ImportError: libintel-ext-pt-cpu.so: cannot enable executable stack as shared object requires: Invalid argument"
+*   Fooocus
+*   DeFooocus
+*   Ollama + OpenWebUI
+*   Forge
+
 Remember that there are limitations beyond my control...like memory management, for example. AIInAAL is a framework for these packages to be installed, but ultimately, these versions, while more versitile and convenient, are the original programs at their core. I've done my best to get them to work with Intel Arc dGPUs on Arch, but this entire project is always a WIP. Keep that in mind before you try to flame me if using something you got for free misbehaves...
 
 # Recent Notes from JT/OCD
+     *  3/17/2025
+          I'm getting urked.  I was making such great progress on getting these packages working...now this GLIBC issue. It stands to reason that might also
+               be contributing to the issues with Ollama too.  Fortunately, Ollama will still run using the CPU, but I'm still counting it as broken for my
+               purposes...at least for now. I'm going to have a look at the "portable" version that the IPEX team has released and see if I can incorporate
+               it into AIInAAL as possibly a more convenient way to keep it working in AIInAAL.  I would just rather have more control over the environment
+               packages. I'm not a huge fan of docker and prefer using python environments since it's easier to see what's going on with it as well as easily
+               accessing files for modification.  I'm pretty sure I saw a docker version on github not long ago...but like I said, I'll have a look.  Also, I
+               saw an ollama-vulkan package...or something like that. It is just what you'd think...ollama built to utilize Vulkan. In theory, that might also
+               work for our Intel GPUs...in theory. I know that Intel is still lagging behind regarding support in Vulkan, but there may be enough support there
+               to allow that version of ollama to function. I dunno...need to check it out.
+          It seems that our list of working packages for AIInAAL is dwindling...I'll keep chipping away at it though.  I'd really like to see Intel climb the
+               popularity ladder...but that will only come with functionality and in the AI realm, progress is slow...and THAT is a sales-killer. I'm seeing so many "improvements" that they are making that don't even apply to the Arc GPUs. This having to split the updates into a specific order is irritating too. You'd think since the Intel PyTorch team and the Intel Extensions team both are working towar the same thing and one is directly dependent on the other, they could get on the same page. I mentioned the version issues below...but seriously..one little character would've handled it. Change == to <= to kill this flippin RED TEXT, constant overwriting BS.  I'm ranting...like I said...I'm urked.  I'd change it, but that's included in their wheel dependencies, right?  Ugh...
      *  3/13/2025
           The Intel Extensions for Pytorch team released v 2.6.10+xpu and also changed the download location for the Intel version of PyTorch. I've made the
                adjustments in AIInAAL. They also failed to correctly specify the version for a package requirement resulting in errors. I have split the
-               install/updates so that the correct version is updated just before launching the apps. I've included the torch packages in the package reqs
-               and the Intel Extensions in the intel_reqs. The update process must remain a 2-stage process until the Intel Extensions team gets their act
-               together and points the extenstions to the right version. If you see errors regarding conflicts between versions 2025.0.2 and 2025.0.4, that's
-               what this is. Spliting the updates this way ensures functionality even though the errors are spit out. So ignore the red text for now.
-          OLLAMA - Okay...for some reason, OpenWebUI only seems to send reqs to the Ollama server to use the CPU runner. At least, that's what it seems like
+               install/updates so that the correct version of the compiler is updated just before launching the apps. I've included the torch packages in the package reqs and the Intel Extensions in the intel_reqs. The update process must remain a 2-stage process until the Intel Extensions team gets their act together and points the extenstions to the right version. If you see errors regarding conflicts between versions 2025.0.2 and 2025.0.4, that's what this is. Spliting the updates this way ensures functionality even though the errors are spit out. So ignore the red text for now.
+          OLLAMA - Okay...for some reason, OpenWebUI only seems to send reqs to the Ollama server to use the CPU. At least, that's what it seems like
                to me. Inference is SLOOOOOOW when done through OpenWebUI. Ironically, when ollama is used directly through the terminal, the speeds are pretty
                good with a 20B parameter (~12GB) LLM (in my testing).  I'm looking for a replacement frontend I like as a backup/alternative to OpenWebUI.
      *  2/5/25
@@ -74,3 +79,4 @@ Remember that there are limitations beyond my control...like memory management, 
           I got F5-TTS to install prior to my AIInAAL reinstall last night, but I'm still in the testing phase of that...seems that there was an issue regarding the tokenizer. Says it can't find it but spits out the correct address.
           I will likely remove DeFooocus and replace RoopUL with other packages. DeFooocus just adds a couple features (most of which I either don't use or have a standalone) and it just doesn't seem to be worth my time to keep 
                maintaining my version of it.  RoopUL is good...but I think there are some other packages that may do a better job at this point. We'll see after I do some testing.
+
