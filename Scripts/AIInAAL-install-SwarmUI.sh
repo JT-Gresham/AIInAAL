@@ -87,6 +87,12 @@ if grep -Fxq "https://pytorch-extension.intel.com/release-whl/stable/xpu/us" $AI
         sed -i 's|--index-url https://download.pytorch.org/whl/rocm6.1|--extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us|g' $AIInAALdir/$aiinaalpkg/launchtools/comfy-install-linux.sh
 fi
 echo "Installation complete. Start with command: AIInAAL-$aiinaalpkg with any SwarmUI arguments afterward"
+echo "     IMPORTANT: To use SwarmUI with the ComfyUI backend if already installed in AIInAAL:"
+echo "          1.) You need to tell SwarmUI you have a pre-existing installation...so make that choice upon first startup"
+echo "          2.) If you've already downloaded models, you won't need to install any...not even the base one so deselect all of them"
+echo "          3.) Once you can get to the server settings, you need to set the ComfyUI backend launcher to your ComfyUI-Start.sh file in your AIInAAL/ComfyUI directory.  The easiest way is to copy the file address in your file browser and then paste it into you launcher entry."
+echo "That's it...SwarmUI should launch and autostart your ComfyUI installation. It may complain because it's looking for main.py...but pay no attention to that warning.  Your AIInAAL launcher will handle that after the settings/mods are handled."
+echo "##### DON'T set it to the main.py file it's asking for...seriously...doing that can mess stuff up. #####"
 echo "--Press any key to exit installer--"
 read go
 exit 0
