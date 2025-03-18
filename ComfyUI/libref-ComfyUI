@@ -16,7 +16,7 @@ AIInAAL_update_ComfyUI () {
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/ComfyUI/user_customize_$aiinaalpkg_example.sh
   wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/ComfyUI/requirements_$aiinaalpkg.txt
   AIInAAL update Torch
-  pip install -r requirements_$aiinaalpkg.txt
+  pip install --upgrade -r requirements_$aiinaalpkg.txt
   AIInAAL update Intel
 #  if grep -Fxq "import intel_extension_for_pytorch as ipex" main.py
 #    then
@@ -63,7 +63,7 @@ AIInAAL_update_ComfyUI () {
   ln -sf "$AIInAALdir/shared/output/ComfyUI/" "$AIInAALdir/$aiinaalpkg/output"
   cp -f $AIInAALdir/Scripts/pip_overrides.json $AIInAALdir/$aiinaalpkg/custom_nodes/comfyui-manager/
   cd $pdirectory
-  $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+  $AIInAALdir/$aiinaalpkg/user_customize_"$aiinaalpkg".sh
   cd $AIInAALdir/$aiinaalpkg
 }
 

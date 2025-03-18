@@ -43,7 +43,7 @@ pip install -r requirements_versions.txt
 pip install -r requirements_$aiinaalpkg.txt
 echo ""
 echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
-cp user_customize_$aiinaalpkg_example.sh user_customize_$aiinaalpkg.sh
+cp user_customize_"$aiinaalpkg_example".sh user_customize_"$aiinaalpkg".sh
 touch $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "#!/usr/bin/env bash" > $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
