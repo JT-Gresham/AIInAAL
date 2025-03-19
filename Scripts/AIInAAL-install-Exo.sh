@@ -11,7 +11,7 @@ echo ""
 echo "Activating environment -> AIInAAL12_env"
 source $pdirectory/AIInAAL/AIInAAL12_env/bin/activate
 echo "AIInAAL installer needs to check/install some PACMAN packages...Please authorize to continue..."
-sudo pacman -r $pdirectory/AIInAAL/AIInAAL12_env/ -S --needed intel-compute-runtime intel-graphics-compiler ocl-icd opencl-headers level-zero-loader python-pipx lm_sensors
+sudo pacman -S --needed intel-compute-runtime intel-graphics-compiler ocl-icd opencl-headers level-zero-loader python-pipx lm_sensors
 echo "Installing pip..."
 cd $pdirectory/AIInAAL/Scripts
 python get-pip.py
