@@ -5,6 +5,7 @@ AIInAALuser="$(whoami)"
 echo "##### AIInAAL installation of EXO #####"
 cd $AIInAALdir
 echo ""
+if [ ! -d "$pdirectory/AIInAAL/AIInAAL12_env" ]; then
 echo "Creating python 3.12 environment (AIInAAL12_env)"
 /usr/bin/python3.12 -m venv $pdirectory/AIInAAL/AIInAAL12_env
 echo ""
@@ -19,7 +20,7 @@ cd $pdirectory/AIInAAL
 echo ""
 echo "Installing wheel package..."
 pip install wheel
-
+fi
 ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL12_env/bin/
 #ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL12_env_inf/bin/
 echo ""
@@ -35,8 +36,11 @@ echo "Creating initial \"shared\" directory...replace with yours afterward, if n
 if [ ! -d "$pdirectory/AIInAAL/shared" ]; then
   mv ./shared1 ./shared
 fi
-cd $pdirectory/AIInAAL
-git clone https://github.com/exo-explore/exo.git $AIInAALdir/Exo
+cd $tmp
+git clone https://github.com/exo-explore/exo.git /tmp/Exo
+cp -rf /tmp/Exo/.* /home/LACII14/Archive-M1/AI/AIInAAL/Exo/
+cp -rf /tmp/Exo/* /home/LACII14/Archive-M1/AI/AIInAAL/Exo/
+rm -r /tmp/Exo
 cd $AIInAALdir/Exo
 pip install -e .
 echo "AIInAAL framework is now installed. AI program installers are located in the \"Scripts\" directory."
