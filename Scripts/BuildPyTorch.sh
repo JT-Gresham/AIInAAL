@@ -33,6 +33,9 @@ pip install mkl-static mkl-include
 # For Intel GPU support, please explicitly `export USE_XPU=1` before running command.
 export USE_XPU=1
 USE_XPU=1 make triton
+USE_VULKAN=1
+USE_VULKAN_SHADERC_RUNTIME=1
+USE_VULKAN_WRAPPER=0
 
 # If you would like to compile PyTorch with new C++ ABI enabled, then first run this command:
 export _GLIBCXX_USE_CXX11_ABI=1
