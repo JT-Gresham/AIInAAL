@@ -25,7 +25,7 @@ ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL12_e
 #ln -sf $pdirectory/AIInAAL/Scripts/ipex-llm-init $pdirectory/AIInAAL/AIInAAL12_env_inf/bin/
 echo ""
 echo "Initializing the AIInAAL and Deb4AIInAAL(12) commands."
-#ln -sf $pdirectory/AIInAAL/Scripts/AIInAAL $pdirectory/AIInAAL/AIInAAL12_env/bin/AIInAAL
+ln -sf $pdirectory/AIInAAL/Scripts/AIInAAL $pdirectory/AIInAAL/AIInAAL12_env/bin/AIInAAL
 ln -sf $pdirectory/AIInAAL/Scripts/Deb4AIInAAL12 $pdirectory/AIInAAL/AIInAAL12_env/bin/Deb4AIInAAL12
 #sudo ln -sf $pdirectory/AIInAAL/AIInAAL12_env/bin/AIInAAL /bin/AIInAAL
 sudo ln -sf $pdirectory/AIInAAL/AIInAAL12_env/bin/Deb4AIInAAL12 /bin/Deb4AIInAAL12
