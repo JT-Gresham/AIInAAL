@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+source /etc/AIInAAL/AIInAAL_path
+source $AIInAALdir/AIInAAL12_env/bin/ipex-llm-init -g --device Arc
+aiinaalpkg=Exo
+
+export no_proxy=localhost,127.0.0.1
+##export ZES_ENABLE_SYSMAN=1
+#source /opt/intel/oneapi/setvars.sh
+#export SYCL_CACHE_PERSISTENT=1
+#!export PATH=/llm/Exo:$PATH
+export ONEAPI_DEVICE_SELECTOR=level_zero:0
+export DEVICE=Arc
+source /opt/intel/oneapi/setvars.sh
+
+AIInAAL_update_Exo () {
+  cd $AIInAALdir/$aiinaalpkg
+  git fetch --all
+  git branch backup-master
+  git reset --hard origin/master
+  git pull
+  rm ./libref-$aiinaalpkg*
+  rm ./requirements_$aiinaalpkg*
+  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Exo/libref-$aiinaalpkg
+#  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Exo/user_customize_$aiinaalpkg_example.sh
+#  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Exo/requirements_$aiinaalpkg.txt
+  AIInAAL update Torch
+#  pip install --upgrade -r requirements_$aiinaalpkg.txt
+  AIInAAL update Intel
+#  cd $AIInAALdir/AIInAAL_env/lib/python3.12/site-packages/Exo
+#  if grep -Fxq "import intel_extension_for_pytorch as ipex" __init__.py
+#    then
+#      echo "Intel extensions found in __init__.py...skipping"
+#    else
+#      sed -i 's|from Exo._client import AsyncClient, Client|import torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_tensorflow as itex\n\nfrom Exo._client import AsyncClient, Client\n|g' __init__.py
+#  fi
+#  cd $AIInAALdir/$aiinaalpkg
+#rm -Rf "$AIInAALdir/$aiinaalpkg/models"
+#ln -sf "$AIInAALdir/shared/LLMs/Exo" "$AIInAALdir/$aiinaalpkg/models"
+
+#cd $pdirectory
+#$AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+cd $AIInAALdir/$aiinaalpkg
+}
+
+#Exo_exit () {
+#    kill $(pgrep -f "Exo serve")
+#    kill $(pgrep -f "open-webui")
+#}
