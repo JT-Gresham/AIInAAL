@@ -1,0 +1,22 @@
+These are some important development notes for current/potential projects.
+
+
+#####################################
+
+exo <https://github.com/exo-explore/exo>
+    Description:  This is a great project that allows clustering of common devices into a network resource pool for inference.
+                            - Allows for running much larger LLMs by spreading over pool RAM and evaluates/impliments each node's
+                                processing capability.
+                            - Supports GPU and CPU resources
+                            - Requires LLM to be on each machine (thought: circumvented via symbolic link to network drive?)
+
+    STATUS: It appears that deftdawg is already working on Arc support <https://github.com/exo-explore/exo/pull/791>
+
+topology/device_capabilities.py : GPU parameters list
+    - Add Intel Arc support here starting with my A770 for testing
+    :Add to bottom for section "CHIP_FLOPS" section
+  "Intel(R) Arc(TM) A770 Graphics": DeviceFlops(fp32=19.66*TFLOPS, fp16=39.32*TFLOPS, int8=78.64*TFLOPS),
+
+
+
+#####################################

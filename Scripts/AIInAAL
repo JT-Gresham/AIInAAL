@@ -137,5 +137,11 @@ case $var1 in
             ;;
         esac
 ;;
+    AIInAAL_env)
+        Deb4AIInAAL -q "$3"
+;;
+    AIInAAL12_env)
+        Deb4AIInAAL12 -q "$3"
+;;
 esac
 
