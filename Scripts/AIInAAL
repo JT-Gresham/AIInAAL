@@ -74,16 +74,20 @@ case $var1 in
                 AIInAAL_update
             ;;
             Intel)
-                pip install --upgrade -r $AIInAALdir/Scripts/intel_requirements.txt
+                #pip install --upgrade -r $AIInAALdir/Scripts/intel_requirements.txt
+                echo "Temporarily disabled due to custom torch build testing..."
             ;;
             intel)
-                pip install --upgrade -r $AIInAALdir/Scripts/intel_requirements.txt
+                #pip install --upgrade -r $AIInAALdir/Scripts/intel_requirements.txt
+                echo "Temporarily disabled due to custom torch build testing..."
             ;;
             Torch)
-                pip install --upgrade torch torchvision torchaudio --index-url https://download.pytorch.org/whl/xpu
+                #pip install --upgrade torch torchvision torchaudio --index-url https://download.pytorch.org/whl/xpu
+                echo "Temporarily disabled due to custom torch build testing..."
             ;;
             torch)
-                pip install --upgrade torch torchvision torchaudio --index-url https://download.pytorch.org/whl/xpu
+                #pip install --upgrade torch torchvision torchaudio --index-url https://download.pytorch.org/whl/xpu
+                echo "Temporarily disabled due to custom torch build testing..."
             ;;
         esac
 ;;
