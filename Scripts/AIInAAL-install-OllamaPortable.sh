@@ -31,7 +31,7 @@ tgzpkgname=$(ls | grep "tgz")
 tar -xvf $tgzpkgname
 echo ""
 echo "Copying library files to AIInAAL environment..."
-cp -Rf ./$tgzpkgname/* $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
+cp -Rf ./$tgzpkgname/* $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama/
 echo "Cleaning up temporary files..."
 cd $AIInAALdir/$aiinaalpkg
 rm -R /tmp/Ollama
@@ -76,6 +76,7 @@ echo "export OLLAMA_NUM_GPU_LAYERS=9999" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-
 echo "export TORCH_DEVICE_BACKEND_AUTOLOAD=0" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "cd $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "start-ollama.sh &" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "cd $AIInAALdir/$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "echo \"Open Web UI will start in 10 seconds. After it loads, you can open it up in your browser. (URL: localhost:8080)\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
