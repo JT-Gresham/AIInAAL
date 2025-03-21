@@ -77,7 +77,7 @@ echo "export TORCH_DEVICE_BACKEND_AUTOLOAD=0" >> $AIInAALdir/$aiinaalpkg/$aiinaa
 echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "cd $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "start-ollama.sh &" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "./start-ollama.sh &" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "cd $AIInAALdir/$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "echo \"Open Web UI will start in 10 seconds. After it loads, you can open it up in your browser. (URL: localhost:8080)\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "sleep 10" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
