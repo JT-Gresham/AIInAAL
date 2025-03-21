@@ -33,7 +33,6 @@ tar -xvf $tgzpkg
 echo ""
 echo "Copying library files to AIInAAL environment..."
 rm -r $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
-mkdir $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
 mv /tmp/Ollama/$tgzpkgname $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
 echo "Cleaning up temporary files..."
 cd $AIInAALdir/$aiinaalpkg
