@@ -31,7 +31,9 @@ tgzpkgname=$(ls | grep "tgz")
 tar -xvf $tgzpkgname
 echo ""
 echo "Copying library files to AIInAAL environment..."
-cp -Rf ./$tgzpkgname/* $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama/
+rm -r $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
+mkdir $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
+cp -Rf /tmp/Ollama/$tgzpkgname/* $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama/
 echo "Cleaning up temporary files..."
 cd $AIInAALdir/$aiinaalpkg
 rm -R /tmp/Ollama
