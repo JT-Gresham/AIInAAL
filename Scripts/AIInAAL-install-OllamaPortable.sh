@@ -27,8 +27,9 @@ echo "Downloading official $aiinaalpkg package to /tmp/$aiinaalpkg"
 wget $aiinaalpkgURL
 echo ""
 echo "Decompressing Ollama package..."
-tgzpkgname=$(ls | grep "tgz")
-tar -xvf $tgzpkgname
+tgzpkg=$(ls | grep "tgz")
+tgzpkgname=$(echo $tgzpkg | head -c -5)
+tar -xvf $tgzpkg
 echo ""
 echo "Copying library files to AIInAAL environment..."
 rm -r $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
