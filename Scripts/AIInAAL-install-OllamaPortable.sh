@@ -71,7 +71,7 @@ echo "Creating the new /usr/bin/ollama executable..."
 echo "#!/usr/bin/env bash" > ollama
 echo "" >> ollama
 echo "set -e" >> ollama
-echo "exec $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama/ollama \"\$\@\"" >> ollama
+echo "exec $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama/ollama \"\$@\"" >> ollama
 sudo ln -sf $AIInAALdir/$aiinaalpkg/ollama /usr/bin/ollama
 #### Executable below
 echo "#export OLLAMA_DEBUG=1" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
