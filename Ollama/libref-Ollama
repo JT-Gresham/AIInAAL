@@ -48,7 +48,22 @@ $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 cd $AIInAALdir/$aiinaalpkg
 }
 
+Ollama_daemon () {
+while [ 1 ]
+do
+openwebuipid=$(pgrep -f "open-webui serve")
+openwebuimem=$(RSSfull=$(cat /proc/$openwebuipid/status | grep RSS); echo $RSSfull | cut -d\  -f2)
+if [[ $openwebuimem -ge "1751916" ]]
+	then
+		sleep 6
+		break
+	else
+		Ollama_exit
+fi
+done
+}
+
 Ollama_exit () {
-    kill $(pgrep -f "ollama serve")
-    kill $(pgrep -f "open-webui")
+    kill $(pgrep -f "ollama-bin serve")
+    kill $(pgrep -f "open-webui serve")
 }
