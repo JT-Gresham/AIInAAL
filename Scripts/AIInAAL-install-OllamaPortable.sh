@@ -68,11 +68,11 @@ echo "source $AIInAALdir/AIInAAL_env/bin/activate" >> $AIInAALdir/$aiinaalpkg/$a
 echo "AIInAAL_update" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 
 echo "Creating the new /usr/bin/ollama executable..."
-echo "#!/usr/bin/env bash" > /usr/bin/ollama
-echo "" >> /usr/bin/ollama
-echo "set -e" >> /usr/bin/ollama
-echo "exec $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama/ollama /"/$/@/"" >> /usr/bin/ollama
-sudo chmod +x 777 /usr/bin/ollama
+echo "#!/usr/bin/env bash" > ollama
+echo "" >> ollama
+echo "set -e" >> ollama
+echo "exec $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama/ollama \"\$\@\"" >> ollama
+sudo ln -sf $AIInAALdir/$aiinaalpkg/ollama /usr/bin/ollama
 #### Executable below
 echo "#export OLLAMA_DEBUG=1" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "#export OLLAMA_USE_OPENVINO=true" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
