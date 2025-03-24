@@ -56,7 +56,6 @@ openwebuimem=$(RSSfull=$(cat /proc/$openwebuipid/status | grep RSS); echo $RSSfu
 if [[ $openwebuimem -ge "1751916" ]]
 	then
 		sleep 6
-		break
 	else
 		Ollama_exit
 fi
