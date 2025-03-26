@@ -14,9 +14,3 @@ sqlalchemy
 psycopg2-binary
 snowflake-connector-python
 markdown
-
---index-url https://download.pytorch.org/whl/xpu
-
-torch
-torchvision
-torchaudio

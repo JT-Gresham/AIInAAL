@@ -17,6 +17,12 @@ AIInAAL - pronounced (ān-ᵊl) or 'anal' in English...fun acronym for AI-IntelA
      - The shared1 folder is provided as a structure template, so if you don't have a "shared" folder, just rename it by removing the 1 at the end.
      - I have noticed that some node packages require tensorflow or onnxruntime. Be cautious what you install. Look at the package requirements.txt file.
           Some custom nodes packages can break your install since they will try to install packages through pip.
+*   Ollama + OpenWebUI
+     - I've implemented the portable version of ollama created by the IPEX team. It is created as a standalone, but I'm made some modifications so it works
+          with the AIInAAL framework.
+     - IMPORTANT: Make sure that ReBAR is enabled properly in your BIOS and is fully functional. I found a setting I needed to set that was causing Ollama
+          to load the LLM properly into VRAM, but would only run inference through the CPU. Getting ReBAR set properly makes the LLM responses FLY on my
+          A770. The ReBAR functionality is absolutely worth the time to check and re-check.
 
 *   OmniGen (WIP but generating images)
      -TODO:  Shared folder links
@@ -32,7 +38,7 @@ AIInAAL - pronounced (ān-ᵊl) or 'anal' in English...fun acronym for AI-IntelA
           For now, we'll need to wait for a fix. It seems that several packages have been effected. Evident if you see this error: "ImportError: libintel-ext-pt-cpu.so: cannot enable executable stack as shared object requires: Invalid argument"
 *   Fooocus
 *   DeFooocus
-*   Ollama + OpenWebUI
+
 *   Forge
 
 Remember that there are limitations beyond my control...like memory management, for example. AIInAAL is a framework for these packages to be installed, but ultimately, these versions, while more versitile and convenient, are the original programs at their core. I've done my best to get them to work with Intel Arc dGPUs on Arch, but this entire project is always a WIP. Keep that in mind before you try to flame me if using something you got for free misbehaves...
