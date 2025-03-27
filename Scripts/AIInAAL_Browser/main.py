@@ -1,12 +1,16 @@
+import os
+import sys
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtPrintSupport import *
-import os
-import sys
 
-argurl = sys.argv[1]
+if len(sys.argv) == 1:
+	argurl = "http://github.com/JT-Gresham/AIInAAL"
+else:
+	argurl = sys.argv[1]
+
 basedir = os.path.dirname(__file__)
 
 # main window
@@ -115,6 +119,10 @@ class MainWindow(QMainWindow):
 
         # if url is blank
         if qurl is None:
+            # creating a google url
+            qurl = QUrl("http://github.com/JT-Gresham/AIInAAL")
+
+        if argurl is None:
             # creating a google url
             qurl = QUrl("http://github.com/JT-Gresham/AIInAAL")
 
