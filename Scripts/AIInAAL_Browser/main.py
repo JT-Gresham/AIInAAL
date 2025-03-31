@@ -20,10 +20,10 @@ class MainWindow(QMainWindow):
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
         self.setWindowIcon(QIcon(os.path.join(basedir, 'OCD.ico')))
+        self.setStyleSheet("background-color: #2A2A2A; border-radius: 8px; font-family: Ariel; font-size: 10pt; color: #9FA8DA")
 
         # creating a tab widget
         self.tabs = QTabWidget()
-
         # making document mode true
         self.tabs.setDocumentMode(True)
 
@@ -38,10 +38,13 @@ class MainWindow(QMainWindow):
 
         # adding action when tab close is requested
         self.tabs.tabCloseRequested.connect(self.close_current_tab)
+        
+        # add stylesheet for tabs
+        self.tabs.setStyleSheet("background-color: #37474F; border-radius: 8px; font-family: Ariel; font-size: 10pt; color: #B2EBF2")
 
         # making tabs as central widget
         self.setCentralWidget(self.tabs)
-
+        
         # creating a status bar
         self.status = QStatusBar()
 
@@ -53,12 +56,12 @@ class MainWindow(QMainWindow):
 
         # adding tool bar tot he main window
         self.addToolBar(self.navtb)
-
+        
         # creating back action
         back_btn = QAction("<", self)
 
         # setting status tip
-        back_btn.setStatusTip("Back to previous page")
+        back_btn.setStatusTip("Previous page")
 
         # adding action to back button
         # making current tab to go back
@@ -69,7 +72,7 @@ class MainWindow(QMainWindow):
 
         # similarly adding next button
         next_btn = QAction(">", self)
-        next_btn.setStatusTip("Forward to next page")
+        next_btn.setStatusTip("Next page")
         next_btn.triggered.connect(lambda: self.tabs.currentWidget().forward())
         self.navtb.addAction(next_btn)
 
@@ -81,7 +84,7 @@ class MainWindow(QMainWindow):
 
         # creating home action
         home_btn = QAction("AIInAAL", self)
-        home_btn.setStatusTip("Go home")
+        home_btn.setStatusTip("AIInAAL Home")
 
         # adding action to home button
         home_btn.triggered.connect(self.navigate_home)
@@ -92,7 +95,7 @@ class MainWindow(QMainWindow):
 
         # creating a line edit widget for URL
         self.urlbar = QLineEdit()
-
+        self.urlbar.setStyleSheet("background-color: #9FA8DA; border-radius: 8px; font-family: Ariel; font-size: 10pt; color: #2A2A2A")
         # adding action to line edit when return key is pressed
         self.urlbar.returnPressed.connect(self.navigate_to_url)
 
@@ -134,7 +137,14 @@ class MainWindow(QMainWindow):
 
         # setting url to browser
         browser.setUrl(qurl)
-
+        
+        # Enable JavaScript (Critical for most modern websites)
+        browser.settings().setAttribute(QWebEngineSettings.JavascriptEnabled, True)
+        
+        # Optional: Additional JavaScript features
+        browser.settings().setAttribute(QWebEngineSettings.JavascriptCanAccessClipboard, True)
+        browser.settings().setAttribute(QWebEngineSettings.FullScreenSupportEnabled, True)
+        
         # setting tab index
         i = self.tabs.addTab(browser, label)
         self.tabs.setCurrentIndex(i)
