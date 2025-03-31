@@ -39,7 +39,7 @@ cd $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
   if grep -Fxq "./ollama serve" start-ollama.sh
     then
       echo ".ollama serve found in start-ollama.sh...correcting"
-      sed -i 's|./ollama serve|ollama serve|g' __init__.py
+      sed -i 's|./ollama serve|ollama serve|g' start-ollama.sh
     else
       echo "Check PASSED"
   fi
