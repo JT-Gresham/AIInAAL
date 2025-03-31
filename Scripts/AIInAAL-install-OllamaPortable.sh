@@ -32,8 +32,17 @@ tgzpkgname=$(echo $tgzpkg | head -c -5)
 tar -xvf $tgzpkg
 echo ""
 echo "Copying library files to AIInAAL environment..."
-rm -r $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
+rm -rf $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
 mv /tmp/Ollama/$tgzpkgname $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
+echo "Checking start-ollama.sh"
+cd $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
+  if grep -Fxq "./ollama serve" start-ollama.sh
+    then
+      echo ".ollama serve found in start-ollama.sh...correcting"
+      sed -i 's|./ollama serve|ollama serve|g' __init__.py
+    else
+      echo "Check PASSED"
+  fi
 echo "Cleaning up temporary files..."
 cd $AIInAALdir/$aiinaalpkg
 rm -R /tmp/Ollama

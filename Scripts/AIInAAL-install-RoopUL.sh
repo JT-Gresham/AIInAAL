@@ -62,7 +62,7 @@ echo "Setting the new start file to be executable. (Authorization Required)"
 sudo chmod +x $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "Creating executable link in /usr/bin --> AIInAAL-$aiinaalpkg"
 sudo ln -sf "$AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh" "/usr/bin/AIInAAL-$aiinaalpkg"
-echo "Installation complete. Start with command: AIInAAL-$aiinaalpkg with any CrewAI arguments afterward"
+echo "Installation complete. Start with command: AIInAAL-$aiinaalpkg with any RoopUL arguments afterward"
 echo "--Press any key to exit installer--"
 read go
 exit 0
