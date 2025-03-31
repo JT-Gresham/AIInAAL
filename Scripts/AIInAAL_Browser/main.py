@@ -40,7 +40,7 @@ class MainWindow(QMainWindow):
         self.tabs.tabCloseRequested.connect(self.close_current_tab)
         
         # add stylesheet for tabs
-        self.tabs.setStyleSheet("background-color: #37474F; border-radius: 8px; font-family: Ariel; font-size: 10pt; color: #B2EBF2")
+        self.tabs.setStyleSheet("background-color: #240A43; border-radius: 8px; font-family: Ariel; font-size: 10pt; color: #B2EBF2")
 
         # making tabs as central widget
         self.setCentralWidget(self.tabs)
