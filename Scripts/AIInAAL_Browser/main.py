@@ -24,6 +24,7 @@ class MainWindow(QMainWindow):
 
         # creating a tab widget
         self.tabs = QTabWidget()
+        
         # making document mode true
         self.tabs.setDocumentMode(True)
 
