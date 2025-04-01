@@ -16,6 +16,15 @@ export TORCH_DEVICE_BACKEND_AUTOLOAD=0
 source ipex-llm-init -g --device Arc
 AIInAAL_update_Ollama
 cd $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
-./start-ollama.sh &
-
+clear
+echo "##### AIInAAL OLLAMA PORTABLE #####"
+echo ""
+echo "To use the Ollama Portable Server...you'll need to open a new terminal and activate the environment to function as your chat interface."
+echo "In the new terminal: cd into your AIInAAL directory, then use this command: source AIInAAL_env/bin/activate"
+echo "You should now see your prompt line start with [AIInAAL_env]"
+echo "Wait for the Ollama server to start in this terminal, then load your ollama LLM (in the chat terminal) with: ollama run <LLM name>"
+echo ""
+echo "Press a key to start the ollama server..."
+read go
+./start-ollama.sh
 Ollama_exit
