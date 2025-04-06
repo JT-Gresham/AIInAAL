@@ -6,8 +6,8 @@ from PyQt5.QtGui import *
 from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtPrintSupport import *
 
-if len(sys.argv) == 1:
-	argurl = "http://github.com/JT-Gresham/AIInAAL"
+if len(sys.argv) <= 1:
+	argurl = "None"
 else:
 	argurl = sys.argv[1]
 
