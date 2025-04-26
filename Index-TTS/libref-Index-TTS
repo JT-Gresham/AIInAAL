@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+
+source /etc/AIInAAL/AIInAAL_path
+aiinaalpkg=Index-TTS
+
+AIInAAL_update_Index-TTS () {
+  cd $AIInAALdir/$aiinaalpkg
+  git fetch --all
+  git branch backup-master
+  git reset --hard origin/master
+  git pull
+  rm ./libref-$aiinaalpkg*
+  rm ./requirements_$aiinaalpkg*
+  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Index-TTS/libref-$aiinaalpkg
+  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Index-TTS/user_customize_$aiinaalpkg_example.sh
+  wget https://raw.githubusercontent.com/JT-Gresham/AIInAAL/main/Index-TTS/requirements_$aiinaalpkg.txt
+  AIInAAL update Torch
+  pip install -r requirements_$aiinaalpkg.txt
+  AIInAAL update Intel
+  if grep -Fxq "import intel_extension_for_pytorch as ipex" app_local.py
+    then
+      echo "Intel extensions found in app_local.py...skipping"
+    else
+      sed -i 's|import tempfile|import tempfile\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\n\n|g' app_local.py
+  fi
+  if grep -Fxq "WARNING: You are running this unofficial Index TTS demo locally" app_local.py
+    then
+      echo "URL for Intel version of pytorch found in app_local.py...skipping"
+    else
+      sed -i 's|print("WARNING: You are running this unofficial E2/Index TTS demo locally, it may not be as up-to-date as the hosted version (https://huggingface.co/spaces/mrfakename/E2-Index-TTS)")||g' $AIInAALdir/$aiinaalpkg/app_local.py
+  fi
+  if grep -Fxq "if torch.backends.mkl.is_available" app_local.py
+    then
+      echo "XPU option found in app_local.py...skipping"
+    else
+      sed -i 's|else "cpu"|else "xpu" if torch.backends.mkl.is_available() else "cpu"|g' $AIInAALdir/$aiinaalpkg/app_local.py
+  fi
+  #if grep -Fxq "torch==2.1.0 torchvision==0.16.0" app_local.py
+  #  then
+  #    echo "Intel versions of pytorch-related packages found in app_local.py...skipping"
+  #  else
+  #    sed -i 's|torch==2.1.0 torchvision==0.16.0|torch>=2.3.1 torchvision>=0.18.1 torchaudio>=2.3.1 intel-extension-for-pytorch>=2.3.110+xpu|g' app_local.py
+  #fi
+  #if grep -Fxq "torchsde==0.2.6" requirements_versions.txt
+  #  then
+  #    echo "torchsde version fix found in requirements_versions.txt...skipping"
+  #  else
+  #    sed -i 's|torchsde==0.2.6|torchsde>=0.2.6|g' requirements_versions.txt
+  #fi
+  #if grep -Fxq "transformers==4.30.2" requirements_versions.txt
+  #  then
+  #    echo "torchsde version fix found in requirements_versions.txt...skipping"
+  #  else
+  #    sed -i 's|transformers==4.30.2|transformers>=4.34.0|g' requirements_versions.txt
+  #fi
+  #if grep -Fxq "accelerate==0.21.0" requirements_versions.txt
+  #  then
+  #    echo "accelerate version fix found in requirements_versions.txt...skipping"
+  #  else
+  #    sed -i 's|accelerate==0.21.0|accelerate>=0.21.0|g' requirements_versions.txt
+  #fi
+  #if grep -Fxq "scipy==1.9.3" requirements_versions.txt
+  #  then
+  #    echo "scipy version fix found in requirements_versions.txt...skipping"
+  #  else
+  #    sed -i 's|scipy==1.9.3|scipy>=1.9.3|g' requirements_versions.txt
+  #fi
+#rm -R "~/.cache/huggingface"
+#rm -R "$AIInAALdir/$aiinaalpkg/models/loras"
+#rm -R "$AIInAALdir/$aiinaalpkg/wildcards"
+#rm -R "$AIInAALdir/$aiinaalpkg/sdxl_styles"
+#rm -R "$AIInAALdir/$aiinaalpkg/models/vae"
+#rm -R "$AIInAALdir/$aiinaalpkg/models/vae_approx"
+#ln -sf "$AIInAALdir/shared/HF" "~/.cache/huggingface"
+#ln -sf "$AIInAALdir/shared/loras/t2i" "$AIInAALdir/$aiinaalpkg/models/loras"
+#ln -sf "$AIInAALdir/shared/wildcards/Fooocus" "$AIInAALdir/$aiinaalpkg/wildcards"
+#ln -sf "$AIInAALdir/shared/sdxl_styles/Fooocus" "$AIInAALdir/$aiinaalpkg/sdxl_styles"
+#ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/models/vae"
+#ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/models/vae_approx"
+cd $pdirectory
+$AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
+cd $AIInAALdir/$aiinaalpkg
+}
+
+Index-TTS-exit () {
+    kill $(pidof python $AIInAALdir/$aiinaalpkg)
+}
