@@ -4,7 +4,8 @@ source /etc/AIInAAL/AIInAAL_path
 source $AIInAALdir/libref
 source $AIInAALdir/AIInAAL_env/bin/activate
 aiinaalpkg="Ollama"
-aiinaalpkgURL="https://github.com/intel/ipex-llm/releases/download/v2.2.0-nightly/ollama-ipex-llm-2.2.0b20250318-ubuntu.tgz"
+#aiinaalpkgURL="https://github.com/intel/ipex-llm/releases/download/v2.2.0-nightly/ollama-ipex-llm-2.2.0b20250318-ubuntu.tgz"
+aiinaalpkgURL="https://github.com/ipex-llm/ipex-llm/releases/download/v2.2.0/ollama-ipex-llm-2.2.0-ubuntu.tgz"
 aiinaaluser=$(whoami)
 
 echo "########## $aiinaalpkg for Intel Arc GPUs on Arch Linux ##########"

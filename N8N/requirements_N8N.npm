@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+source /usr/share/nvm/init-nvm.sh
+
+pacman -S --needed nvm npm
+
+nvm install 22
+nvm use 22
+nvm alias default 22
+
+npm install n8n
