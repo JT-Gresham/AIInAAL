@@ -53,6 +53,9 @@ echo "source $AIInAALdir/libref" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "source $AIInAALdir/$aiinaalpkg/libref-$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "source $AIInAALdir/AIInAAL_env/bin/activate" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+cp "$AIInAALdir/$aiinaalpkg/checkpoints/config.yaml" "$AIInAALdir/shared/checkpoints/tts/config.yaml"
+rm -R "$AIInAALdir/$aiinaalpkg/checkpoints"
+ln -sf "$AIInAALdir/shared/checkpoints/tts/" "$AIInAALdir/$aiinaalpkg/checkpoints"
 
 #### Executable below
 echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
