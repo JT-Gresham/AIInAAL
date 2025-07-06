@@ -61,6 +61,13 @@ AIInAAL_update_ComfyUI () {
   ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/sams/" "$AIInAALdir/$aiinaalpkg/models/sams"
   ln -sf "$AIInAALdir/shared/configs/$aiinaalpkg/ultralytics" "$AIInAALdir/$aiinaalpkg/models/ultralytics"
   ln -sf "$AIInAALdir/shared/output/ComfyUI/" "$AIInAALdir/$aiinaalpkg/output"
+# OmniGen2 Setup #
+# FIRST You need to manually download the model, text encoder, and vae files from: "https://huggingface.co/Comfy-Org/Omnigen2_ComfyUI_repackaged/tree/main/split_files"
+  rm -R "$AIInAALdir/$aiinaalpkg/models/diffusion_models"
+  rm -R "$AIInAALdir/$aiinaalpkg/models/text_encoders"
+  ln -sf "$AIInAALdir/shared/diffusion_models/" "$AIInAALdir/$aiinaalpkg/models/diffusion_models"
+  ln -sf "$AIInAALdir/shared/text_encoders/" "$AIInAALdir/$aiinaalpkg/text_encoders"  
+###################
   cp -f $AIInAALdir/Scripts/pip_overrides.json $AIInAALdir/$aiinaalpkg/custom_nodes/comfyui-manager/
   cd $pdirectory
   $AIInAALdir/$aiinaalpkg/user_customize_"$aiinaalpkg".sh
