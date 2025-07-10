@@ -34,3 +34,18 @@ source AIInAAL/libref
 #cd $pdirectory/AIInAAL/ComfyUI
 #outputdir=$(echo $(date +%Y)"-"$(date +%m)"-"$(date +%d))
 #mkdir -p "output/Remote/"$outputdir
+
+# Clears the persistent input cache directory of any used uploaded images *privacy protection* - Done before the ComfyUI launches
+#cd $pdirectory/AIInAAL
+#cp ComfyUI/input/example.png /tmp/
+#rm -r ComfyUI/input
+#mkdir -p ComfyUI/input/3d
+#cp /tmp/example.png ComfyUI/input/
+
+# Tie RoopUL models to ComfyUI for the ComfyUI-FaceSwap package
+#cd $pdirectory/AIInAAL
+#rm -r $pdirectory/AIInAAL/ComfyUI/models/roop
+#ln -sf $pdirectory/AIInAAL/shared/RoopUL/models/ $pdirectory/AIInAAL/ComfyUI/models/roop
+
+# Fixes for ComfyUI-roop-node (not comfyui-roop) SEE: https://codeberg.org/Gourieff/comfyui-reactor-node
+#pip install --upgrade albumentations==1.14.16 #fixes albucore requirement so nodes will load (Also allows ComfyUI-FaceSwap to load)
