@@ -60,7 +60,7 @@ echo "echo    Correcting any BS WINBLOWS carriage return entries in bash scripts
 echo "    cd $AIInAALdir/\$aiinaalpkg" >> $AIInAALdir/libref
 echo "    for file in libref-*" >> $AIInAALdir/libref
 echo "      do" >> $AIInAALdir/libref
-echo "      sed -i 's/\r//' \$file 2>/dev/null" >> $AIInAALdir/libref
+echo "      sed -i 's/\r//' \$file 2> /dev/null" >> $AIInAALdir/libref
 echo "    done" >> $AIInAALdir/libref
 echo "}" >> $AIInAALdir/libref
 echo "LIBREF regenerated."
