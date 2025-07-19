@@ -17,12 +17,12 @@ AIInAAL_update_RoopUL () {
   AIInAAL update Torch
   pip install -r requirements_$aiinaalpkg.txt
   AIInAAL update Intel
-  if grep -Fxq "import intel_extension_for_pytorch as ipex" run.py
-    then
-      echo "Intel extensions found in run.py...skipping"
-    else
-      sed -i 's|from roop import core|import torch\nimport openvino\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\n\nfrom roop import core|g' run.py
-  fi
+  #if grep -Fxq "import intel_extension_for_pytorch as ipex" run.py
+  #  then
+  #    echo "Intel extensions found in run.py...skipping"
+  #  else
+  #    sed -i 's|from roop import core|import torch\nimport openvino\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\n\nfrom roop import core|g' run.py
+  #fi
   cd ui
   if grep -Fxq "server_port=server_port, share=False" main.py
     then
