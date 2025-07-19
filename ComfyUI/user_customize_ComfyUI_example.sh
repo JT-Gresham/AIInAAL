@@ -48,4 +48,4 @@ source AIInAAL/libref
 #ln -sf $pdirectory/AIInAAL/shared/RoopUL/models/ $pdirectory/AIInAAL/ComfyUI/models/roop
 
 # Fixes for ComfyUI-roop-node (not comfyui-roop) SEE: https://codeberg.org/Gourieff/comfyui-reactor-node
-#pip install --upgrade albumentations==1.14.16 #fixes albucore requirement so nodes will load (Also allows ComfyUI-FaceSwap to load)
+#pip install --upgrade albumentations==1.4.16 #fixes albucore requirement so nodes will load (Also allows ComfyUI-FaceSwap to load)
