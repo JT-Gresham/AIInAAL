@@ -23,6 +23,12 @@ AIInAAL_update_RoopUL () {
   #  else
   #    sed -i 's|from roop import core|import torch\nimport openvino\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\n\nfrom roop import core|g' run.py
   #fi
+  if grep -Fxq "import openvino" run.py
+    then
+      echo "Import Openvino found in run.py...skipping"
+    else
+      sed -i 's|from roop import core|import openvino\n\nfrom roop import core|g' run.py
+  fi
   cd ui
   if grep -Fxq "server_port=server_port, share=False" main.py
     then
