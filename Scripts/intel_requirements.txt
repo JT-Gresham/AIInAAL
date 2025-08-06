@@ -33,8 +33,8 @@
 #torchvision==0.20.1
 #torchaudio==2.5.1
 #mkl-dpcpp
-intel-extension-for-pytorch==2.7.10+xpu
-oneccl_bind_pt==2.7.0+xpu
+intel-extension-for-pytorch==2.8.10+xpu
+oneccl_bind_pt==2.8.0+xpu
 intel-extension-for-transformers
 #openvino
 onnxruntime-openvino
