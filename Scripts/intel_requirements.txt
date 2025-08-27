@@ -47,7 +47,7 @@
 #intel-extension-for-transformers
 #mkl-dpcpp
 
-intel-extension-for-pytorch==2.7.10+xpu oneccl-bind-pt==2.7.0+xpu --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us/
+#intel-extension-for-pytorch==2.7.10+xpu oneccl-bind-pt==2.7.0+xpu --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us/
 #openvino
 
 ############################# Not ready - requires intel-oneapi-base==2025.1.3
