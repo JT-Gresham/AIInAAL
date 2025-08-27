@@ -47,6 +47,12 @@ AIInAAL - pronounced (ān-ᵊl) or 'anal' in English...fun acronym for AI-IntelA
 Remember that there are limitations beyond my control...like memory management, for example. AIInAAL is a framework for these packages to be installed, but ultimately, these versions, while more versitile and convenient, are the original programs at their core. I've done my best to get them to work with Intel Arc dGPUs on Arch, but this entire project is always a WIP. Keep that in mind before you try to flame me if using something you got for free misbehaves...
 
 # Recent Notes from JT/OCD
+     *  4/7/2025
+          I just saw that a couple of people have comments on the IPEX git that they've found a workaround for the GLIBC 2.41 issues. They are using a simple
+               command to patch the libintel-ext-pt-cpu.so file. I am testing now, but it does require you to add the tool package from the Arch repositories.
+
+               yay -S execstack (or how ever you install from the AUR)
+               execstack -c $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/intel_extension_for_pytorch/lib/libintel-ext-pt-gpu.so
      *  4/1/2025
           I've been screwing around with trying to rectify this GLIBC issue. It seems that the GLIBC issue directly affects ChromaDB...which many packages
                use to load onnxruntime. You see it plain as day when you try to run Open WebUI or CrewAI and probably several other apps. As long as ChromaDB's
