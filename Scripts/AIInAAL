@@ -82,12 +82,12 @@ case $var1 in
                 #echo "Temporarily disabled due to custom torch build testing..."
             ;;
             Torch)
-                #pip install --upgrade torch torchvision torchaudio --index-url https://download.pytorch.org/whl/xpu
-                echo "Temporarily disabled due to custom torch build testing..."
+                pip install --upgrade -r $AIInAALdir/Scripts/torch_requirements.txt
+                #echo "Temporarily disabled due to custom torch build testing..."
             ;;
             torch)
-                #pip install --upgrade torch torchvision torchaudio --index-url https://download.pytorch.org/whl/xpu
-                echo "Temporarily disabled due to custom torch build testing..."
+                pip install --upgrade -r $AIInAALdir/Scripts/torch_requirements.txt
+                #echo "Temporarily disabled due to custom torch build testing..."
             ;;
         esac
 ;;
