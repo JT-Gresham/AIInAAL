@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 source /etc/AIInAAL/AIInAAL_path
-source $AIInAALdir/AIInAAL_env/bin/ipex-llm-init -g --device Arc
+#source $AIInAALdir/AIInAAL_env/bin/ipex-llm-init -g --device Arc
 aiinaalpkg=ComfyUI
 
 AIInAAL_update_ComfyUI () {
