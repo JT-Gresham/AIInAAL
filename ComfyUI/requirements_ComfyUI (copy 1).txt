@@ -1,0 +1,4 @@
+comfyui-frontend-package==1.23.4
+#comfyui-frontend-package
+alembic
+pydantic-settings
