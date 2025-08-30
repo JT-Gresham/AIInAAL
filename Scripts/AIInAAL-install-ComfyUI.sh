@@ -63,8 +63,15 @@ echo "AIInAAL_update" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 #### Executable below
 echo "#source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "#export TORCH_DEVICE_BACKEND_AUTOLOAD=0" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "python $AIInAALdir/$aiinaalpkg/main.py --port 7865 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "# DEFAULT Executable" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "#python $AIInAALdir/$aiinaalpkg/main.py --port 7865 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "# Enables split attention and async offload (use this for oneapi 2025.1)" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "#export UR_L0_ENABLE_SYSMAN_ENV_DEFAULT=0" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "python $AIInAALdir/$aiinaalpkg/main.py --use-split-cross-attention --async-offload --port 7865 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "sleep 60"
 #echo "echo "ComfyUI is still running in the background. Enter command: ComfyUI-exit to close down ComfyUI.""
 #echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh

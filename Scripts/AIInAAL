@@ -83,10 +83,14 @@ case $var1 in
             ;;
             Torch)
                 pip install --upgrade -r $AIInAALdir/Scripts/torch_requirements.txt
+                set UR_L0_ENABLE_SYSMAN_ENV_DEFAULT=0
+                export UR_L0_ENABLE_SYSMAN_ENV_DEFAULT=0
                 #echo "Temporarily disabled due to custom torch build testing..."
             ;;
             torch)
                 pip install --upgrade -r $AIInAALdir/Scripts/torch_requirements.txt
+                set UR_L0_ENABLE_SYSMAN_ENV_DEFAULT=0
+                export UR_L0_ENABLE_SYSMAN_ENV_DEFAULT=0
                 #echo "Temporarily disabled due to custom torch build testing..."
             ;;
         esac
