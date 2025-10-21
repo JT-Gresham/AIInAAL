@@ -71,7 +71,10 @@ echo "#python $AIInAALdir/$aiinaalpkg/main.py --port 7865 \"\$@\"" >> $AIInAALdi
 echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "# Enables split attention and async offload (use this for oneapi 2025.1)" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "#export UR_L0_ENABLE_SYSMAN_ENV_DEFAULT=0" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "python $AIInAALdir/$aiinaalpkg/main.py --use-split-cross-attention --async-offload --port 7865 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "#python $AIInAALdir/$aiinaalpkg/main.py --use-split-cross-attention --async-offload --port 7865 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "python /home/LACII14/Archive-M1/AI/AIInAAL/ComfyUI/main.py --novram --bf16-unet --cpu-vae --use-split-cross-attention --disable-smart-memory --async-offload --oneapi-device-selector level_zero:gpu --port 7865 "$@"
+" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+
 echo "sleep 60"
 #echo "echo "ComfyUI is still running in the background. Enter command: ComfyUI-exit to close down ComfyUI.""
 #echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
