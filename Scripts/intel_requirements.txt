@@ -60,5 +60,5 @@ intel-extension-for-transformers --extra-index-url https://pytorch-extension.int
 #torchvision==0.23.0 --index-url https://download.pytorch.org/whl/xpu
 #torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/xpu
 #openvino
-#onnxruntime-openvino
+onnxruntime-openvino
 #############################
