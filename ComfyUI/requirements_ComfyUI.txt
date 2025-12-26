@@ -2,3 +2,5 @@
 comfyui-frontend-package==1.23.4
 alembic
 pydantic-settings
+onnxruntime-openvino
+onnx
