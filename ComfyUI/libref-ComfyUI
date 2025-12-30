@@ -32,6 +32,10 @@ AIInAAL_update_ComfyUI () {
 #      sed -i 's|import folder_paths|import folder_paths\n\nimport torch\nimport intel_extension_for_pytorch as ipex\nimport intel_extension_for_transformers\nimport openvino\n|g' prestartup_script.py
 #  fi
 
+# FIX DOTNET
+  rm $AIInAALdir/AIInAAL_env/bin/dotnet
+  ln -sf $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/dotnetcore2/ $AIInAALdir/AIInAAL_env/lib/python3.11/dotnetcore2
+
   cd $AIInAALdir/$aiinaalpkg
   rm -R "$AIInAALdir/$aiinaalpkg/models/checkpoints"
   rm -R "$AIInAALdir/$aiinaalpkg/models/loras"
