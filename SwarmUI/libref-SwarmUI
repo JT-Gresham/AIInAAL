@@ -61,8 +61,9 @@ AIInAAL_update_SwarmUI () {
   #fi
 
 # FIX DOTNET
-  rm $AIInAALdir/AIInAAL_env/bin/dotnet
-  ln -sf $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/dotnetcore2/ $AIInAALdir/AIInAAL_env/lib/python3.11/dotnetcore2
+rm $AIInAALdir/AIInAAL_env/bin/dotnet
+ln -sf $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/dotnetcore2/ $AIInAALdir/AIInAAL_env/lib/python3.11/dotnetcore2
+ln -sf $AIInAALdir/AIInAAL_env/lib/python3.11/dotnetcore2/bin/dotnet $AIInAALdir/AIInAAL_env/bin/dotnet
 
 rm -R "$AIInAALdir/$aiinaalpkg/Models/Stable-Diffusion"
 rm -R "$AIInAALdir/$aiinaalpkg/Models/Lora"
