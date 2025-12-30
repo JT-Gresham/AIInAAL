@@ -59,6 +59,11 @@ AIInAAL_update_SwarmUI () {
   #  else
   #    sed -i 's|scipy==1.9.3|scipy>=1.9.3|g' requirements_versions.txt
   #fi
+
+# FIX DOTNET
+  rm $AIInAALdir/AIInAAL_env/bin/dotnet
+  ln -sf $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/dotnetcore2/ $AIInAALdir/AIInAAL_env/lib/python3.11/dotnetcore2
+
 rm -R "$AIInAALdir/$aiinaalpkg/Models/Stable-Diffusion"
 rm -R "$AIInAALdir/$aiinaalpkg/Models/Lora"
 rm -R "$AIInAALdir/$aiinaalpkg/Models/clip_vision"
