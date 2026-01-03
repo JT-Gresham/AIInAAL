@@ -16,7 +16,7 @@ export OLLAMA_HOST=0.0.0.0
 export OLLAMA_INTEL_GPU=true
 export ONEAPI_DEVICE_SELECTOR=level_zero:0
 export DEVICE=Arc
-source /opt/intel/oneapi/setvars.sh
+#source /opt/intel/oneapi/setvars.sh
 
 AIInAAL_update_Ollama () {
   cd $AIInAALdir/$aiinaalpkg

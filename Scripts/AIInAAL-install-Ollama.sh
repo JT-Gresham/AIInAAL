@@ -76,7 +76,7 @@ echo "export OLLAMA_INTEL_GPU=true" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start
 echo "export OLLAMA_NUM_GPU=999" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "export OLLAMA_NUM_GPU_LAYERS=9999" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "export TORCH_DEVICE_BACKEND_AUTOLOAD=0" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
-echo "source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "#source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "ollama serve &" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "cd $AIInAALdir/$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh

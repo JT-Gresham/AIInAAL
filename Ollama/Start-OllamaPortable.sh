@@ -16,7 +16,7 @@ export OLLAMA_INTEL_GPU=true
 export OLLAMA_NUM_GPU=9999
 export OLLAMA_NUM_GPU_LAYERS=9999
 export TORCH_DEVICE_BACKEND_AUTOLOAD=0
-source ipex-llm-init -g --device Arc
+#source ipex-llm-init -g --device Arc
 AIInAAL_update_Ollama
 cd $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/ollama
 clear
