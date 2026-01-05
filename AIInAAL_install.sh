@@ -93,8 +93,9 @@ echo ""
 echo "Initializing the AIInAAL command."
 ln -sf $pdirectory/AIInAAL/Scripts/AIInAAL $pdirectory/AIInAAL/AIInAAL_env/bin/AIInAAL
 sudo ln -sf $pdirectory/AIInAAL/AIInAAL_env/bin/AIInAAL /bin/AIInAAL
-#sudo chmod +x /bin/AIInAAL
-sudo chmod +x $pdirectory/AIInAAL/AIInAAL_env/bin/AIInAAL
+sudo chmod +x -R $pdirectory/AIInAAL
+sudo chmod 777 -R $pdirectory/AIInAAL
+#sudo chmod +x -R $pdirectory/AIInAAL/AIInAAL_env/bin/AIInAAL
 echo "Creating initial \"Shared\" directory...replace with yours afterward, if necssary (symlink allowed)"
 if [ ! -d "$pdirectory/AIInAAL/Shared" ]; then
   mv ./shared1 ./shared
