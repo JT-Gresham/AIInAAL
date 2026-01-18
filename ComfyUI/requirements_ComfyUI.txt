@@ -4,3 +4,7 @@ alembic
 pydantic-settings
 onnxruntime-openvino
 onnx
+einops
+av
+spandrel
+webcolors
