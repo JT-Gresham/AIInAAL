@@ -54,7 +54,10 @@ export PATH="$AIInAALdir/AIInAAL_env/lib/python3.11/dotnetcore2/bin/dotnet:$PATH
 # Note: manual installers that want to avoid home dir, add to both of the below lines: --install-dir "$AIInAALdir/$aiinaalpkg/.dotnet"
 ./launchtools/dotnet-install.sh --channel 8.0 --runtime aspnetcore --install-dir "$AIInAALdir/$aiinaalpkg/.dotnet"
 ./launchtools/dotnet-install.sh --channel 8.0 --install-dir "$AIInAALdir/$aiinaalpkg/.dotnet"
-
+cd $SCRIPT_DIR
+$SCRIPT_DIR/.dotnet/dotnet build src/SwarmUI.csproj --configuration Release -o ./src/bin/live_release
+cur_head=`git rev-parse HEAD`
+echo $cur_head > src/bin/last_build
 echo ""
 echo "Creating the launcher file ($aiinaalpkg-Start.sh)"
 cp user_customize_$aiinaalpkg_example.sh user_customize_$aiinaalpkg.sh
