@@ -49,6 +49,7 @@ wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 chmod +x dotnet-install.sh
 cd ..
 SCRIPT_DIR=$(echo $AIInAALdir/$aiinaalpkg)
+DOTNET_ROOT=$AIInAALdir/AIInAAL_env/lib/python3.11/dotnetcore2/bin/dotnet
 export PATH="$AIInAALdir/AIInAAL_env/lib/python3.11/dotnetcore2/bin/dotnet:$PATH"
 # Note: manual installers that want to avoid home dir, add to both of the below lines: --install-dir "$AIInAALdir/$aiinaalpkg/.dotnet"
 ./launchtools/dotnet-install.sh --channel 8.0 --runtime aspnetcore --install-dir "$AIInAALdir/$aiinaalpkg/.dotnet"
