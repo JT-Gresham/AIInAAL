@@ -66,8 +66,8 @@ fi
 rm $AIInAALdir/AIInAAL_env/bin/dotnet
 ln -sf $AIInAALdir/AIInAAL_env/lib/python3.11/site-packages/dotnetcore2/ $AIInAALdir/AIInAAL_env/lib/python3.11/dotnetcore2
 ln -sf $AIInAALdir/AIInAAL_env/lib/python3.11/dotnetcore2/bin/dotnet $AIInAALdir/AIInAAL_env/bin/dotnet
-export DOTNET_ROOT="$AIInAALdir/AIInAAL_env/lib/python3.11/dotnetcore2"
-export DOTNET_ROOT_X64="$AIInAALdir/AIInAAL_env/lib/python3.11/dotnetcore2"
+export DOTNET_ROOT="$AIInAALdir/$aiinaalpkg/.dotnet"
+export DOTNET_ROOT_X64="$AIInAALdir/$aiinaalpkg/.dotnet"
 
 rm -R "$AIInAALdir/$aiinaalpkg/Models/Stable-Diffusion"
 rm -R "$AIInAALdir/$aiinaalpkg/Models/Lora"
