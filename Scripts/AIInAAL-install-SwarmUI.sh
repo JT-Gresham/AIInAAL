@@ -85,7 +85,7 @@ if grep -Fxq "https://download.pytorch.org/whl/xpu" $AIInAALdir/$aiinaalpkg/laun
     else
         sed -i 's|GPU_TYPE=$1|GPU_TYPE=xpu|g' $AIInAALdir/$aiinaalpkg/launchtools/comfy-install-linux.sh
         sed -i 's|&& [ "$GPU_TYPE" != "nv" ]|&& [ "$GPU_TYPE" != "nv" ] && [ "$GPU_TYPE" != "xpu" ]|g' $AIInAALdir/$aiinaalpkg/launchtools/comfy-install-linux.sh
-        sed -i 's|--index-url https://download.pytorch.org/whl/rocm7.1|--index-url https://download.pytorch.org/whl/rocm7.1\nelif [ "$GPU_TYPE" == "xpu" ]; then\n    echo "install xpu torch..."\n    $python -s -m pip install --pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/xpu|g' $AIInAALdir/$aiinaalpkg/launchtools/comfy-install-linux.sh
+        sed -i 's|--index-url https://download.pytorch.org/whl/nightly/rocm7.1|--index-url https://download.pytorch.org/whl/nightly/rocm7.1\nelif [ "$GPU_TYPE" == "xpu" ]; then\n    echo "install xpu torch..."\n    $python -s -m pip install --pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/xpu|g' $AIInAALdir/$aiinaalpkg/launchtools/comfy-install-linux.sh
 fi
 echo "Installation complete. Start with command: AIInAAL-$aiinaalpkg with any SwarmUI arguments afterward"
 echo "     IMPORTANT: To use SwarmUI with the ComfyUI backend if already installed in AIInAAL:"
