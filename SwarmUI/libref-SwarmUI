@@ -85,7 +85,7 @@ ln -sf "$AIInAALdir/shared/controlnet" "$AIInAALdir/$aiinaalpkg/Models/controlne
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae/" "$AIInAALdir/$aiinaalpkg/Models/VAE"
 ln -sf "$AIInAALdir/shared/VAEs/t2i/vae_approx/" "$AIInAALdir/$aiinaalpkg/Models/VAE-approx"
 ln -sf "$AIInAALdir/shared/wildcards/" "$AIInAALdir/$aiinaalpkg/Data/Wildcards"
-ln -sf "$AIInAALdir/shared/output/ComfyUI/" "$AIInAALdir/$aiinaalpkg/Output/local/raw"
+ln -sf "$AIInAALdir/shared/output/SwarmUI/" "$AIInAALdir/$aiinaalpkg/Output/local/raw"
 cd $pdirectory
 $AIInAALdir/$aiinaalpkg/user_customize_$aiinaalpkg.sh
 cd $AIInAALdir/$aiinaalpkg
