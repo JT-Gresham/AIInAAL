@@ -1,5 +1,8 @@
 #comfyui-frontend-package==1.25.11
 comfyui-frontend-package==1.23.4
+comfyui-workflow-templates==0.9.77
+comfyui-embedded-docs==0.5.0
+comfy-kitchen>=0.2.8
 alembic
 pydantic-settings
 onnxruntime-openvino
@@ -8,5 +11,27 @@ einops
 av
 spandrel
 webcolors
-comfy-aimdo>=0.1.6
+comfy-aimdo>=0.3.0
 simpleeval
+
+tokenizers>=0.13.3
+sentencepiece
+safetensors>=0.4.2
+aiohttp>=3.11.8
+yarl>=1.18.0
+pyyaml
+Pillow
+scipy
+tqdm
+psutil
+SQLAlchemy>=2.0.0
+filelock
+
+requests
+blake3
+
+#non essential dependencies:
+kornia>=0.7.1
+pydantic
+PyOpenGL
+glfw
