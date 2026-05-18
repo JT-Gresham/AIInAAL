@@ -65,6 +65,8 @@ echo "#source ipex-llm-init -g --device Arc" >> $AIInAALdir/$aiinaalpkg/$aiinaal
 echo "AIInAAL_update_$aiinaalpkg" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "#export TORCH_DEVICE_BACKEND_AUTOLOAD=0" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "export UR_L0_ENABLE_SYSMAN_ENV_DEFAULT=0" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "export CUDA_VISIBLE_DEVICES=\"xpu:0\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "# DEFAULT Executable" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "python $AIInAALdir/$aiinaalpkg/main.py --port 7865 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
