@@ -69,6 +69,9 @@ echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "# DEFAULT Executable" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "python $AIInAALdir/$aiinaalpkg/main.py --port 7865 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "# Enables MultiGPU distribution custom nodes" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "#python /home/LACII14/Archive-M1/AI/AIInAAL/ComfyUI/main.py --listen --enable-cors-header --async-offload --lowvram --preview-method latent2rgb --port 7865 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
+echo "" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "# Enables split attention and async offload (use this for oneapi 2025.1)" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "#export UR_L0_ENABLE_SYSMAN_ENV_DEFAULT=0" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
 echo "#python $AIInAALdir/$aiinaalpkg/main.py --use-split-cross-attention --async-offload --port 7865 \"\$@\"" >> $AIInAALdir/$aiinaalpkg/$aiinaalpkg-Start.sh
