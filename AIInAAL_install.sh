@@ -67,8 +67,8 @@ curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
 cd $pdirectory/AIInAAL
 echo ""
-echo "Installing wheel package..."
-pip install wheel
+echo "Installing wheel and cmake packages..."
+pip install wheel cmake
 echo ""
 echo "Installing packages from requirements_AIInAAL.txt..."
 pip install -r requirements_AIInAAL.txt
