@@ -36,7 +36,7 @@ echo "Creating the AIInAAL-update command..."
 sudo echo "#!/usr/bin/env bash" > /usr/bin/AIInAAL-update
 sudo echo "" >> /usr/bin/AIInAAL-update
 sudo echo "source $pdirectory/AIInAAL/AIInAAL_env/bin/activate" >> /usr/bin/AIInAAL-update
-sudo echo "souce $pdirectory/AIInAAL/libref" >> /usr/bin/AIInAAL-update
+sudo echo "source $pdirectory/AIInAAL/libref" >> /usr/bin/AIInAAL-update
 sudo echo "AIInAAL_update" >> /usr/bin/AIInAAL-update
 sudo chmod +x /usr/bin/AIInAAL-update
 git clone https://github.com/JT-Gresham/AIInAAL.git
