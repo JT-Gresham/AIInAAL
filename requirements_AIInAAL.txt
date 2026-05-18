@@ -9,6 +9,7 @@
 
 #mkl-dpcpp
 transformers>=4.45,<4.58.0
+tokenizers==0.22.0
 intel-extension-for-transformers
 #tensorflow==2.15.0
 #tensorflow-intel
