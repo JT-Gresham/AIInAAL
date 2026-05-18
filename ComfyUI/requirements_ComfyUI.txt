@@ -3,7 +3,7 @@ comfyui-frontend-package==1.23.4
 comfyui-workflow-templates==0.9.77
 comfyui-embedded-docs==0.5.0
 comfy-kitchen>=0.2.8
-#comfy-aimdo>=0.3.0
+comfy-aimdo
 alembic
 pydantic-settings
 onnxruntime-openvino
