@@ -5,8 +5,8 @@ echo "########## AI Framework for Intel Arc GPUs on Arch Linux ##########"
 echo "################### created by JT Gresham ####################"
 echo ""
 echo "*  This installer requires that you have up-to-date drivers for your Intel Arc GPU."
-echo "*  You also need to have Python 3.11 installed since this installer creates your"
-echo "       python virtual environment with it. It can be found in the AUR (python311)"
+echo "*  You also need to have Python 3.13 installed since this installer creates your"
+echo "       python virtual environment with it. It can be found in the AUR (python313)"
 echo "*  This installer will check/install a couple of packages via PACMAN. These are installed"
 echo "       from the offical Arch repositories so you will be asked to authorize the install with"
 echo "       your password."
@@ -54,10 +54,10 @@ bash $pdirectory/AIInAAL/Scripts/librefgen
 echo "Changing directory ->$pdirectory/AIInAAL"
 cd $pdirectory/AIInAAL
 echo ""
-echo "Creating python 3.11 environment (AIInAAL_env)"
-/usr/bin/python3.11 -m venv $pdirectory/AIInAAL/AIInAAL_env
-#echo "Creating python 3.11 environment (AIInAAL_env_inf)"
-#/usr/bin/python3.11 -m venv $pdirectory/AIInAAL/AIInAAL_env_inf
+echo "Creating Python 3.13 environment (AIInAAL_env)"
+/usr/bin/python3.13 -m venv $pdirectory/AIInAAL/AIInAAL_env
+#echo "Creating python 3.13 environment (AIInAAL_env_inf)"
+#/usr/bin/python3.13 -m venv $pdirectory/AIInAAL/AIInAAL_env_inf
 echo ""
 echo "Activating environment -> AIInAAL_env"
 source $pdirectory/AIInAAL/AIInAAL_env/bin/activate
