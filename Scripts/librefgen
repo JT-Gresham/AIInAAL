@@ -55,6 +55,10 @@ echo "AIInAAL_update_Intel_inf () {" >> $AIInAALdir/libref
 echo "    pip install --upgrade -r $AIInAALdir/Scripts/intel_requirements_inf.txt" >> $AIInAALdir/libref
 echo "}" >> $AIInAALdir/libref
 
+echo "AIInAAL_update_Torch () {" >> $AIInAALdir/libref
+echo "    pip install --upgrade -r $AIInAALdir/Scripts/torch_requirements.txt" >> $AIInAALdir/libref
+echo "}" >> $AIInAALdir/libref
+
 echo "EOF_fix () {" >> $AIInAALdir/libref
 echo "echo    Correcting any BS WINBLOWS carriage return entries in bash scripts..." >> $AIInAALdir/libref
 echo "    cd $AIInAALdir/\$aiinaalpkg" >> $AIInAALdir/libref
